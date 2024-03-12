@@ -1,0 +1,1118 @@
+TABLE_ALIAS;COLUMN_NAME;COLUMN_DESCRIPTION
+AG;ENT_ID;Identifiant national de l’entité déclarante
+;;
+AG;STTM_DT;Date d'arrêté
+AG;AGMT_ID;Permet d'identifier de manière unique le contrat dans le système Zone de Partage
+;;
+AG;SRC_CD;Code du système opérationnel de gestion ou système remettant de l'objet métier
+AG;MKT_TYPE_CD;Permet d'identifier la clientèle du contrat
+;;
+AG;HOST_AGMT_ID;Identifiant technique local du contrat
+AG;HOST_AGMT_NUM;Référence unique du contrat dans le système de gestion local de l'entité remettante
+AG;HOST_SUB_AGMT_NUM;Référence Unique de l'élément du contrat dans le système de gestion source de l'entité remettante
+;;
+;;
+AGR;PARNT_AGMT_ID;Permet d'identifier de manière unique le contrat parent dans le système Zone de Partage
+;;
+AGR;PARNT_AGMT_ID;Permet d'identifier de manière unique le contrat parent dans le système Zone de Partage
+;;
+AG;FLOW_TYPE_CD;Type d’enregistrement dans la création de la ligne en base (ex : P3C)
+AG;FLOW_SCOPE;Périmètre du fichier (maître) qui créé la ligne en base
+AG;PROD_TYPE_CD;Non renseigné
+EX;RISK_TYPE_CD;Classification de l'opération selon la nomenclature risque.
+TYPRISE;KVLBRISE;Codification du produit autorisé.
+AG;OPRTN_NATR_CD;Correspond à la classification de l'encours selon la nomenclature Groupe CA NATO commune aux Risques et à la Comptabilité.
+;;
+NATOPE;H8LDES11;NATO, mode de regroupement les opérations par nature comptable homogène, permettant de réaliser des rapprochements entre agrégats risques et comptables.
+PTA_PRN;PRNCPAL_PRTY_ENT_ID;Entité rattachée au Tiers principal
+PTA_PRN;PRNCPAL_PRTY_ID;Permet d'identifier de manière unique le tiers dans le système Zone de Partage
+;;
+PTA_PRN;PRNCPAL_PRTY_REF_TIGRE_IND;Permet d'indiquer que le Tiers est géré en central
+;;
+;;
+EX;BSL_PTFOL_CD;Code opération dans le corpus Bâlois
+;;
+PTFO;KVLIBBAL;Libellé du Portefeuille Bâle Opération
+PTA_PRN;CALCD_WTD_ASSET_CLAS_CD;#N/A
+PTA_PRN;CALCD_WTD_ASSET_CLAS_LB;La Classe d'Actif de Pondération est une nomenclature Groupe CA permettant de classer les activités du Groupe de manière homogène avec les portefeuilles de Bâle Tiers et Opérations et les courbes de pondération Bâle II. Calcul effectué dans la ZP
+PTA_PRN;BNFRY_PRTY_ENT_ID;Entité rattachée au Tiers bénéficiaire
+PTA_PRN;BNFRY_PRTY_ID;Permet d'identifier de manière unique le tiers dans le système Zone de Partage
+;;
+PTA_PRN;LENDG_LEG_ISSUR_PRTY_ENT_ID;Entité rattachée au Tiers Emetteur - Jambe emprunteuse
+PTA_PRN;LENDG_LEG_ISSUR_PRTY_ID;Permet d'identifier de manière unique le tiers dans le système Zone de Partage
+;;
+PTA_PRN;BORWG_LEG_ISSUR_PRTY_ENT_ID;Entité rattachée au Tiers - Jambe emprunteuse
+PTA_PRN;BORWG_LEG_ISSUR_PRTY_ID;Permet d'identifier de manière unique le tiers dans le système Zone de Partage
+;;
+PTA_PRN;GUARTR_PRTY_ENT_ID;Entité rattachée au Tiers garant
+PTA_PRN;GUARTR_PRTY_ID;Permet d'identifier de manière unique le tiers dans le système Zone de Partage
+;;
+PTA_PRN;UNDRLY_ISSUR_PRTY_ENT_ID;Entité rattachée à l'émetteur du sous jacent
+PTA_PRN;UNDRLY_ISSUR_PRTY_ID;Permet d'identifier de manière unique le tiers dans le système Zone de Partage
+;;
+PTA_PRN;CVRD_THIRD_PRTY_ENT_ID;Entité rattachée au Tiers couvert
+PTA_PRN;CVRD_THIRD_PRTY_ID;Permet d'identifier de manière unique le tiers dans le système Zone de Partage
+;;
+PTA_PRN;CLEARING_HOUSE_PRTY_ENT_ID;Entité rattachée au Tiers Chambre de compensation
+PTA_PRN;CLEARING_HOUSE_PRTY_ID;Permet d'identifier de manière unique le tiers dans le système Zone de Partage
+;;
+PTA_PRN;ISSUR_PRTY_ENT_ID;#N/A
+PTA_PRN;ISSUR_PRTY_ID;Permet d'identifier de manière unique le tiers dans le système Zone de Partage
+;;
+EX;AGMT_RISK_OFF_BAL_SHET_IND;Indicateur bilan / hors bilan
+PTA_PRN;CALCD_BASE_EURO_AMT;Montant de base en devise euro
+AG;SCHD_STGE_NB;Indique le nombre de paliers
+BAL;UNDRWN_AMT;Montant de la PNU (Part Non Utilisée)
+BAL;UNDRWN_AMT_CURY_CD;Devise de la Part Non Utilisée
+BAL;UNDRWN_EURO_AMT;Non renseigné
+BAL;ENDG_LEDGR_BAL_AMT;Solde débiteur / Solde créditeur
+BAL;ENDG_LEDGR_BAL_AMT_CURY_CD;Devise d'expression du solde du compte
+BAL;ENDG_LEDGR_BAL_EURO_AMT;Non renseigné
+BAL;OVRDRFT_BAL_AMT;Montant de découverts
+;;
+BAL;OVRDRFT_BAL_AMT_CURY_CD;Devise d'expression du découvert (LC.0005)
+BAL;OVRDRFT_BAL_EURO_AMT;Non renseigné
+BAL;CPTL_OUTST_AMT;Montant du Capital restant dû
+;;
+BAL;CPTL_OUTST_AMT_CURY_CD;Devise du Capital restant dû
+BAL;CPTL_OUTST_EURO_AMT;Correspond à l’encours à date d’arrêté du contrat, il est exprimé dans la devise d’origine du contrat. Pour les contrats non démarré, correspond au nominal initial.
+BAL;AGMT_ASSET_LEASG_AMT;Montant des loyers
+BAL;AGMT_ASSET_LEASG_CURY_CD;Devise des loyers
+BAL;AGMT_ASSET_LEASG_EURO_AMT;Non renseigné
+BAL;LTR_OF_CR_NMNL_AMT;Montant du nominal de l'engagement par signature
+BAL;LTR_OF_CR_NMNL_AMT_CURY_CD;Devise du montant nominal de l'engagement par signature
+BAL;LTR_OF_CR_NMNL_EURO_AMT;Non renseigné
+BAL;MK_TO_MKT_AMT;Montant de Mark-to-market
+BAL;MK_TO_MKT_AMT_CURY_CD;Devise du montant du MtM
+BAL;MK_TO_MKT_EURO_AMT;
+;;
+Correspond à la valorisation d'actifs et de passifs sur la base d'une estimation de leur valeur de marché ou de leur valeur d'utilité par actualisation des flux de trésorerie estimés attendus de leur utilisation.;;
+BAL;LENDG_LEG_MTM_AMT;Mark-to-Market de la jambe prêteuse
+BAL;LENDG_LEG_MTM_AMT_CURY_CD;Devise d'expression du Mark-to-Market.
+BAL;LENDG_LEG_MTM_EURO_AMT;Non renseigné
+BAL;BORWG_LEG_MTM_AMT;Mark-to-Market de la jambe emprunteuse
+BAL;BORWG_LEG_MTM_AMT_CURY_CD;Devise d'expression du Mark-to-Market.
+BAL;BORWG_LEG_MTM_EURO_AMT;Mark-to-Market de la jambe emprunteuse,  contrevalorisé en euro
+BAL;RLTD_CUR_ACCT_BAL_AMT;Solde du compte courant d'associé
+BAL;RLTD_CUR_ACCT_BAL_CURY_CD;Devise d'expression du solde du compte
+BAL;RLTD_CUR_ACCT_BAL_EURO_AMT;Signe du montant, partie entière, Partie décimale
+BAL;OPRTN_DT_OUTST_AMT;Encours en date d’opération en devise d’origine
+BAL;OPRTN_DT_OUTST_AMT_CURY_CD;Code devise encours à date d'arrêté
+BAL;OPRTN_DT_OUTST_EURO_AMT;Encours en date d’opération en contrevaleur
+BAL;OUTST_AMT;Encours à la Date d'arrêté en devise d'origine en NF
+BAL;OUTST_AMT_CURY_CD;Code devise de l'encours à la Date d'arrêté/Devise dans laquelle le contrat a été signé
+BAL;OUTST_EURO_AMT;Encours à la Date d'arrêté en contrevaleur en NF
+BAL;AMT_DRCTN_CD;Sens du montant à date d'arrêté
+BAL;ACRUD_INT_NOT_DUE_AMT;Somme des intérêts courus non échus à la Date d'arrêté
+BAL;ACRUD_INT_NOT_DUE_AMT_CURY_CD;Devise dans laquelle les échanges d'intérêt sont réalisés
+BAL;ACRUD_INT_NOT_DUE_EURO_AMT;Montant des intérêts Courus Non Echus à la date d'arrêté, en contrevaleur euro
+BAL;AMRTZD_COST_AMT;Montant du coût amorti
+BAL;AMRTZD_COST_AMT_CURY_CD;Devise du montant du coût amorti
+BAL;AMRTZD_COST_EURO_AMT;Non renseigné
+BAL;ASSET_HRCT_AMT;Montant de la décote sur actif déprécié à l’achat
+BAL;ASSET_HRCT_AMT_CURY_CD;Devise du montant de la décote sur actif déprécié à l’achat
+BAL;ASSET_HRCT_EURO_AMT;Non renseigné
+BAL;BASE_COUPN_MTM_AMT;Montant MTM pied coupon
+BAL;BASE_COUPN_MTM_EURO_AMT;Non renseigné
+BAL;BASE_COUPN_MTM__AMT_CURY_CD;Devise du montant du MTM Pied de coupon
+BAL;BLNCG_ADJSTMT_AVG_RATE_AMT;Montant des ICTM en devise d'origine
+BAL;BLNCG_ADJSTMT_AVG_RATE_AMT_CURY_CD;Code devise du montant des indemnités Compensatrices de Taux Moyen (ICTM)
+BAL;BLNCG_ADJSTMT_AVG_RATE_EURO_AMT;Montant des indemnités Compensatrices de Taux Moyen
+BAL;BORWG_LEG_MTM_AMT_COA_CD;Numéro du poste comptable PCCO du MtM de la jambe emprunteuse
+BAL;BORWG_LEG_NON_EXPRD_COUPN_AMT;Signe du montant, partie entière, partie décimale
+BAL;BORWG_LEG_NON_EXPRD_COUPN_AMT_CURY_CD;Devise d'expression montant des coupons courus non échus de la jambe emprunteuse.
+BAL;BORWG_LEG_NON_EXPRD_COUPN_EURO_AMT;Non renseigné
+BAL;BORWG_LEG_OUTST_AMT;Non renseigné
+BAL;BORWG_LEG_OUTST_AMT_COAI_CD;Numéro de compte local (PCI) de l'encours (devise achetée) en IFRS
+BAL;BORWG_LEG_OUTST_AMT_COA_CD;Numéro Compte PCCO de l'encours en norme IFRS en devise achetée - Jambe emprunteuse
+BAL;BORWG_LEG_OUTST_AMT_CURY_CD;Code devise de l'Encours (jambe emprunteuse)
+BAL;BORWG_LEG_OUTST_EURO_AMT;Encours à la Date d'arrêté en devise (jambe payeuse), contrevalorisé en euro
+BAL;BORWG_LEG_PD_INT_AMT;Montant des intérêts payés ou capitalisés dans le mois en devise - Jambe emprunteuse
+BAL;BORWG_LEG_PD_INT_AMT_CURY_CD;Code devise du montant des intérêts payés ou capitalisés dans le mois
+BAL;BORWG_LEG_PD_INT_EURO_AMT;Montant des intérêts payés ou capitalisés dans le mois (euro)
+BAL;BORWG_LEG_RECNCLN_AGREGAT_ID;Non renseigné
+BAL;BUY_LEG_NON_EXPRD_COUPN_AMT;Montant des coupons courus non échus de la jambe achetée (dérivés)
+BAL;BUY_LEG_NON_EXPRD_COUPN_AMT_CURY_CD;Devise d'expression montant des coupons  courus non échus de la jambe achetée.
+BAL;BUY_LEG_NON_EXPRD_COUPN_EURO_AMT;Montant des coupons courus non échus de la jambe achetée (dérivés)
+BAL;COMS_AMT;Montant des accessoires ou des CCNE en devise
+BAL;COMS_AMT_CURY_CD;Code devise du montant des accessoires, montant des CCNE
+BAL;COMS_EURO_AMT;Commissions,÷
+BAL;COMS_OUTSANDING_AMT;Montant des commissions d’engagement  restantes dûes
+BAL;COMS_OUTSANDING_AMT_CURY_CD;Devise d'expression des commissions d’engagement restantes dûes
+BAL;COMS_OUTSANDING_EURO_AMT;Montant des commissions restant dues, contrevalorisées en euro
+BAL;COUPN_NATR_CD;Non renseigné
+BAL;CPTLZN_PREM_ELGBL_AMT;Montant des droits à prime à la capitalisation
+BAL;CPTLZN_PREM_ELGBL_AMT_CURY_CD;Code devise des droits à prime à la capitalisation
+BAL;CPTLZN_PREM_ELGBL_EURO_AMT;Montant des droits à prime à la capitalisation
+BAL;CR_ACRUD_INT_NOT_DUE_AMT;Non renseigné
+BAL;CR_ACRUD_INT_NOT_DUE_AMT_CURY_CD;vient de depo
+BAL;CR_ACRUD_INT_NOT_DUE_EURO_AMT;ICNE créditeurs à date d'arrêté
+BAL;CR_ELGBL_AMT;Montant droits à crédit disponibles à date d'arrêté
+BAL;CR_ELGBL_AMT_CURY_CD;Code devise des droits à crédit disponibles
+BAL;CR_ELGBL_EURO_AMT;Montant droits à crédit disponibles à date d'arrêté
+BAL;CSH_LEG_AMT;Non renseigné
+BAL;CSH_LEG_AMT_CURY_CD;Devise dans laquelle le contrat a été signé
+BAL;CSH_LEG_EURO_AMT;Non renseigné
+BAL;CUMULATED_RCVRY_AMT;Montant cumulé recouvrements depuis défaut
+BAL;CUMULATED_RCVRY_AMT_CURY_CD;Devise du montant cumulé des recouvrements depuis le défaut
+BAL;CUMULATED_RCVRY_EURO_AMT;Non renseigné
+BAL;DBTFL_DEBT_PRT_AMT;Montant de l'encour en douteux compromis
+BAL;DBTFL_DEBT_PRT_CURY_CD;Devise du capital théorique restant dû
+BAL;DBTFL_DEBT_PRT_EURO_AMT;Montant de l'encours en douteux compromis
+BAL;DR_ACRUD_INT_NOT_DUE_AMT;ICNE débiteurs à date d'arrêté
+;;
+BAL;DR_ACRUD_INT_NOT_DUE_AMT_CURY_CD;Code devise des ICNE
+BAL;DR_ACRUD_INT_NOT_DUE_AMT_LIABTY_ASSET_IND;P pour un positionnement au passif du bilan, A pour un positionnement à l'actif.
+BAL;DR_ACRUD_INT_NOT_DUE_EURO_AMT;ICNE débiteurs à date d'arrêté
+BAL;EARLY_RPMT_CMPSTN_AMT;Montant Indemnité de Remboursement Anticipé
+BAL;EARLY_RPMT_CMPSTN_AMT_CURY_CD;Code devise du montant IRA
+BAL;EARLY_RPMT_CMPSTN_EURO_AMT;Montant Indemnité de Remboursement Anticipé
+BAL;EARLY_WDRWL_AMT;Montant des retraits anticipés en devise d'origine
+BAL;EARLY_WDRWL_AMT_CURY_CD;Non renseigné
+BAL;EARLY_WDRWL_EURO_AMT;Montant des retraits anticipés partiels depuis l'ouverture du contrat
+BAL;EXRCS_PRC_AMT;Prix d'exercice
+BAL;EXRCS_PRC_AMT_CURY_CD;Devise du prix d'exercice de l'option(LC.0005)
+BAL;EXRCS_PRC_EURO_AMT;Non renseigné
+BAL;EXRCS_PRC_RATE;Prix d'exercice en taux
+BAL;FEES_AMT;Total des frais à la date d'arrêté
+BAL;FEES_AMT_CURY_CD;Non renseigné
+BAL;FEES_EURO_AMT;Total des frais à la date d'arrêté (euro)
+BAL;FR_GAAP_ACCNTG_AMT;Montant nominal + ICNE - Dépréciation
+BAL;FR_GAAP_ACCNTG_AMT_CURY_CD;Non renseigné
+BAL;FR_GAAP_ACCNTG_EURO_AMT;Montant nominal + ICNE - Dépréciation
+BAL;FUNDS_NET_ACCNTG_ASSET_AMT;Montant actif net comptable fond
+BAL;FUNDS_NET_ACCNTG_ASSET_AMT_CURY_CD;Devise du montant actif net comptable du fond
+BAL;FUNDS_NET_ACCNTG_ASSET_EURO_AMT;Non renseigné
+BAL;GRS_MK_TO_MKT_AMT;Non renseigné
+BAL;GRS_MK_TO_MKT_AMT_CURY_CD;Non renseigné
+BAL;GRS_MK_TO_MKT_EURO_AMT;Non renseigné
+BAL;HLTHY_OUTST_AMT_FR_COAA_CD;Numéro de compte PCCA de l'encours sain en NF 
+;;
+BAL;HSTCL_AMT;Coût historique de la position hors frais
+BAL;HSTCL_AMT_CURY_CD;Non renseigné
+BAL;HSTCL_EURO_AMT;Coût historique de la position hors frais
+BAL;IFRS_ACCNTG_AMT;Montant nominal + ICNE - Dépréciation
+BAL;IFRS_ACCNTG_AMT_CURY_CD;Non renseigné
+BAL;IFRS_ACCNTG_EURO_AMT;Montant nominal + ICNE - Dépréciation
+BAL;INT_OUTST_AMT;Montant des intérêts restants dûs
+BAL;INT_OUTST_AMT_COA_CD;Numéro du poste comptable PCCO des intérêts restant dûs
+BAL;INT_OUTST_AMT_CURY_CD;Devise d'expression des intérêts restants dûs
+BAL;INT_OUTST_EURO_AMT;Non renseigné
+BAL;LENDG_LEG_MTM_AMT_COA_CD;Numéro du poste comptable PCCO du MtM de la jambe prêteuse
+BAL;LENDG_LEG_NON_EXPRD_COUPN_AMT;Signe du montant, partie entière, partie décimale
+BAL;LENDG_LEG_NON_EXPRD_COUPN_AMT_CURY_CD;Devise d'expression montant des coupons courus non échus de la jambe prêteuse.
+BAL;LENDG_LEG_NON_EXPRD_COUPN_EURO_AMT;Non renseigné
+BAL;LENDG_LEG_OUTST_AMT;Non renseigné
+BAL;LENDG_LEG_OUTST_AMT_COAI_CD;Non renseigné
+BAL;LENDG_LEG_OUTST_AMT_COA_CD;Numéro de compte PCCO de l'encours en norme IFRS (devise vendue)
+BAL;LENDG_LEG_OUTST_AMT_CURY_CD;Non renseigné
+BAL;LENDG_LEG_OUTST_EURO_AMT;Non renseigné
+BAL;LENDG_LEG_PD_INT_AMT;Montant des intérêts payés ou capitalisés dans le mois en devise - Jambe prêteuse
+BAL;LENDG_LEG_PD_INT_AMT_CURY_CD;Non renseigné
+BAL;LENDG_LEG_PD_INT_EURO_AMT;Montant des Intérêts payés ou capitalisés dans le mois d'arrêté, contrevalorisé en euro
+BAL;LENDG_LEG_RECNCLN_AGREGAT_ID;Non renseigné
+BAL;MAXM_ACHIEVABLE_AMT;Valeur du montant maximum qui peut être débloqué, il est obligatoirement supérieur ou égal au montant réellement réalisé
+BAL;MAXM_ACHIEVABLE_AMT_CURY_CD;Non renseigné
+BAL;MAXM_ACHIEVABLE_EURO_AMT;Valeur du montant maximum qui peut être débloqué, il est obligatoirement supérieur ou égal au montant réellement réalisé
+BAL;MK_TO_MKT_AMT_COA_CD;Numéro du poste comptable PCCO du MtM des dérivés (à l'actif du bilan)
+BAL;MK_TO_MKT_AMT_LIABTY_ASSET_IND;Non renseigné
+BAL;MTH_AVG_OUTST_CR_AMT;En date de valeur for les DAV et découverts autorisés ou en date d'opération for autres produits (cf définition SURFI)
+BAL;MTH_AVG_OUTST_CR_AMT_CURY_CD;Non renseigné
+BAL;MTH_AVG_OUTST_CR_EURO_AMT;En date de valeur for les DAV et découverts autorisés ou en date d'opération for autres produits (cf définition SURFI)
+BAL;MTH_AVG_OUTST_DR_AMT;Somme des encours journaliers divisé par le nombre de jours dans le mois. 
+;;
+;;
+;;
+BAL;MTH_AVG_OUTST_DR_AMT_CURY_CD;Non renseigné
+BAL;MTH_AVG_OUTST_DR_EURO_AMT;Somme des encours journaliers divisé par le nombre de jours dans le mois. 
+;;
+;;
+;;
+BAL;MTH_EARLY_RPMT_AMT;Montant du remboursement anticipé sur le mois
+BAL;MTH_EARLY_RPMT_AMT_CURY_CD;Non renseigné
+BAL;MTH_EARLY_RPMT_EURO_AMT;Montant du remboursement anticipé sur le mois
+BAL;MTH_FUND_RLEAS_AMT;A renseigner pour les prêts amortissables et les prêts avec techniques à plafonds hors OC (pour le OC à valoriser à zéro).
+;;
+;;
+BAL;MTH_FUND_RLEAS_AMT_CURY_CD;Code devise du montant des réalisations du mois
+BAL;MTH_FUND_RLEAS_EURO_AMT;A renseigner pour les prêts amortissables et les prêts avec techniques à plafonds hors OC (pour le OC à valoriser à zéro).
+;;
+;;
+BAL;MTH_MODFN_AMT;Montant du réaménagement sur le mois en devise d'origine
+BAL;MTH_MODFN_AMT_CURY_CD;Code devise du montant du réaménagement sur le mois
+BAL;MTH_MODFN_EURO_AMT;Montant du réaménagement sur la période
+BAL;NETG_AGMT_MTM_AMT;Montantn MtM net si accord de netting
+BAL;NETG_AGMT_MTM_AMT_CURY_CD;Devise du montant du MtM net si accord de netting
+BAL;NETG_AGMT_MTM_EURO_AMT;Non renseigné
+BAL;NON_EXPRD_COUPN_AMT;Montant des coupons non échus
+BAL;NON_EXPRD_COUPN_AMT_COA_CD;PCCO – Montant des coupons non échus
+BAL;NON_EXPRD_COUPN_AMT_CURY_CD;Devise d'expression des coupons
+BAL;NON_EXPRD_COUPN_EURO_AMT;Permettre de déterminer le montant du coupon couru à l'achat pour affectaction dans le PNB. Besoin selon la modalité de calcul dans RCO.
+BAL;NON_IMPUTD_VALS_CPTL_AMT;Montant des Valeurs Non Imputées en capital en devise
+BAL;NON_IMPUTD_VALS_CPTL_AMT_CURY_CD;Code devise du montants des Valeurs Non Imputées en capital
+BAL;NON_IMPUTD_VALS_CPTL_EURO_AMT;Montants d'impayés en capital à date d'arrêté (Valeurs Non Imputées)
+BAL;NON_IMPUTD_VALS_INT_AMT;Montant des Valeurs Non Imputées en intérêts en devise
+BAL;NON_IMPUTD_VALS_INT_AMT_CURY_CD;Code devise des montants des Valeurs Non Imputées en intérêts
+BAL;NON_IMPUTD_VALS_INT_EURO_AMT;Montants d'impayés en intérêts à date d'arrêté (Valeurs Non Imputées)
+BAL;NOTL_AMT;Montant du nominal
+BAL;NOTL_AMT_COA_CD;Numéro du poste comptable (PCCO) du nominal
+BAL;NOTL_AMT_CURY_CD;Devise du nominal
+BAL;NOTL_EURO_AMT;Non renseigné
+BAL;OPRTN_DT_OUTST_AMT_COA_CD;Numéro de compte PCCO de l'encours en norme IFRS
+BAL;OPRTN_DT_OUTST_AMT_LIABTY_ASSET_IND;P pour un positionnement au passif du bilan, A pour un positionnement à l'actif.
+BAL;ORIGNL_UNITRY_ACQ_AMT;Montant d'acquisition initial unitaire.
+BAL;ORIGNL_UNITRY_ACQ_AMT_CURY_CD;Devise du montant d'acquisition initial unitaire.
+BAL;ORIGNL_UNITRY_ACQ_EURO_AMT;Montant d'acquisition initial unitaire (euro)
+BAL;OUTST_AMT_COAI_CD;Compte comptable local de l'encours  (NF ou locale)
+BAL;OUTST_AMT_COA_CD;Numéro de compte PCCO de l'encours en norme IAS
+BAL;OUTST_AMT_FR_COAA_CD;Numéro de compte PCCA de l'encours en NF
+BAL;OUTST_AMT_IAS_COAA_CD;Numéro de compte PCCA de l'encours en norme IAS
+BAL;OVR_INDEBTED_AMT;Montant d'Encours en Surendettement
+BAL;OVR_INDEBTED_AMT_CURY_CD;Devise d’expression des montants d'encours en Surendettement.
+BAL;OVR_INDEBTED_EURO_AMT;Partie entière du montant.
+;;
+BAL;PD_INT_AMT;Montant des intérêts payés ou capitalisés dans le mois en devise de paiement
+BAL;PD_INT_AMT_CURY_CD;Code devise montant des Intérêts payés ou capitalisés dans le mois
+BAL;PD_INT_EURO_AMT;Montant des Interests payés ou capitalisés dans le mois (euro)
+BAL;PLND_PMT_AMT;Montant de l'abonnement en devise d'origine
+BAL;PLND_PMT_AMT_CURY_CD;Devise dans laquelle le contract a été signé/Code devise du montant de l'abonnement
+BAL;PLND_PMT_EURO_AMT;Montant des versements Mandatorys/programmés
+BAL;PMT_CURY_ACRUD_INT_NOT_DUE_AMT;Non renseigné
+BAL;PMT_CURY_ACRUD_INT_NOT_DUE_AMT_CURY_CD;Devise dans laquelle le contrat a été signé/Devise dans laquelle les échanges d'intérêt sont réalisés
+BAL;PMT_CURY_ACRUD_INT_NOT_DUE_EURO_AMT;Non renseigné
+BAL;PRCHD_RECVBL_PREM_AMT;Montant du Add-on affacturage
+BAL;PRCHD_RECVBL_PREM_AMT_CURY_CD;Devise du montant du Add-on affacturage
+BAL;PRCHD_RECVBL_PREM_EURO_AMT;montant du Add-on affacturage. (LC.0005)
+BAL;PRCH_NMNL_AMT;Non renseigné
+BAL;PRCH_NMNL_AMT_CURY_CD;Non renseigné
+BAL;PRCH_NMNL_EURO_AMT;Non renseigné
+BAL;PRVDD_FUNDS_AMT;Montant exprimé en devise d'orgine  qui correspond au cumul des fonds mis à la disposition du client. Ce montant évolue à chaque déblocage de fonds dans le cas de réalisations fractionnées et devient invariant lors de la réalisation soldante. Par définition, il est toujours inférieur ou égal au montant du prêt accordé.
+BAL;PRVDD_FUNDS_AMT_CURY_CD;Code devise du montant des fonds remis
+BAL;PRVDD_FUNDS_EURO_AMT;Montant exprimé en devise d'orgine  qui correspond au cumul des fonds mis à la disposition du client. Ce montant évolue à chaque déblocage de fonds dans le cas de réalisations fractionnées et devient invariant lors de la réalisation soldante. Par définition, il est toujours inférieur ou égal au montant du prêt accordé.
+BAL;RECNCLN_AGREGAT_ID;Identifiant de l'agrégat de rapprochement de l'encours en norme locale, utilisé pour les entités souhaitant définir en amont les agrégats de rapprochement des données de gestion avec les données comptables (à alimenter des deux cotés)
+BAL;RESTRUCTURING_HRCT_FR_AMT;Montant total de la décote en Norme Française restant à étaler pour un crédit restructuré à un taux inférieur au taux du marché, pour cause de défaillance du client.
+;;
+BAL;RESTRUCTURING_HRCT_FR_AMT_CURY_CD;Devise de décote restructuration restant à étaler
+BAL;RESTRUCTURING_HRCT_FR_EURO_AMT;Montant total de la décote en Norme Française restant à étaler pour un crédit restructuré à un taux inférieur au taux du marché, pour cause de défaillance du client.
+;;
+BAL;SCURTS_GLOBL_NMNL_AMT;Valable pour les obligations
+BAL;SCURTS_GLOBL_NMNL_AMT_CURY_CD;Devise dans laquelle le contrat a été signé
+BAL;SCURTS_GLOBL_NMNL_EURO_AMT;Valable pour les obligations
+BAL;SCURTY_LEG_AMT;Non renseigné
+BAL;SCURTY_LEG_AMT_CURY_CD;Devise dans laquelle le contrat a été signé
+BAL;SCURTY_LEG_EURO_AMT;Non renseigné
+BAL;SEL_LEG_NON_EXPRD_COUPN_AMT;Montant des coupons courus non échus de la jambe vendue (dérivés)
+BAL;SEL_LEG_NON_EXPRD_COUPN_AMT_CURY_CD;Devise d'expression montant des coupons  courus non échus de la jambe vendue.
+BAL;SEL_LEG_NON_EXPRD_COUPN_EURO_AMT;Montant des coupons courus non échus de la jambe vendue (dérivés), en contrevaleur euro
+BAL;SL_NMNL_AMT;Non renseigné
+BAL;SL_NMNL_AMT_CURY_CD;Non renseigné
+BAL;SL_NMNL_EURO_AMT;Non renseigné
+BAL;SPOT_PRC_AMT;Montant cours spot
+BAL;SPOT_PRC_AMT_CURY_CD;Devise montant cours spot
+BAL;SPOT_PRC_EURO_AMT;Montant cours spot
+BAL;SPOT_PRC_VAL;Cours spot
+BAL;THEORICAL_TRDNL_ADVNC_OUTST_AMT;Montant théorique de l'avance traditionnelle avant la date de prochaine échéance. Evolue en fonction du tableau d’amortissement remis au client et d’événements intervenant sur le prêt (ex : remboursement anticipé partiel).
+BAL;THEORICAL_TRDNL_ADVNC_OUTST_AMT_CURY_CD;Non renseigné
+BAL;THEORICAL_TRDNL_ADVNC_OUTST_EURO_AMT;Montant théorique de l'avance traditionnelle avant la date de prochaine échéance. Evolue en fonction du tableau d’amortissement remis au client et d’événements intervenant sur le prêt (ex : remboursement anticipé partiel).
+BAL;THRTCL_CPTL_OUTST_AMT;Correspond au CRD théorique sur les prêts (ne prend pas en compte les arriérés de paiement)
+BAL;THRTCL_CPTL_OUTST_CURY_CD;Devise du capital théorique restant dû
+BAL;THRTCL_CPTL_OUTST_EURO_AMT;Correspond au CRD théorique sur les prêts (ne prend pas en compte les arriérés de paiement)
+BAL;TOT_EARLY_RPMT_AMT;Montant total du remboursement anticipé depuis l'ouverture du contract
+BAL;TOT_EARLY_RPMT_AMT_CURY_CD;Code devise du montant RA total
+BAL;TOT_EARLY_RPMT_EURO_AMT;Montant total du remboursement anticipé depuis l'ouverture du contract
+BAL;TOT_MODFN_AMT;Montant total des réaménagements depuis le début de vie du contract : 
+;;
+BAL;TOT_MODFN_AMT_CURY_CD;Code devise du montant total du Réaménagement
+BAL;TOT_MODFN_EURO_AMT;Montant total des réaménagements depuis le début de vie du contract : 
+;;
+BAL;TRMTN_COMP_AMT;Signe du montant, partie entière, partie décimale
+BAL;TRMTN_COMP_AMT_CURY_CD;Devise du montant montant de l'indemnité de résiliation
+BAL;TRMTN_COMP_EURO_AMT;Non renseigné
+BAL;TSACTN_FEES_AMT;Montant des frais de courtage
+BAL;TSACTN_FEES_AMT_CURY_CD;Devise dans laquelle le contrat a été signé/Code devise des frais de transaction
+BAL;TSACTN_FEES_EURO_AMT;Montant des frais de courtage
+BAL;UNDRW_AMT_COA_CD;Numéro du poste comptable PCCO correspondant au montant déclaré ci-dessus
+BAL;UNPD_CPTL_AMT;Montant des Créances Impayées en capital en devise
+BAL;UNPD_CPTL_AMT_CURY_CD;Code devise des montants des Créances Impayées en capital
+BAL;UNPD_CPTL_EURO_AMT;Montants d'impayés en capital à date d'arrêté (Créances Impayées)
+BAL;UNPD_DRWN_CPTL_AMT;Montant du capital en arriéré de paiement
+BAL;UNPD_DRWN_CPTL_AMT_CURY_CD;Devise du Montant de capital en arriéré de paiement
+BAL;UNPD_DRWN_CPTL_EURO_AMT;Montant du capital en arriéré de paiement
+BAL;UNPD_DRWN_INT_OUTST_AMT;Montant des intérêts restant dûs en arriéré de paiement
+BAL;UNPD_DRWN_INT_OUTST_AMT_CURY_CD;Devise d'expression du montant des intérêts restant dûs en arriéré de paiement
+BAL;UNPD_DRWN_INT_OUTST_EURO_AMT;Montant des intérêts restant dûs en arriéré de paiement en contrevaleur euro
+BAL;UNPD_INT_AMT;Montant des Créances Impayées en intérêts en devise
+BAL;UNPD_INT_AMT_CURY_CD;Code devise des montants des Créances Impayées en intérêts
+BAL;UNPD_INT_EURO_AMT;Montants d'impayés en intérêts à date d'arrêté (Créances Impayées)
+BAL;UNPD_PORTN_MTM_AMT;Montant MTM pied coupon
+BAL;UNPD_PORTN_MTM_AMT_CURY_CD;Devise du montant du MTM Pied de coupon
+BAL;UNPD_PORTN_MTM_EURO_AMT;montant du MTM Pied de coupon
+BAL;UPDT_MTH_INT_AMT;Non renseigné
+BAL;UPDT_MTH_INT_AMT_CURY_CD;Non renseigné
+BAL;UPDT_MTH_INT_EURO_AMT;Non renseigné
+BAL;VALUT_ADJSTMT_AMT;Montant ajustement de valeur
+BAL;VALUT_ADJSTMT_AMT_CURY_CD;Devise du montant d'ajustement de valeur
+BAL;VALUT_ADJSTMT_EURO_AMT;Montant CVA comptable
+AST;AGMT_ASSET_LEAS_RSDUL_AMT;Valeur estimée en fin de période du bien loué
+AST;AGMT_ASSET_LEAS_RSDUL_AMT_CURY_CD;Devise d’expression de la Valeur Résiduelle  - crédit-bail.
+AST;AGMT_ASSET_LEAS_RSDUL_EURO_AMT;Non renseigné
+AST;APLCBL_LAW_CTRY_CD;#N/A
+AST;ASSET_ASESMT_METH_CD;#N/A
+AST;BLD_YR_NUM;#N/A
+AST;BORWG_BASE_IND;#N/A
+AST;BSL_RTG_INDX_IND;#N/A
+AST;DEP_PLACE_CD;#N/A
+AST;DROR_NTLTY_CD;#N/A
+AST;INDX_CD;#N/A
+AST;INTBL_ASSET_RGSTRN_CTRY_CD;#N/A
+AST;ISIN_CD;#N/A
+AST;ISSUR_NTLTY_CD;#N/A
+AST;LEAS_MGMT_IND;#N/A
+AST;LOC_CTRY_CD;Localisation (pays) de l’actif
+;;
+AST;LOC_NUTS_CD;#N/A
+AST;MORTAGE_AMT;#N/A
+AST;MORTAGE_QLTY_IND;#N/A
+AST;MORTG_AMT_CURY_CD;#N/A
+AST;MORTG_EURO_AMT;#N/A
+AST;OFF_PTNT_YR_NUM;#N/A
+AST;PTNT_ISSUD_IND;#N/A
+AST;REAL_ESTAT_ASSET_QLTY_IND;#N/A
+AST;REAL_ESTAT_DEST_CD;Usage du bien immobilier
+AST;RECVD_CLTRL_INVSTMT_PRD_NEXP_CPN_AMT;#N/A
+AST;RECVD_CLTRL_INVSTMT_PRD_NEXP_CPN_AMT_CURY_CD;#N/A
+AST;RECVD_CLTRL_INVSTMT_PRD_NEXP_CPN_EURO_AMT;#N/A
+AST;RECVD_CLTRL_INVSTMT_PROD_NMNL_AMT;#N/A
+AST;RECVD_CLTRL_INVSTMT_PROD_NMNL_AMT_CURY_CD;#N/A
+AST;RECVD_CLTRL_INVSTMT_PROD_NMNL_EURO_AMT;#N/A
+AST;SCURTS_CR_QLTY_CD;#N/A
+AST;SCURTS_IDNTFTN_TYPE_CD;#N/A
+AST;SCURTS_ISSU_CTRY_CD;#N/A
+AST;SCURTS_MATURTY_DT;#N/A
+AST;SCURTS_OWND_QTY;#N/A
+AST;SCURTY_LQDTN_PRD_CD;#N/A
+AST;STK_EXCH_CTRY_CD;#N/A
+AST;STRT_YR_NUM;#N/A
+AST;AGMT_ASSET_LEAS_PRCH_LKLHOOD_CD;Achat en fin de contrat du bien loué
+AST;ASSET_MKT_VAL_AMT;Valeur de marché du bien financé ou loué à la date d’évaluation
+AST;ASSET_MKT_VAL_CURY_CD;Devise de la valeur de marché du bien financé ou loué à la date d’évaluation (LC.0005)
+AST;ASSET_MKT_VAL_EURO_AMT;Montant du bien immobilier revalorisé,  contravalorisé en euro
+AST;ASSET_MORTG_VAL_AMT;Valeur hypothécaire du bien financé ou loué à la date d’évaluation
+AST;ASSET_MORTG_VAL_CURY_CD;Devise de la valeur hypothécaire du bien financé ou loué à la date d’évaluation (LC.0005)
+AST;ASSET_MORTG_VAL_EURO_AMT;Valeur hypothécaire du bien immobilier loué à la date d’évaluation, contravalorisé en euro
+AST;ASSET_RVW_DT;Date de revalorisation du bien financé ou loué
+AST;FUNDD_ASSET_CD;Destination des fonds, description de la nature du bien financé. Par exemple un terrain à vocation agricole, un logement principal individuel ou secondaire, etc.
+;;
+AST;GRNTNG_ASSET_VAL_AMT;Montant initial du bien financé / loué
+AST;GRNTNG_ASSET_VAL_CURY_CD;Devide du Montant initial du bien financé / loué
+AST;GRNTNG_ASSET_VAL_EURO_AMT;Non renseigné
+AST;LAST_ASESMT_ASSET_MKT_VAL_AMT;Valeur de marché du bien financé ou loué à la date d'évaluation
+AST;LAST_ASESMT_ASSET_MKT_VAL_CURY_CD;Devise de la valeur de marché du bien financé ou loué à la date d'évaluation
+AST;LAST_ASESMT_ASSET_MKT_VAL_EURO_AMT;Non renseigné
+AST;LEGL_CMPLI_IND;Respect des conditions réglementaires
+AG;ACCNTG_DVISN_CD;Permet d'identifier le service gestionnaire du contract.
+;;
+AG;ACCNTG_RECNCLN_VAL;Zone libre d'appariement comptable
+AG;ACCNTG_RESPONSABL_CTR_CD;Obligatoire si entité porteuse de risques (C1 0.2) = '00018'
+;;
+;;
+;;
+AG;ACLRTN_DT;Date à laquelle la banque met fin au contrat et exige le remboursement total du crédit (impayés + échéances à venir + frais + Intérêt)
+AG;AGMT_GRNLT_CD;Permet de qualifier le niveau de granularité du contrat
+;;
+AG;AGMT_INIT_CURY_CD;Devise de montant du contrat à l'origine (LC.0005)
+AG;AGMT_OPN_DT;Date contractuelle de début d'engagement
+;;
+AG;AGMT_ORIGNL_AMT;Montant global initial
+AG;AGMT_ORIGNL_AMT_COA_CD;Numéro du poste comptable PCCO correspondant au montant déclaré ci-dessus
+AG;AGMT_ORIGNL_AMT_CURY_CD;Devise de montant du contrat à l’origine
+AG;AGMT_ORIGNL_EURO_AMT;Non renseigné
+AG;AGMT_SBTYPE_CD;Permet d'identifier le sous-type du contrat
+;;
+;;
+AG;AGMT_SIGND_DT;Date de signature du contrat entre les partis
+AG;AGMT_STS_CD;Indique si le contrat est douteux ou non
+AG;ALM_PROD_CD;Code produit
+AG;AMRTZN_STGE_INT_PMT_MODALITY_CD;Indique si les intérêts sont payés directement ou ajoutés au capital lors de la phase d'amortissement
+AG;APLCTN_CD;Non renseigné
+AG;ASSET_MOBILISATION_CD;Permet d'identifier si l'actif est mobilisé, mobilisable ou non mobilisable
+AG;ASSOCD_AGMT_NUM;Dans le cas d'une opérations pour compte de la clientèle, compléter la référence contrat adossé. Dans le cas d'une opérations pour compte propre, laisser vide.
+AG;BORWG_LEG_FIXG_LAST_DT;Non renseigné
+AG;BORWG_LEG_FIXG_NXT_DT;Non renseigné
+AG;BORWG_LEG_INT_CALCN_CNVTN_DY_CD;Non renseigné
+AG;BORWG_LEG_INT_CPTLZN_NXT_DT;Non renseigné
+AG;BORWG_LEG_INT_PMT_CNVTN_DY_CD;Non renseigné
+AG;BORWG_LEG_INT_PMT_MODALITY_CD;Non renseigné
+AG;BORWG_LEG_NMNL_RATE;Non renseigné
+AG;BORWG_LEG_NXT_PRD_RATE_INDX_VAL;Non renseigné
+AG;BUSN_LN_2_CD;Non renseigné
+AG;BUSN_LN_3_CD;PEMP 115
+AG;BUSN_LN_4_CD;Non renseigné
+AG;BUSN_LN_CD;Classification de l'opération selon la ligne Métier.
+AG;CCF_IFRS9_METHDGY_CD;Clé d'appariemment avec les courbes de CCF du référentiel ifrs9
+AG;CLASFCN_PTFOL_CD;Permet de connaître le portefeuille de classification en normes internationales
+AG;CNTRPRT_RSULT_DVISN_CD;Rubrique permetant de disposer d'une structure analytique CAsa
+AG;DATA_RSRVD_LOCL;Zone réservée locale
+AG;DAYS_INIT_DURTN_NUM;Non renseigné
+AG;DURTN_NUM;Durée réelle du prêt à date BDF (PR27)
+;;
+;;
+;;
+;;
+;;
+AG;EARLY_RPMT_DT;Non renseigné
+AG;EARLY_RPMT_NATR_CD;Précise la nature de la clause contractuelle permettant de déclencher les remboursements anticipés
+AG;ECONMC_OPRTR_CD;Rubrique définissant le type de métier
+AG;EFF_INT_RATE;TIE au sens IFRS
+AG;ENT_SEGMT_CD;Segmentation des entités en filières ALM, Trésorerie, Back to Back et autres
+AG;EXTR_AGMT_ID;Identifiant unique du contrat dans le SI de gestion local de l’entité gérant le contrat dans les cas de sous-traitance et dont le flux est fourni par l'entité déclarante
+AG;FINC_APLCTN_CD;Code de l'application émettrice spécifique à PALMA
+AG;FIXG_NXT_DT;Cette rubrique est à renseigner pour les prêts dont le taux est indexé. 
+;;
+AG;GLOBL_EFF_INT_RATE;rates Effectif Global
+AG;IFRS9_ACCNTG_CLASFCN_CD;Classification comptable en norme IFRS9
+AG;INIT_AGMT_SIGND_DT;Date de signature du contrat initial
+AG;INIT_AMRTZN_METH_CD;Non renseigné
+AG;INIT_CAP_RATE;Non renseigné
+AG;INIT_CPTL_AMRTZN_PERIODCITY_CD;Non renseigné
+AG;INIT_CUST_RATE;Non renseigné
+AG;INIT_DURTN_NUM;Exprimée en nombre de mois, correspond à la durée du contrat  à la signature
+AG;INIT_FLOOR_RATE;Non renseigné
+AG;INIT_INDX_CD;Non renseigné
+AG;INIT_INDX_MATURTY_NUM;Non renseigné
+AG;INIT_INT_CALCN_PERIODCITY_CD;Non renseigné
+AG;INIT_PRE_POST_SET_IND;Non renseigné
+AG;INIT_RATE_RVW_PERIODCITY_CD;Non renseigné
+AG;INIT_RATE_TYPE_CD;Non renseigné
+AG;INTRAGRP_IND;Permet d'identifier les opérations internes
+AG;INTRAGRP_LVL_CD;Non renseigné
+AG;INTRAGRP_ROLE_CD;Rôle d'intragroupe
+AG;INT_CALCN_CNVTN_DY_CD;Non renseigné
+AG;INT_CALCN_METH_CD;Indique si les intérêts sont calculés avant ou après la période d'intérêt
+AG;INT_CPTLZN_NXT_DT;Date à laquelle le prochain paiement ou la prochaine capitalisation d'intérêts aura lieu
+AG;INT_CPTLZN_RATE;Pourcentage des intérêts capitalisés après prise en compte de la fiscalité
+AG;INT_PMT_CNVTN_DY_CD;Convention de jour de paiement des intérêts
+AG;INT_PMT_MODALITY_CD;Indique si les intérêts sont payés ou capitalisés
+AG;JURIS_CTRY_CD;Code du pays de juridiction du contrat
+AG;LEGL_PRPTY_IND;Non renseigné
+AG;LENDG_LEG_FIXG_LAST_DT;Non renseigné
+AG;LENDG_LEG_FIXG_NXT_DT;Non renseigné
+AG;LENDG_LEG_INT_CALCN_CNVTN_DY_CD;Non renseigné
+AG;LENDG_LEG_INT_CPTLZN_NXT_DT;Non renseigné
+AG;LENDG_LEG_INT_PMT_CNVTN_DY_CD;Non renseigné
+AG;LENDG_LEG_INT_PMT_MODALITY_CD;Non renseigné
+AG;LENDG_LEG_NMNL_RATE;Non renseigné
+AG;LENDG_LEG_NXT_PRD_RATE_INDX_VAL;Non renseigné
+AG;LGD_IFRS9_METHDGY_CD;Clé d'appariemment avec les courbes de LGD du référentiel ifrs9
+AG;LOCL_ACCNTG_CLASFCN_CD;Classification comptable en norme locale
+AG;LOCL_PROD_CD;Permet d'identifier le produit dans la filiale gestionnaire (plus particulièrement chez CA-Titres)
+AG;NARROW_SENSE_EFF_INT_RATE;Le TESE est défini comme étant le Rates d'intérêt, annualisé, qui égalise le montant initial de l'opération avec la valeur actuelle de l'ensemble des engagements autres que les charges (dépôts ou crédits, versements ou remboursements, versements d'intérêt), existants ou futurs, pris par les agents déclarants et le ménage ou la société non financière.
+;;
+AG;NMNL_RATE;Taux du contrat à la Date d'arrêté
+AG;NON_EXPRD_COUPN_DUE_INT_OPRTN_NATR_CD;Correspond à la classification des intérêts selon la nomenclature Groupe CA NATO commune aux Risques et à la Comptabilité.
+AG;NON_POSTNG_MGR_ENT_ID;Correspond au code consolidation comptable de l'Entité gérant le contrat dans les cas de sous-traitance et lorsque le flux est fourni par l'entité déclarante (porteuse du risque)
+AG;NXT_PRD_RATE_INDX_VAL;Valeur de l'index de référence qui servira au calcul du taux de la période suivant la période en cours. Elle peut être renseignée pour un crédit dont le mode d'utilisation de l'index est post fixé si elle est connue à la date d'arrêté.
+AG;ORD_NUM;Rubrique permettant d'identifier le numéro de l'opération en cas de sous produits  composant un même Contract (PEP feuillet/feuillet
+;;
+AG;ORIGNL_EFF_INT_RATE;Non renseigné
+AG;ORIGNL_MATURTY_DT;Date contractuelle d'échéance du contrat
+;;
+AG;PD_IFRS9_METHDGY_CD;Clé d'appariemment avec les courbes de PD du référentiel ifrs9
+AG;PD_INT_CALCN_BSS_CD;Base de calcul des intérêts payés
+AG;PD_RATE_MRGN_RATE;Exprimée en pourcentage.
+;;
+AG;PD_RATE_PMT_FRQCY_CD;Fréquence à laquelle les intérêts sont payés (/calculés)
+AG;POOLG_CRITRA_VAL;Ce champ permet de remonter les critères complémentaires d'agrégation
+AG;PRCH_INTNT_CD;Classification de l'opération dans le Portefeuille Bancaire (Banking) ou Négociation (Trading) selon les normes Bâle.
+AG;PREPMT_RATE_IFRS9_METHDGY_CD;Clé d'appariemment avec les courbes de taux de remboursement anticipé du référentiel ifrs9
+AG;PROD_LN_CD;Code Ligne de Produit dans la codification locale
+AG;PRTNR_CD;Code entité (de conso) du tiers
+AG;PRVSNG_ELGBLY_IND;Permet d’exclure le deal du traitement OMP ou de l'intégrer avec ou sans calculs : Plusieurs cas œ
+AG;RECVD_INT_CALCN_BSS_CD;Base de calcul des intérêts reçus
+AG;RECVD_RATE_MRGN_RATE;Exprimée en pourcentage.
+;;
+AG;RECVD_RATE_PMT_FRQCY_CD;Fréquence à laquelle les intérêts sont reçus (/calculés)
+AG;REFIXG_THRSH_RATE;Pourcentage de variation de l'index à partir duquel il sera revu conformément aux caractéristiques du contract.
+AG;REF_ACCNTG_CLASFCN_CD;Classification comptable des actifs en Normes IAS
+AG;RLEAS_STGE_INT_PMT_MODALITY_CD;Indique si les intérêts sont payés directement ou ajoutés au capital lors de la phase de déblocage
+AG;RMNG_PRD_NUM;Durée restant à courir en jours
+AG;RNEW_AGMT_OPN_DT;Date de début  de validité de la ligne d’autorisation quand elle est renouvelée
+AG;RPMT_PRCH_DT;Date de remboursement ou date de vente. Date de fin de contrat réelle.
+AG;RSULT_DVISN_CD;Zone exploitée uniquement par les entités déclarant les risques portés par Crédit Agricole S.A.
+;;
+AG;SCHD_NB;Indique le nombre d'échéanciers
+AG;SCHD_PRVDD_IND;Indicateur échéancier explicite fourni
+AG;SCHD_STGE_PRVDD_IND;Indicateur permettant d'indiquer que les données nécessaires au calcul de l'échéancier à date sont reportées dans l'objet PALIER (ou autre objet 'technique').
+;;
+AG;STGE_CD;Indique la phase dans laquelle se trouve le contrat à la Date d'arrêté
+AG;TERM_PROD_CD;Indicateur produit échéancé
+AG;THIRD_PRTY_CNTRCTUAL_RCOGTN_IND;Reconnaissance de la clause contractuelle de bail-in dans la configuration où le contrat de l'instrument est libellé dans le droit d'un pays tiers (Oui / Non)
+AG;TMTBL_NB;Non renseigné
+AG;VAL_DT;Date de valeur
+AG;ZERO_PMT_DT;Date de début d'amortissement (date de la première échéance moins une périodicité de révision), elle s'obtient également en soustrayant de la date de dernière échéance la durée théorique du contrat. Elle correspond au point de départ de la durée théorique du contrat.
+FIN;ANNUAL_GRS_YLD_MATURTY_RATE;rates de Rendement Actuariel Annuel Brut
+FIN;CAP_COST_RATE;Correspond à la valeur du coût du cap
+FIN;GRS_YLD_MATURTY_RATE;Rates de Rendement Actuariel Brut. 
+;;
+FIN;INIT_OPTN_AMT;Non renseigné
+FIN;INIT_OPTN_AMT_CURY_CD;Non renseigné
+FIN;INIT_OPTN_EURO_AMT;Non renseigné
+FIN;INTRNL_TFRT_PRC_BAL_SHET_RATE;Non renseigné
+FIN;INTRNL_TFRT_PRC_BASE_RISK_COMPT_RATE;Non renseigné
+FIN;INTRNL_TFRT_PRC_LQDTY_COMPT_RATE;Non renseigné
+FIN;INTRNL_TFRT_PRC_OPTL_COMPT_RATE;Non renseigné
+FIN;INTRNL_TFRT_PRC_RATE;Valeur du TCI
+FIN;INTRNL_TFRT_PRC_RATE_COMPT_RATE;Non renseigné
+FIN;INTRNL_TFRT_PRC_SLS_MNTRG_COMPT_RATE;Non renseigné
+FIN;LOCL_INTRNL_TFRT_PRC_RATE;Valeur du TCI si ce dernier est valorisé au niveau régional
+FIN;ONGOING_ADVNC_RATE;Avant janvier 2004, pour les prêts sur avance, c’est le Rates des avances traditionnelles (prêts par prêts). Depuis janvier 2004, il a été remplacé par un Rates théorique initial (TATI)
+;;
+FIN;OPTN_AMT;Marge ajoutée à l'index sur le palier en cours pour obtenir le taux de cession interne au contrat lorsque le taux est révisable capé
+FIN;OPTN_AMT_CURY_CD;Non renseigné
+FIN;OPTN_EURO_AMT;Marge ajoutée à l’index sur le palier en cours pour obtenir le taux de cession interne au contrat lorsque le taux est révisable capé
+FIN;THEORICAL_ACTUARIAL_COMRCL_MRGN_RATE;Différence entre le Rates actuariel du prêt et le Rates actuariel d’avance globale théorique initial (TATI actuariel).
+;;
+#N/A;CAD_ADDON_AMT;Montant Add-on CAD
+#N/A;CAD_ADDON_AMT_CURY_CD;Devise montant add-on CAD
+#N/A;CAD_ADDON_EURO_AMT;Montant Add-on CAD
+#N/A;CR_CNVRSN_RATE;Crédit conversation factor
+#N/A;CR_VALUT_ADJSTMT_AMT;Montant CVA comptable
+#N/A;CR_VALUT_ADJSTMT_AMT_CURY_CD;Devise de la CVA comptable
+#N/A;CR_VALUT_ADJSTMT_EURO_AMT;Montant Credit Valuation Adjustment CVA comptable (euro)
+#N/A;EXPCTD_LOSS_BEST_EST_RATE;Exprimée en pourcentage.
+;;
+#N/A;EXPSR_AT_DFLT_AMT;Montant d'exposition au défaut
+#N/A;EXPSR_AT_DFLT_CURY_CD;Devise de l'EAD
+#N/A;EXPSR_AT_DFLT_EURO_AMT;Non renseigné
+#N/A;FLUC_RISK_ANLTCL_MODL_ID;Permet d'identifier le modèle interne utilisé en local pour calculer le risque interne de variation
+#N/A;FLUC_RISK_INTRNL_BASE_AMT;Montant de l’assiette interne du risque de variation
+#N/A;FLUC_RISK_INTRNL_BASE_AMT_CURY_CD;Devise de l’assiette interne du risque de variation
+#N/A;FLUC_RISK_INTRNL_BASE_EURO_AMT;Non renseigné
+#N/A;IMM_EAD_AMT;Montant EAD IMM
+#N/A;IMM_EAD_AMT_CURY_CD;Devise montant EAD IMM
+#N/A;IMM_EAD_EURO_AMT;Non renseigné
+#N/A;IMM_EFF_MATURTY_VAL;Maturité effective méthode IMM
+#N/A;LOCL_CALCD_RGLTRY_BASE_AMT;Montant de l’assiette réglementaire calculée en local
+#N/A;LOCL_CALCD_RGLTRY_BASE_AMT_CURY_CD;Devise du montant de l’assiette réglementaire calculée en local
+#N/A;LOCL_CALCD_RGLTRY_BASE_EURO_AMT;Non renseigné
+#N/A;LOSS_GVN_DFLT_RATE;Taux de perte en cas de défaut
+#N/A;RISK_WT_RATE;Pondération baloise engagement
+#N/A;STRSSED_IMM_EAD_AMT;Montant EAD IMM Stressé
+#N/A;STRSSED_IMM_EAD_AMT_CURY_CD;Devise montant EAD IMM Stressé
+#N/A;STRSSED_IMM_EAD_EURO_AMT;montant EAD IMM Stressé (LC.0005)
+#N/A;STRSSED_IMM_EFF_MATURTY_VAL;Maturité effective stressée méthode IMM
+CRA;A3C_IND;Non renseigné
+CRA;ANNUAL_BONIFICATION_RATE;Bonification de Rates par les pouvoirs pubilcs pour creations types de prêts
+CRA;BONIFICATION_RATE;Rates de bonification des crédits bonifiés représente un Rates ou une marge
+CRA;BSL_II_FUNDS_USE_CD;Cette rubrique pourrait permettre de dériver le « code marché » pour ventiler les encours de production nouvelle, et non natif dans les SI remettants. Cette notion est disponible dans l’application Arcade géré par les risques.
+CRA;CENTRL_BNK_ELGBLY_IND;Indique si le  prêt peut être mobilisé auprès de la banque centrale à la date d'arrêté
+CRA;CLTRLZD_UCITS_NATR_CD;Permet de déterminer le CCF des protections données aux OPCVM en central
+CRA;CLTRL_LMT_USE_IND;Indicateur permettant d'identifier la couverture requise
+CRA;CNTPTY_QTY;Nombre de contreparties constituant l’engagement agrégé
+CRA;CPRMSD_DBTFL_STRT_DT;Date de passage en douteux compromis
+CRA;CR_CARD_DFRD_PMT_IND;Permet de distinguer les différés de paiement sur cartes de crédit Corporate
+CRA;CR_CMPLEMTRY_CD;Code complémentarité
+CRA;CR_CTGY_CD;Indique les caractéristique du prêt (court, moyen, long terme)
+;;
+CRA;CR_MODFN_LAST_DT;Date à laquelle il y a eu une renégociation des conditions du prêt consenti par l'établissement prêteur.
+CRA;CR_TECHNICS_CD;Technique de crédit
+CRA;CVR_RATE_IND;Indicateur permettant d'identifier que l'engagement est supérieur ou égal au montant de couverture requis
+CRA;DBTFL_DEBT_END_DT;Date de sortie en Créances Douteuses
+CRA;DBTFL_DEBT_PRPS_CD;Motif du passage de l'opération en engagement douteux
+CRA;DEBT_EFCNCY_STS_PRPS_CD;Motif de l'état de performance de la créance
+CRA;DEBT_EFCNCY_STS_STRT_DT;Date de début de l'état de performance de la créance
+CRA;DEBT_RECVBL_CLTRLZD_AMT;Montant de la part de financement garanti par des créances acheteurs
+CRA;DEBT_RECVBL_CLTRLZD_AMT_CURY_CD;Devise de la part de financement garanti par des créances acheteurs
+CRA;DEBT_RECVBL_CLTRLZD_EURO_AMT;Montant de la part de financement garanti par des créances acheteurs
+CRA;DFLT_IND;Cet indicateur permet d’identifier les engagements entrés en défaut (douteux  ou impayés prudentiels) depuis le dernier arrêté trimestriel.
+CRA;DFRL_DURTN_NUM;La durée du Deferral au cours du prêt doit être renseignée dès la mise en place du Deferral. La durée du Deferral est incluse dans la durée initiale du prêt.
+;;
+;;
+CRA;DFRL_END_DT;Date à laquelle s'achève la phase de report
+CRA;DFRL_NATR_CD;Permet de distinguer un prêt report des autres prêts et de préciser si le prêt report est consécutif à une pause contractuelle (report a priori) ou non (report a posteriori).
+;;
+;;
+;;
+;;
+;;
+;;
+;;
+;;
+CRA;DFRL_STRT_DT;Permet de connaître la date de départ du Deferral au cours de vie du prêt.
+CRA;DFRL_TYPE_CD;Ce Deferral est un aménagement du remboursement, négocié en cours de vie du prêt.
+;;
+;;
+;;
+;;
+CRA;DRWN_AMT_DFLT_STS_CD;Indicateur permettant de préciser que l'opération est prudentiellement en arriéré de paiement de + de 90 jours
+CRA;DRWN_AMT_DFLT_STS_DT;Ces deux dates devraient être identiques
+CRA;DRWN_AMT_HIST_IND;Indicateur portant sur les impayés passés
+CRA;DSTRBN_METH_CD;Circuit de distribution
+CRA;EARLY_RPMT_CLAUS_IND;Clause de remboursement anticipé.
+CRA;EARLY_RPMT_OPTN_IND;Indicateur option de remboursement anticipé (LC.0232)
+CRA;EXTR_RPRCH_IND;Cet indicateur permet d'identifier les prêts provenant d'un rachat externe à l'entité
+CRA;FINCD_OBJT_CD;Objet financé
+CRA;FIXD_INT_RATE;Taux facial du prêt fixe (exprimé en pourcentage)
+CRA;FRBRNC_END_DT;Date de sortie effective de la situation FORBORN de la créance
+CRA;FRBRNC_THRTCL_END_DT;Date théorique de fin de la situation de FORBORN de la créance
+CRA;FRST_DFRL_DURTN_NUM;La durée du premier Deferral doit être renseignée et est également négociée lors de la conclusion du contract. La durée du Deferral est incluse dans la durée initiale du prêt.
+;;
+CRA;FRST_DFRL_TYPE_CD;Ce Deferral est un aménagement du remboursement du prêt, négocié lors de la conclusion du contract.
+;;
+;;
+;;
+;;
+CRA;FRST_TM_HOMEOWNR_IND;Cet indicateur permet d'identifier les prêts des primo-accédant
+CRA;FRST_UNPD_DRWN_DT;Date du 1er arriéré de paiement
+CRA;GRC_PRD_ACTL_DURTN_NUM;Durée réelle, en mois, mise à jour à la fin de la période d’'anticipation
+CRA;GRC_PRD_IND;0 : pas de période d’anticipation
+;;
+;;
+;;
+CRA;GRC_PRD_MAXM_DURTN_NUM;Durée maximum définie pour la période d’'anticipation (en mois)
+CRA;GRC_PRD_RATE;Rates d'intérêt annuel utilisé pendant la période d'anticipation
+CRA;GRNTNG_CUST_RATE;Correspond au taux client fixe ou variable  à l’octroi
+CRA;GRNTNG_DEBT_RATIO_RATE;Le taux d'endettement est déterminé sur chaque prêt à l'octroi
+;;
+;;
+CRA;GRNTNG_LTI_VAL;Loan to income à l’octroi (Mt du prêt accordé sur les revenus du client)
+CRA;INIT_OCPTN_TYPE_CD;Catégorie socioprofessionnelle
+CRA;INTRVNTN_DMN_CD;Les différents domaines d'intervention permettent de sélectionner les financements selon leur finalité économique, quelle que soit la personnalité juridique de l’emprunteur.
+;;
+;;
+CRA;LAST_BUSN_REMDTN_PLN_DT;Date de dernière restructuration commerciale
+CRA;LATE_PMT_DAYS_QTY;Nombre de jours de retard de paiement
+CRA;LOAN_TYPE_CD;Le type de prêt permet d'identifier si le prêt est un prêt principal, un prêt relai, un prêt travaux
+CRA;LOCL_GRNTNG_LTV_VAL;LTV local à l'octroi (ratio en %)
+;;
+;;
+CRA;MRGG_AGMT_IND;Indicateur permettant de préciser si le prêt/concours entre dans le cadre d'une lettre de fusion.
+;;
+CRA;MRGG_AGMT_LTR_ID;Référence locale de la lettre de Fusion.
+CRA;OPTN_1_ACTVTN_DT;Date d'activation de l'option 1
+CRA;OPTN_1_END_DT;Date de fin d'option 1
+CRA;OPTN_1_FMLY_CD;Contexte d’exercice de l’option 1 : Sécurisation, Pause suite chômage, Pause Agri et Pro, etc÷ (RB 0735)
+CRA;OPTN_1_TYPE_CD;Option 1 contractuelle offerte aux clients permettant de faire une pause dans un crédit RB0734
+CRA;OPTN_2_ACTVTN_DT;Date d'activation de l'option 2
+CRA;OPTN_2_END_DT;Date de fin d'option 2
+CRA;OPTN_2_FMLY_CD;Contexte d’exercice de l’option 2 : Sécurisation, Pause suite chômage, Pause Agri et Pro, etc÷ (RB 0735)
+CRA;OPTN_2_TYPE_CD;Option contractuelle 2 offerte aux clients permettant de faire une pause dans un crédit RB0734
+CRA;PRBTARY_PRD_END_DT;Date de sortie (réelle ou théorique) de la créance FORBORN en  «probatoire»
+CRA;PRBTARY_PRD_STRT_DT;Date d’entrée de la créance FORBORN en  «probatoire»
+CRA;PRCHD_RECVBL_PREM_PRTY_ROLE_CD;Permet d’identifier le rôle du tiers en risque «Client/Acheteur»
+CRA;PRGTR_PRD_END_DT;Date de sortie (réelle ou théorique) de la créance FORBORN en  «purgatoire». (correspond au dernier changement de statut)
+CRA;PRGTR_PRD_STRT_DT;Date d’entrée de la créance FORBORN en  «purgatoire». (correspond au dernier changement de statut)
+CRA;PRSNNAL_INVSTMT_RATE;Taux d'apport personnel
+CRA;PRVSN_IND;Indicateur permettant d'indiquer que la provision spécifique adossée couvre à hauteur de 20% et plus l'engagement (douteux)
+CRA;RATE_TYPE_CD;Type de taux, Variable ou Fixe
+;;
+CRA;REMDTN_PLN_STRT_DT;Correspond à la date à laquelle la restructuration a été validée par l’organe décisionnel compétent.
+CRA;REMDTN_PLN_TYPE_CD;Indicateur permettant d'identifier les encours ayant fait l'objet d'une restructuration, et préciser le type de celle-ci.
+CRA;RFINCG_QTTY_RATE;C'est la quotité de refinancement d'un prêt par des avances traditionnelles, exprimée en pourcentage.
+CRA;RGLTD_SPNSRD_CR_IND;Indique si le prêt est réglementé ou aidé
+;;
+;;
+;;
+;;
+;;
+CRA;RPMT_MODALITY_CD;Modalité de RBT de la créance
+CRA;RVLVG_RL_OVR_IND;Indicateur permettant de préciser si le prêt est de caractère 'Revolving' ou 'Roll-over'.
+CRA;RVSD_LTI_VAL;LTI local revalorisé
+CRA;RVSD_LTV_VAL;LTV local revalorisé (ratio en %)
+;;
+CRA;SCURTZD_DEBT_IND;Indicateur créance titrisée
+CRA;SEC_DFRL_DURTN_NUM;La durée du deuxième Deferral doit être renseignée et est également négociée lors de la conclusion du contract. La durée du Deferral est incluse dans la durée initiale du prêt.
+;;
+CRA;SEC_DFRL_TYPE_CD;Ce Deferral est un aménagement du remboursement du prêt, négocié lors de la conclusion du contract.
+;;
+;;
+;;
+;;
+CRA;UNPD_DRWN_AMT_IND;Indicateur permettant  d’indiquer s’il existe au moins un arriéré de paiement
+CRA;UNPD_TERMS_NB;Nombre d'échéances impayées
+CSHMTG;AUTHZD_OVRDRFT_BAL_AMT;Montant de l’autorisation de découvert
+CSHMTG;AUTHZD_OVRDRFT_BAL_AMT_CURY_CD;Code devise du découvert autorisé
+CSHMTG;AUTHZD_OVRDRFT_BAL_EURO_AMT;Montant de l’autorisation de découvert
+CSHMTG;BNK_INCRD_RATE;Taux intégrant la majoration de la prime d'État for 
+;;
+;;
+CSHMTG;CSH_MGMT_PROD_CD;Permet d'identifier le type de produit de collecte
+CSHMTG;EARLY_WDRWL_OPTN_IND;Indique si l'option de RA est applicable au contrat
+CSHMTG;EARLY_WDRWL_PENALITY_RATE;Taux de pénalité  appliqué en cas de remboursement avant l'échéance
+CSHMTG;EARLY_WDRWL_TYPE_CD;Indique le tye de RA applicable au contrat
+CSHMTG;GOVT_PREM_RATE;Taux de la prime d'Etat for les PEL/CEL
+CSHMTG;GRS_RATE;Taux du contrat à la Date d'arrêté.
+;;
+CSHMTG;INIT_PMT_AMT;Montant du versement initial en devise d'origine
+CSHMTG;INIT_PMT_AMT_CURY_CD;Non renseigné
+CSHMTG;INIT_PMT_EURO_AMT;Montant du versement initial du produit
+CSHMTG;NET_RATE;rates net du contrat hors prélèvements fiscaux et sociaux
+CSHMTG;NOTC_PRD_DAYS_NB;nombre de jours dans le cas où il y a période de préavis.
+CSHMTG;NOTC_PRD_IND;Indique s'il existe une période de préavis que le déposant doit respecter entre l'annonce de son souhait de récupération des fonds et le déblocage effectif des fonds,  pour le tout ou partiellement (oui/non)
+CSHMTG;PLND_PMT_PERIODCITY_CD;Périodicité de l'abonnement
+CSHMTG;TFRT_DT;Date de transfert entrant du PEL
+DVT;BORWG_LEG_INIT_BLNCG_PMT_AMT;Non renseigné
+DVT;BORWG_LEG_INIT_BLNCG_PMT_AMT_CURY_CD;Devise de paiement de la Balancing Payment payée à l’initiation du Contrat
+DVT;BORWG_LEG_INIT_BLNCG_PMT_EURO_AMT;Montant contrevalorisé euro de la Balancing Payment de mise en place du SWAP :
+;;
+;;
+DVT;BORWG_LEG_NMNL_HSTCL_AMT;Montant Nominal historique en devise (jambe payeuse)
+DVT;BORWG_LEG_NMNL_HSTCL_AMT_CURY_CD;Code devise du nominal historique (jambe payeuse)
+DVT;BORWG_LEG_NMNL_HSTCL_EURO_AMT;Montant Nominal historique en devise (jambe payeuse), contrevalorisé en euro
+DVT;BORWG_LEG_UNWINDING_INIT_BLNCG_PMT_AMT;Non renseigné
+DVT;BORWG_LEG_UNWINDING_INIT_BLNCG_PMT_AMT_CURY_CD;Non renseigné
+DVT;BORWG_LEG_UNWINDING_INIT_BLNCG_PMT_EURO_AMT;Montant contrevalorisé Euro de la Balancing Payment de dénouement perçue ou versée dans le mois:
+;;
+;;
+;;
+DVT;DVIDND_PMT_PERIODCITY_CD;Non renseigné
+DVT;DVIDND_SHR_RATE;Non renseigné
+DVT;EQTY_SWAP_TYPE_CD;Non renseigné
+DVT;EXRCS_END_DT;Non renseigné
+DVT;EXRCS_STRT_DT;Non renseigné
+DVT;INIT_BLNCG_PMT_RMNG_PRD_NUM;Non renseigné
+DVT;INIT_INFLTN_BLNCG_PMT_AMT;Composante inflation de la Balancing Payment. Montant de la Balancing Payment liée à l'inflation.
+DVT;INIT_INFLTN_BLNCG_PMT_AMT_CURY_CD;Non renseigné
+DVT;INIT_INFLTN_BLNCG_PMT_EURO_AMT;Composante inflation de la Balancing Payment. Montant de la Balancing Payment liée à l'inflation, en contrevaleur euro.
+DVT;LENDG_LEG_INIT_BLNCG_PMT_AMT;Non renseigné
+DVT;LENDG_LEG_INIT_BLNCG_PMT_AMT_CURY_CD;Non renseigné
+DVT;LENDG_LEG_INIT_BLNCG_PMT_EURO_AMT;Non renseigné
+DVT;LENDG_LEG_NMNL_HSTCL_AMT;Non renseigné
+DVT;LENDG_LEG_NMNL_HSTCL_AMT_CURY_CD;Code devise nominal historique en devise - Jambe Receveuse
+DVT;LENDG_LEG_NMNL_HSTCL_EURO_AMT;Non renseigné
+DVT;LENDG_LEG_UNWINDING_INIT_BLNCG_PMT_AMT;Non renseigné
+DVT;LENDG_LEG_UNWINDING_INIT_BLNCG_PMT_AMT_CURY_CD;Devise de paiement de la Balancing Payment reçue à la rupture du Contrat
+DVT;LENDG_LEG_UNWINDING_INIT_BLNCG_PMT_EURO_AMT;Montant contrevalorisé Euro de la Balancing Payment de dénouement perçue ou versée dans le mois :
+;;
+;;
+;;
+DVT;SETLMT_MODE_CD;Non renseigné
+DVT;SWAP_TYPE_CD;Non renseigné
+DVT;UNWINDING_BLNCG_PMT_RMNG_PRD_NUM;Non renseigné
+EX;ATACHMT_PNT_VAL;Valeur du point d'attachement (%). Spécifique grands risques
+EX;BSL_II_APRCH_TYPE_CD;Correspond à la méthode de calcul des risques pondérés dans Bâle.
+EX;CENTRLZD_CMPSTN_IND;Indicateur de compensation centralisée de l’opération, de manière directe (face à une CCP) ou de manière indirecte (face à un courtier compensateur, lui-même membre d’une CCP)
+EX;CNFRMTN_IND;Correspond au niveau d'engagement de l'établissement dans une opération.
+EX;CVA_CALCN_METH_CD;Méthode de calcul CVA
+EX;CVRD_OPRTN_RISK_CTGY_CD;Famille de risque de l'opération couverte par l'engagement
+EX;DTACHMENT_PNT_VAL;Valeur du point détachement (%). Spécifique grands risques
+EX;EXPSR_CALCN_METH_CD;Méthode réglementaire du calcul de l'exposition
+EX;EXPSR_NATR_CD;Permet d'identifier la nature du contrat d'exposition
+;;
+EX;EXPSR_SBTYPE_CD;Permet d'identifier le sous-type du contrat d'exposition
+;;
+;;
+EX;FUNDS_PRVSN_DT;Date de mise à disposition des fonds
+EX;FUT_MOBILIZATION_DT;Date of future Mobilization
+EX;GRADE_CTGY_CD;Classe de notation du contrat
+EX;GRNLT_IND;Indicateur de granularité
+EX;GRR_ENGN_CD;Permet de filtrer certains engagements du moteur GRR (pour faciliter les correctifs)
+EX;GUAR_GVN_TRIGR_EV_CD;Evénement susceptible de déclencher la mise en jeu de la garantie (ex défaut, solvabilité...)
+EX;IFRS9_BCKT_OUTST_RANK_CD;Permet d'indiquer le classement de l'encours en norme IFRS9
+EX;IMPARD_ASSET_IND;Indicateur Actif déprécié dès l’origination
+EX;LAST_PRT_ACQ_DT;Permet d'identifier les engagements (OPC) bénéficiant de la clause de Grandfathering. Spécifique grands risques
+EX;MOBILIZATION_END_DT;Non renseigné
+EX;MOBILIZATION_ORG_NAME;Nom de l'organisme auprès duquel les créances déclarées éligibles par les Caisses régionales ont effectivement été mobilisées par Crédit Agricole S.A.
+EX;MOBILIZATION_STRT_DT;Date à laquelle les créances déclarées éligibles ont effectivement été mobilisées
+EX;OMP_LOCL_CRITRN_1_VAL;Zone OMP permettant de véhiculer le critère 1 local de sélection des portefeuilles à stresser
+EX;OMP_LOCL_CRITRN_2_VAL;Zone OMP permettant de véhiculer le critère 2 local de sélection des portefeuilles à stresser
+EX;ORIGNL_EXTR_CORP_RISK_GRADE_VAL;Note externe finale à l'origine. Données de niveau Tiers mais stocké au niveau Contrat pour des questions de traçabilité (donnée à l'origine du contrat non nécessairement disponible dans le référentiel)
+;;
+EX;ORIGNL_GRADE_SEGMT_CD;Segment de   notation ANADEFI
+;;
+EX;ORIGNL_INTRNL_CORP_RISK_GRADE_VAL;Note interne finale  à l'origine. Données de niveau Tiers mais stocké au niveau Contrat pour des questions de traçabilité (donnée à l'origine du contrat non nécessairement disponible dans le référentiel)
+;;
+EX;ORIGNL_PRBTY_DFLT_RATE;Probabilité de défaut après octroi du crédit. Données de niveau Tiers mais stocké au niveau Contrat pour des questions de traçabilité (donnée à l'origine du contrat non nécessairement disponible dans le référentiel)
+EX;ORIGNL_RISK_GRADE_VAL;Note finale retenue  à l'origine
+EX;ORIGNL_RISK_RTG_METH_CD;Code de la méthodologie utilisée pour la notation d’une contrepartie. Données de niveau Tiers mais stocké au niveau Contrat pour des questions de traçabilité (donnée à l'origine du contrat non nécessairement disponible dans le référentiel)
+;;
+EX;ORIGNL_RTAIL_RISK_GRADE_VAL;Note finale retenue en local à l'origine (tiers Retail à l'origine du contrat). Données de niveau Tiers mais stocké au niveau Contrat pour des questions de traçabilité (donnée à l'origine du contrat non nécessairement disponible dans le référentiel)
+;;
+EX;ORIGNL_RTG_AGNCY_CD;Organisme de notation à l'origine pour les tiers ayant changé de segmentation/marché (CORPORATE => RETAIL), Données de niveau Tiers mais stocké au niveau Contrat pour des questions de traçabilité (donnée à l'origine du contrat non nécessairement disponible dans le référentiel)
+EX;ORIGNL_RTG_MODL_CD;Référence de la grille Anadefi de notation utilisée pour la détermination de la note interne.  (LC.0153) Données de niveau Tiers mais stocké au niveau Contrat pour des questions de traçabilité (donnée à l'origine du contrat non nécessairement disponible dans le référentiel)
+;;
+EX;OUTST_RTG_METH_CD;Code de la méthodologie utilisée pour la notation d'un encours
+EX;POSBL_NUMTR_DEDCTN_IND;Indicateur permettant de préciser s’il s’agit de titres ou créances subordonnées à traiter en quasi-fonds propres (déduction possible au numérateur).
+EX;PRBTY_DFLT_RATE;Probabilité de défaut à la date d'arrêté
+EX;RISK_LVL_CD;Indicateur niveau de risque
+EX;RSDUL_MATURTY_VAL;Partie entière de la maturité
+EX;RSRC_TYPE_CD;Permet d'identifier la nature de la ressource attachée au crédit (ressources monétaires, ressources propres, avances ÷). Cette information est nécessaire pour l'analyse du risque de taux.
+EX;RWA_ENGN_CD;Correspond au traitement moteur de calcul des RWA Bâlois.
+EX;SRY_LVL_CD;Indicateur séniorité de la dette
+EX;STRC_TRANSPARNCY_IND;#N/A
+EX;UNDRLY_INVSTMT_PROD_IND;Top «Produit à sous-jacent». Spécifique grands risques
+INV;ACQ_COST_AMT;Montant coût d'acquistion
+INV;ACQ_COST_AMT_CURY_CD;Devise du montant du coût d’acquisition
+INV;ACQ_COST_EURO_AMT;Non renseigné
+INV;ADVRS_CORRL_SPCFC_RISK_IND;Indicateur de risque spécifique de corrélation défavorable
+INV;ASESMT_FRQCY_CD;Fréquence de valorisation
+INV;ASSET_PORTABL_IND;Indicateur de portabilité de l’actif en cas de défaut d’un membre compensateur (CCP) spécifique familles de risque TRE203/205/206/207
+INV;BCK_TO_BCK_IND;Indicateur permettant de lier l'élément couvert et l'élément couvrant (positions identiques qui se compensent).
+INV;BCK_TO_BCK_OPRTN_REF;Référence unique de l'opération associée en back-to-back en lien avec la finalité back to back
+INV;BORWG_LEG_INVSTMT_PROD_CR_QLTY_CD;Correspond à l'échelon de qualité de crédit des titres
+INV;BORWG_LEG_INVSTMT_PROD_ISIN_CD;Code ISIN des titres
+INV;BORWG_LEG_INVSTMT_PROD_NMNL_AMT;Signe du montant, partie entière, partie décimale
+INV;BORWG_LEG_INVSTMT_PROD_NMNL_AMT_CURY_CD;Devise d'expression montant du nominal  des titres de la jambe emprunteuse.
+INV;BORWG_LEG_INVSTMT_PROD_NMNL_EURO_AMT;Non renseigné
+INV;BORWG_LEG_QUOTD_ASSET_IND;Permet de savoir si le titre sous jacent de la jambe emprunteuse côté ou non.
+INV;BORWG_LEG_RECVD_CLTRL_IND;Indique si l'actif constitue un collatéral obtenu d'une autre contrepartie jambe emprunteuse -besoin asset encumbarnce
+INV;BORWG_LEG_SCURTY_DESC;Libellé associé à la référence du  sous-jacent titre de la jambe emprunteuse.
+INV;BORWG_LEG_SCURTY_IDNTFTN_TYPE_CD;Permet de connaître le type d'identifiant  du titre renseigné dans la référence du titre sous-jacent de la  jambe emprunteuse -besoin asset encumbarnce
+INV;BORWG_LEG_SCURTY_MOBILIZATION_IND;Indicateur mobilisation de l'actif sous-jacent jambe emprunteuse (LC.0237) -besoin asset encumbarnce
+INV;BORWG_LEG_SCURTY_QTY;Quantité de titres sous-jacent titre de la jambe emprunteuse
+INV;BORWG_LEG_STK_EXCH_CD;Code du pays de la place boursière sur laquelle sont côtés les titres.
+INV;BORWG_LEG_STK_INDX_CD;Code de l'indice de pêt jambes emprunteuse
+INV;BORWG_LEG_UNDRLY_INVSTMT_PROD_NATR_CD;Ce champ permet d’identifier la nature du sous-jacent de la jambe emprunteuse et de déterminer la décote relative à l’exposition
+INV;BORWG_LEG__UNDRLY_INVSTMT_PROD_MATURTY_DT;Date d'échéance du titre sous-jacent
+INV;BUY_LEG_NMNL_AMT;Montant notionnel de la jambe achetée
+INV;BUY_LEG_NMNL_AMT_CURY_CD;Devise du montant du notionnel de la jambe payée
+INV;BUY_LEG_NMNL_EURO_AMT;Montant notionnel de la jambe achetée
+INV;BUY_NOTL_QTY;Quantité à recevoir
+INV;BUY_NOTL_UOM_TYPE_CD;Unité de mesure de la quantité de matières premières à recevoir
+INV;CDS_SETLMT_IND;Indicateur de dénouement du CDS lorsque l’acheteur de protection devient insolvable
+INV;CNTPTY_ISDA_PTCOL_IND;Pour les dérivés (hors repos), indicateur de présence d'un protocole de niveau contrepartie permettant de faciliter la signature numérique du CSA (Credit Support Annex)
+INV;CNTRCTUAL_CALL_DT;Date contractuelle de call
+INV;CNTRL_RATE;Ratio d'emprise
+INV;CR_DERVTV_CVA_ELGBLY_CD;Indicateur de l’éligibilité du Dérivé de crédit à la couverture du risque CVA
+INV;DERVTV_MKT_SPRD_AMT;Spread marché dérivé
+INV;DERVTV_SBTYPE_CD;Type de dérivé de crédit
+INV;EARLY_RPRCH_SCURTY_OPTN_IND;Non renseigné
+INV;ENT_ISDA_PTCOL_IND;Pour les dérivés (hors repos), indicateur de présence d'un protocole de niveau entité permettant de faciliter la signature numérique du CSA (Credit Support Annex)
+INV;EXPRT_OPNIN_CVGE_DT;Date à laquelle le gestionnaire anticipe la réalisation du call
+INV;FINCL_INSTM_CD;Instrument financier /Type de produit dérivé
+INV;FOREX_TYPE_CD;Non renseigné
+INV;HEDGED_SCURTY_REF;Référence unique du titre couvert par l'opération de dérivé
+INV;HEDGING_CD;Permet de distinguer les opérations  micro/macro couverture/trading
+INV;HEDGING_DERVTV_OPRTN_REF;Permet de connaitre la référence du dérivé venant en couverture du titre.
+INV;HEDGING_INTNT_CD;Permet d'identifer le type de couverture
+INV;HEDGING_OPRTN_REF;Non renseigné
+INV;HEDGING_PRPS_CD;Permet de tracer les différentes types de couverture (Taux, Base, Fixing, Option, Liquidité)
+INV;HEDGING_RLTN_TYPE_CD;Permet d'identifier le périmètre des dérivés de couverture
+INV;IFRS_INVSTMT_VAL_COA_CD;Numéro du poste comptable (PCCO) de la Valeur du titre en norme IFRS
+INV;IMPARD_SCURTY_IND;Indicateur titre déprécié
+INV;INIT_OPRTN_COST_AMT;Non renseigné
+INV;INIT_OPRTN_COST_AMT_CURY_CD;Non renseigné
+INV;INIT_OPRTN_COST_EURO_AMT;Non renseigné
+INV;INVSTMT_SBTYPE_CD;Non renseigné
+INV;ISSUD_SCURTS_MATURTY_CD;L'information permet de définir le niveau de séniorité pour les différentes tranches des ABS (Tranche avec le rang le plus élevé / Tranche mezzanine / Tranche de première perte)
+INV;ISSUR_SPRD_RATE;Cotation spread émetteur (%)
+INV;LEGL_OPNIN_IND;Indicateur de l'opinion juridique
+INV;LENDG_LEG_INVSTMT_PROD_CR_QLTY_CD;Correspond à l'échelon de qualité de crédit des titres
+INV;LENDG_LEG_INVSTMT_PROD_ISIN_CD;Code ISIN des titres
+INV;LENDG_LEG_INVSTMT_PROD_NMNL_AMT;Signe du montant, partie entière, partie décimale
+INV;LENDG_LEG_INVSTMT_PROD_NMNL_AMT_CURY_CD;Devise d'expression montant du nominal  des titres de la jambe prêteuse.
+INV;LENDG_LEG_INVSTMT_PROD_NMNL_EURO_AMT;Non renseigné
+INV;LENDG_LEG_QUOTD_ASSET_IND;Non renseigné
+INV;LENDG_LEG_RECVD_CLTRL_IND;Non renseigné
+INV;LENDG_LEG_SCURTY_DESC;Non renseigné
+INV;LENDG_LEG_SCURTY_IDNTFTN_TYPE_CD;Non renseigné
+INV;LENDG_LEG_SCURTY_MOBILIZATION_IND;Non renseigné
+INV;LENDG_LEG_SCURTY_QTY;Non renseigné
+INV;LENDG_LEG_STK_EXCH_CD;Code du pays de la place boursière sur laquelle sont côtés les titres.
+INV;LENDG_LEG_STK_INDX_CD;Code de l'indice de pêt jambes prêteuse
+INV;LENDG_LEG_UNDRLY_INVSTMT_PROD_MATURTY_DT;Date d'échéance du titre sous-jacent
+INV;LENDG_LEG_UNDRLY_INVSTMT_PROD_NATR_CD;Ce champ permet d’identifier la nature du sous-jacent de la jambe prêteuse et de déterminer la décote relative à l’exposition
+INV;LQDTN_PRD_20D_CD;Période de liquidation 20 j
+INV;LQDTN_PRD_X2_CD;Période de liquidation X2
+INV;LVRAGING_OPRTN_IND;Indicateur permettant d'identifier les encours sur opérations de financement à effet de levier.
+INV;MRGN_CALL_TFRT_MINIMAL_AMT;Montant minimum de transfert d'appel de marge
+INV;MRGN_CALL_TFRT_MINIMAL_AMT_CURY_CD;Devise du seuil du montant minimum de transfert
+INV;MRGN_CALL_TFRT_MINIMAL_EURO_AMT;Non renseigné
+INV;MRGN_CALL_TRIGRING_THRSH_AMT;Seuil de déclenchement de l'appel de marge
+INV;MRGN_CALL_TRIGRING_THRSH_AMT_CURY_CD;Devise du seuil de déclenchement de l'appel de marge
+INV;MRGN_CALL_TRIGRING_THRSH_EURO_AMT;Montant Seuil de déclenchement de l'appel de marge en contrevaleur euro
+INV;MSTR_CNTRCT_TYPE_CD;Type de contrat cadre pour les cessions temporaires de titres et les dérivés.
+INV;NETG_AGMT_CURY_CD;Devise de référence de l’accord de netting.
+INV;NETG_AGMT_IND;Indicateur permettant de préciser si l'opération de marché entre dans le cadre d'un accord de netting
+INV;NETG_AGMT_LOCL_ID;Référence locale du contrat de netting.
+INV;OPTN_EXRCS_TYPE_CD;Type d'exercice de l'option
+INV;OPTN_NATR_CD;Nature de l'option
+INV;OPTN_PUT_CALL_TYPE_CD;Indicateur permettant de préciser si l'option est de nature Call ou Put
+INV;PD_RATE_ID;Référence du taux payé
+INV;PD_RATE_TYPE_CD;Type du taux payé
+INV;PRNCPAL_CPTL_FINCL_SPNSR_IND;Indicateur de présence d'un sponsor financier majoritaire sur opération de financement à effet de levier.
+INV;PROD_CMPLXY_CD;Permet de distinguer les produits vanille et les produits exotiques
+INV;PRUDNT_VALUT_EXMPTN_RSN_CD;Motif d'exemption déclaré à l'ajustement à la juste valeur
+INV;PRUDNT_VALUT_MODE_IND;Indicateur du mode de valorisation de la juste valeur de l'instrument financier
+INV;PTRMNL_ATNM_IND;Indicateur d’autonomie patrimoniale de l’actif en cas de défaut d’un membre compensateur (CCP) spécifique familles de risque TRE203/205/206/207
+INV;PUDNT_VALUT_ELGBLY_IND;Indicateur d' éligibilité à la Prudent Valuation
+INV;QUOTD_ASSET_IND;Permet de savoir si le sous-jacent  titre est côté ou non.
+INV;REASESMT_PERIODCITY_CD;Périodicité de réévaluation de l'opération (patte prêteuse / patte emprunteuse)
+INV;RECVD_CLTRL_IND;Indicateur collatéral reçu
+INV;RECVD_RATE_ID;Référence du taux reçu
+INV;RECVD_RATE_TYPE_CD;Type du taux reçu
+INV;RISK_MTGNT_AGMT_IND;Indicateur permettant de préciser si l'opération de marché entre dans le cadre d'un accord de collatéralisation
+INV;RISK_MTGNT_AGMT_LOCL_ID;Référence locale du contrat de collatéralisation.
+INV;RPRCH_SCURTY_DT;Non renseigné
+INV;SCURTY_DESC;Libellé associé à la référence du  titre sous-jacent.
+INV;SCURTY_IDNTFTN_TYPE_CD;#N/A
+INV;SCURTY_MOBILIZATION_IND;Indicateur mobilisation de l'actif
+INV;SCURTY_QTY;Quantité de titres du sous-jacent titre
+INV;SEL_LEG_NMNL_AMT;Montant du notionnel de la jambe vendue
+INV;SEL_LEG_NMNL_AMT_CURY_CD;Devise du montant du notionnel de la jambe vendue
+INV;SEL_LEG_NMNL_EURO_AMT;Montant du notionnel de la jambe vendue
+INV;SEL_NOTL_QTY;Quantité à livrer
+INV;SEL_NOTL_UOM_TYPE_CD;Unité de mesure de la quantité de matières premières à livrer
+INV;SGRGTN_IND;Indicateur de ségrégation
+INV;STRC_TRANSPARNCY_IND;#N/A
+INV;SWAP_OBLGTN_SBTYPE_CD;Type de swap
+INV;TSACTN_DRCTN_CD;Indicateur précisant le sens de l’opération du point de vue de la banque.
+INV;UNDRLY_INVSTMT_PROD_CR_QLTY_CD;Correspond  à l’échelon de qualité de crédit des titres
+INV;UNDRLY_INVSTMT_PROD_ISIN_CD;Code ISIN des titres
+INV;UNDRLY_INVSTMT_PROD_ISSUG_MATURTY_DT;Date d’échéance de l’émission du titre sous-jacent
+INV;UNDRLY_INVSTMT_PROD_NATR_CD;Correspond à la nature de l'actif sous-jacent servant de référence au contrat.
+INV;UNDRLY_INVSTMT_PROD_STD_ELGBLY_CD;Ce champ permet d’indiquer si les actifs de référence des CDS et TRS sont éligibles selon les règles de la méthode STD
+INV;UNDRLY_INVSTMT_PROD_STK_EXCH_CD;Code du pays de la place boursière sur laquelle sont côtés les titres.
+INV;UNDRLY_INVSTMT_PROD_STK_INDX_CD;Code de l'indice
+PTA_PRN;SCHD_STGE_STRT_DT;Date à partir de laquelle les caractéristiques du palier sont appliquées
+;;
+PTA_PRN;SCHD_STGE_END_DT;#N/A
+PTA_PRN;SCHD_STGE_AMT;#N/A
+PTA_PRN;SCHD_STGE_CURY_CD;Devise du montant du palier à amortir
+PTA_PRN;SCHD_STGE_EURO_AMT;Montant du palier en devise d'origine
+PTA_PRN;PMT_AMT;Montant  de l'échéance (capital + intérêts) dans le cas d'un amortissement à montant constant
+PTA_PRN;PMT_CURY_CD;Devise du montant de l'échéance
+PTA_PRN;PMT_EURO_AMT;Montant de l'échéance en cours (euro)
+PTA_PRN;ADITV_MRGN_RATE;Taux de marge en complément de l’indice de référence.
+ peut être négative ou positive. Par exemple : taux d'intêret =  taux du palier + marge additive (E0).;;
+PTA_PRN;AMRTZN_METH_CD;Mode d'amortissement du palier
+PTA_PRN;CAP_RATE;Taux plafond
+PTA_PRN;CPTL_AMRTZN_PERIODCITY_CD;Fréquence à laquelle le capital est remboursé
+PTA_PRN;CUST_RATE;Taux du flux d'intérêt de l'échéance
+;;
+PTA_PRN;DATA_FROM_CNTRCT_IND;Permet d'identifier les paliers issus des données Contrat (création du palier dans la Zone de Partage à partir des données de niveau contrat)
+;;
+PTA_PRN;FLOOR_RATE;Taux plancher
+PTA_PRN;FRST_PMT_DT;Cette donnée est nécessaire si la première échéance du palier n'est pas conforme à la périodicité de calcul/paiement des intérêts appliquée à la date de début de palier
+PTA_PRN;GRC_PRD_END_DT;Date de fin de la période d’anticipation : mise à jour à la fin de la période d’anticipation
+PTA_PRN;INT_CALCN_BSS_CD;Base de calcul des intérêts
+PTA_PRN;INT_PMT_PERIODCITY_CD;Fréquence à laquelle les intérêts sont payés (/calculés)
+PTA_PRN;MLTPLTV_MRGN_RATE;Taux de marge en complément de l’indice de référence
+PTA_PRN;PRE_POST_SET_IND;Iindique l’utilisation pré ou post fixé de l’index du palier
+;;
+PTA_PRN;RATE_RVW_PERIODCITY_CD;La périodicité de révision d’un crédit à taux variable est la fréquence de révision du taux du prêt. Elle est à renseigner pour les prêts autres que prêts à taux fixe, y compris lorsque le prêt est sur la dernière période.
+PTA_PRN;RATE_TYPE_CD;Type de taux
+PTA_PRN;REF_INDX_CD;Indice de référence
+PTA_PRN;RATE_RVW_PERIODCITY_NUM;La périodicité de révision d’un crédit à taux variable est la fréquence de révision du taux du prêt. Elle est à renseigner pour les prêts autres que prêts à taux fixe, y compris lorsque le prêt est sur la dernière période.
+PTA_PRN;FRST_FUNDS_RLEAS_DT;Date du premier déblocage de fond
+PTA_PRN;EXTR_AGMT_ID;Cette information permettra de rapprocher les informations fournies par les filiales avec celles issues des Caisses régionales.
+;;
+PTA_PRN;RIMRS_METH_CD;Modalité de remboursement de la créance : terme échu / terme à échoir
+PTA_PRN;RATE_NXT_RVW_DT;Détermine le début de la période suivante (soit P+1, si P est la période en cours).
+;;
+SCTY;BORWG_LEG_SCURTY_ISSU_DT_CPI_VAL;Non renseigné
+SCTY;FACIAL_RATE;Taux facial à l'émission du titre
+SCTY;ISSUR_CTGY_CD;Il s'agit d'une catégorisation des émetteurs de titre
+SCTY;LENDG_LEG_SCURTY_ISSU_DT_CPI_VAL;Non renseigné
+SCTY;OVRPRC_DRP_IN_VAL_AMT;Valeur de la Surcote/Décote de la position. Obligatoire pour CAsa
+SCTY;OVRPRC_DRP_IN_VAL_AMT_CURY_CD;Devise dans laquelle le contrat a été signé/Code devise de la valeur de la Surcote/Décote
+SCTY;OVRPRC_DRP_IN_VAL_IND;Indique l'existence d'une décote ou d'une surcote  lorsque la valeur de marché ne correspond pas exactement à la valeur actuelle du titre
+SCTY;OVRPRC_DRP_IN_VAL_EURO_AMT;Valeur de la Surcote/Décote de la position. Mandatory pour CAsa
+SCTY;QUOTN_METH_CD;Type de cotation du titre
+SCTY;QUOTN_TYPE_CD;Type de cotation Clean/Dirty
+SCTY;RPRCH_SCURTY_UNITRY_AMT;Valeur d'une unité du titre au moment du rachat
+SCTY;RPRCH_SCURTY_UNITRY_AMT_CURY_CD;Devise dans laquelle le contrat a été signé/ code devise de la valeur unitaire de rachat
+SCTY;RPRCH_SCURTY_UNITRY_EURO_AMT;Valeur d'une unité du Security au moment du rachat
+SCTY;SCURTY_EXTR_RTG_VAL;Il s'agit de la notation externe par une agence de notation du titre (possibilité d'utiliser une des 3 agences fitch, S&P et Moody's)
+SCTY;SCURTY_IDNTFTN_TYPE_CD;#N/A
+SCTY;SCURTY_ISSUR_NAME;Emetteur du titre
+SCTY;SCURTY_ISSU_DT;Date à laquelle le titre a été émis
+SCTY;SCURTY_ISSU_DT_CPI_VAL;Valeur de l'indice des prix à la consommation à la date d'émission du titre
+SCTY;SCURTY_MATURTY_DT;Date d'échéance du titre
+SCTY;SCURTY_NUM;Code ISIN ou code unique du titre non coté
+SCTY;SCURTY_UNITRY_AMT;Valeur d'une unité du titre
+SCTY;SCURTY_UNITRY_AMT_CURY_CD;Devise dans laquelle le contrat a été signé/code devise de la valeur unitaire
+SCTY;SCURTY_UNITRY_EURO_AMT;Valeur d'une unité du Security
+SCTY;SCURTY_UNITRY_HSTCL_AMT;Pour les obligations, prix exprimé en pourcentage, pour les actions et les OPCVM prix exprimé en unité de devise
+SCTY;SCURTY_UNITRY_HSTCL_AMT_CURY_CD;Devise dans laquelle le contrat a été signé/code devise du prix unitaire historique du titre
+SCTY;SCURTY_UNITRY_HSTCL_EURO_AMT;Pour les obligations, prix exprimé en pourcentage, pour les actions et les UCITS prix exprimé en unité de devise
+SCTY;SCURTY_UNITRY_NMNL_AMT;Valable pour les obligations
+SCTY;SCURTY_UNITRY_NMNL_AMT_CURY_CD;Devise dans laquelle le contrat a été signé/code devise du prix Nominale unitaire du titre
+SCTY;SCURTY_UNITRY_NMNL_EURO_AMT;Valable pour les obligations
+SCTFEAT;POOL_GRNLT_TYPE_CD;Indicateur permettant d’apprécier la granularité des actifs sous jacents titrisés.
+SCTFEAT;RESCURTZN_IND;Ce champ permet d’indiquer si la titrisation fait l’objet d’une re-titrisation  (CRD 3)
+SCTFEAT;SCURTZN_MODE_CD;Indicateur du mode de titrisation
+SCTFEAT;SCURTZN_NMNL_WTD_RATE;Pondération à l'origine
+SCTFEAT;SCURTZN_POOL_POSITN_CD;Correspond à la position ou statut de la banque dans le programme de titrisation
+SCTFEAT;SCURTZN_POOL_TYPE_CD;Ce champ permet d’identifier la nature de la titrisation
+SCTFEAT;SCURTZN_POOL_WTD_METH_CD;Ce champ permet d’identifier la méthode de pondération utilisée
+SCTFEAT;SCURTZN_TRNCH_RTG_CD;Rating de la tranche dans l’échelle de la source du rating.
+SCTFEAT;SCURTZN_TRNCH_RTG_SRC_CD;Source du rating de la tranche
+SCTFEAT;SCURTZN_TRNCH_SRY_LVL_CD;Séniorité de la tranche sous-jacente à l’opération.
+SCTFEAT;SCURTZN_TYPE_CD;Type de titrisation
+SCTFEAT;SPL_PRPS_VEH_ID;Identifiant du Fond Commun de Tritrisation (FCT) dans le Référentiel Crédit Agricole SA / FIN
+SKT;CPI_VAL;Valeur de l'indice des prix à la consommation à la date de valeur. Concerne les titres indexés sur l'inflation
+SKT;ORIGNL_EFF_RATE;Prix de revient de la positon, exprimé en taux ou en pourcentage.
+AG;PRN_REF_EURO_AMT;#N/A
+AG;SEC_REF_EURO_AMT;#N/A
+#N/A;#N/A;Nombre de lignes de provision liées à la ligne d'autorisation
+PTA_TIT;PRTY_ID;Permet d'identifier de manière unique le tiers dans le système Zone de Partage
+;;
+EX;DFLT_LIQUITY_CD;Indique le délai prévisible de réalisation de notre engagement sur le marché en cas de revente.
+#N/A;#N/A;Nombre de garanties reçues pour la ligne d'autorisation
+AUTORIZATION_LINE;AGMT_RVSD_EURO_AMT;Non renseigné
+AUTORIZATION_LINE;FLOW_TYPE_CD;Type d’enregistrement dans la création de la ligne en base (ex : P3C)
+EX;BSL_II_APRCH_TYPE_CD;Correspond à la méthode de calcul des risques pondérés dans Bâle.
+AUTORIZATION_LINE;SRC_CD;Code du système opérationnel de gestion ou système remettant de l'objet métier
+AUTORIZATION_LINE;MKT_TYPE_CD;Permet d'identifier la clientèle du contrat
+;;
+AUTORIZATION_LINE;ORIGNL_MATURTY_DT;Date contractuelle d'échéance du contrat
+;;
+PTA_BNF;LOCL_PRTY_ID;Non renseigné
+BAL;PRCHD_RECVBL_PREM_AMT;Montant du Add-on affacturage
+#N/A;#N/A;Permet d'identifier de manière unique le contrat dans le système Zone de Partage
+;;
+AUTORIZATION_LINE;AGMT_SBTYPE_CD;Permet d'identifier le sous-type du contrat
+;;
+;;
+EX;FAC_AMT_CURY_CD;Non renseigné
+AGR_AL;PARNT_AGMT_ID;Permet d'identifier de manière unique le contrat parent dans le système Zone de Partage
+;;
+AUTORIZATION_LINE;HOST_AGMT_NUM;Référence unique du contrat dans le système de gestion local de l'entité remettante
+AUTORIZATION_LINE;AGMT_RVSD_AMT;Le montant initial peut être révisé dans le cadre des procédures de revalorisation
+;;
+PTA_BNF;ENT_ID;Entité rattachée au Tiers Bénéficiaire
+AUTORIZATION_LINE;AGMT_ID;Permet d'identifier de manière unique le contrat dans le système Zone de Partage
+;;
+EX;FAC_AUTHZD_CURY_CD;Permet de préciser une devise ou un panier de devise autorisé pour l'utilisation de la ligne.
+EX;RISK_TYPE_CD;Classification de l'opération selon la nomenclature risque.
+AG;STTM_DT;Date d'arrêté
+AUTORIZATION_LINE;HOST_AGMT_ID;Identifiant technique local du contrat
+AUTORIZATION_LINE;ACCNTG_RESPONSABL_CTR_CD;Obligatoire si entité porteuse de risques (C1 0.2) = '00018'
+;;
+;;
+;;
+EX;EXPSR_MAXIMAL_DURTN_NUM;Période, en nombre de jours, définissant la durée maximale de l'engagement.
+PTA_TIT;LOCL_PRTY_ID;Non renseigné
+AG;ENT_ID;Identifiant national de l’entité déclarante
+;;
+PTA_BNF;PRTY_ID;Permet d'identifier de manière unique le tiers dans le système Zone de Partage
+;;
+AUTORIZATION_LINE;AGMT_GRNLT_CD;Permet de qualifier le niveau de granularité du contrat
+;;
+AUTORIZATION_LINE;AGMT_ORIGNL_EURO_AMT;Non renseigné
+EX;DRWG_DEADLN_DT;Date limite d'initialisation d'un tirage.
+EX;RWA_ENGN_CD;Correspond au traitement moteur de calcul des RWA Bâlois.
+EX;FAC_EURO_AMT;Non renseigné
+AUTORIZATION_LINE;AGMT_OPN_DT;Date contractuelle de début d'engagement
+;;
+#N/A;#N/A;Permet de qualifier la nature du lien entre contrats
+;;
+AUTORIZATION_LINE;FLOW_SCOPE;Périmètre du fichier (maître) qui créé la ligne en base
+EX;FAC_AMT;Montant autorisé du client pour la ligne d'autorisation
+AUTORIZATION_LINE;INTRAGRP_LVL_CD;Non renseigné
+BAL;PRCHD_RECVBL_PREM_EURO_AMT;Non renseigné
+EX;AUTHZD_TSACTN_RTG_VAL;Permet de tenir compte du contexte particulier de l'opération afin de modifier (en général améliorer) la note qui sera prise en compte pour qualifier le risque pris par l'établissement.
+AUTORIZATION_LINE;AGMT_RVSD_AMT_CURY_CD;Devise de montant du contrat à l’origine
+EX;EXPSR_SBTYPE_CD;Permet d'identifier le sous-type du contrat d'exposition
+;;
+;;
+BAL;PRCHD_RECVBL_PREM_AMT_CURY_CD;Devise du montant du Add-on affacturage
+AUTORIZATION_LINE;INTRAGRP_ROLE_CD;Rôle d'intragroupe
+AUTORIZATION_LINE;AGMT_ORIGNL_AMT;Montant global initial
+PTA_TIT;ENT_ID;Entité rattachée au Tiers en risque
+#N/A;#N/A;Non renseigné
+EX;EXPSR_NATR_CD;Permet d'identifier la nature du contrat d'exposition
+;;
+#N/A;#N/A;Permet d'identifier de manière unique le contrat dans le système Zone de Partage
+;;

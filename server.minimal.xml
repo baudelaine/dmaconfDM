@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="new server">
+
+	<!-- Enable features -->
+	<featureManager>
+		<feature>servlet-3.0</feature>
+		<feature>appSecurity-2.0</feature>
+		<feature>jndi-1.0</feature>
+		<feature>jdbc-4.0</feature>
+	</featureManager>
+
+	<!-- !!! WARNING /opt/wlp/bin/installUtility install defaultServer -->
+	
+
+	<quickStartSecurity userName="dma" userPassword="dma" />
+
+	<httpEndpoint host="*" httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint"/>
+
+	<!-- START DMA SETUP-->
+
+	<jndiEntry jndiName="WithRecCount" value="true"/>
+
+	<!-- END DMA SETUP-->
+
+	<!-- START COGNOS SETUP -->
+
+	<jndiEntry jndiName="CognosFolder" value="C:/models"/>
+	<jndiEntry jndiName="CognosModelsPath" value="/mnt/models"/>
+	<jndiEntry jndiName="CognosDispatcher" value="http://172.16.186.246:9300/p2pd/servlet/dispatch"/>
+	<jndiEntry jndiName="CognosLogin" value="admin"/>
+	<jndiEntry jndiName="CognosPassword" value="Freestyle05$"/>
+	<jndiEntry jndiName="CognosNamespace" value="CognosEx"/>
+	<jndiEntry jndiName="CognosDefaultLocale" value="en-gb"/>
+	<jndiEntry jndiName="CognosLocales" value="en"/>
+
+  	<!-- END COGNOS SETUP -->	
+
+	<!-- START DB2 SETUP-->
+
+	<library id="DB2Lib">
+	<fileset dir="${shared.resource.dir}/DB2" includes="*.jar"/>
+	</library>
+	
+	<dataSource jndiName="jdbc/SAMPLE.DB2INST1" transactional="false" cognosCatalog="" cognosDataSource="DB2Sample" cognosSchema="DB2INST1">
+	<jdbcDriver libraryRef="DB2Lib"/>
+	<properties.db2.jcc databaseName="SAMPLE" password="spcspc" portNumber="50000" serverName="172.16.186.242" user="db2inst1"/>
+	</dataSource>
+
+	<jndiEntry jndiName="TestDB2Connection" value="select current date from sysibm.sysdummy1"/>
+
+	<!-- END DB2 SETUP-->
+
+	<application id="app" location="app.war" name="app">
+		<application-bnd>
+			<security-role name="testing">
+				<user name="dma"/>
+			</security-role>
+		</application-bnd>
+	</application>
+
+</server>

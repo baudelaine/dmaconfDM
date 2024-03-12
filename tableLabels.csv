@@ -1,0 +1,25 @@
+TABLE_NAME;TABLE_LABEL
+ACT;Ce champs est le label fr de la table ACT
+CATALOG;Ce champs est le label fr de la table CATALOG
+CL_SCHED;Ce champs est le label fr de la table CL_SCHED
+COLUMNLABELS;Ce champs est le label fr de la table COLUMNLABELS
+CUSTOMER;Ce champs est le label fr de la table CUSTOMER
+DEPARTMENT;Ce champs est le label fr de la table DEPARTMENT
+EMPLOYEE;Ce champs est le label fr de la table EMPLOYEE
+EMPMDC;Ce champs est le label fr de la table EMPMDC
+EMPPROJACT;Ce champs est le label fr de la table EMPPROJACT
+EMP_PHOTO;Ce champs est le label fr de la table EMP_PHOTO
+EMP_RESUME;Ce champs est le label fr de la table EMP_RESUME
+INVENTORY;Ce champs est le label fr de la table INVENTORY
+IN_TRAY;Ce champs est le label fr de la table IN_TRAY
+ORG;Ce champs est le label fr de la table ORG
+PRODUCT;Ce champs est le label fr de la table PRODUCT
+PRODUCTSUPPLIER;Ce champs est le label fr de la table PRODUCTSUPPLIER
+PROJACT;Ce champs est le label fr de la table PROJACT
+PROJECT;Ce champs est le label fr de la table PROJECT
+PURCHASEORDER;Ce champs est le label fr de la table PURCHASEORDER
+SALES;Ce champs est le label fr de la table SALES
+STAFF;Ce champs est le label fr de la table STAFF
+STAFFG;Ce champs est le label fr de la table STAFFG
+SUPPLIERS;Ce champs est le label fr de la table SUPPLIERS
+TABLELABELS;Ce champs est le label fr de la table TABLELABELS

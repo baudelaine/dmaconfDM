@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.4/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.9/css/bootstrap-select.css" />
+	<style>	
+		.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){
+			width:100%;
+		}
+	</style>
+
+</head>
+
+<body>
+	
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-md-12">
+				<label for="tags">Select tags list</label>
+				<div class="form-group">
+					<select class="selectpicker input-large" multiple data-live-search="true">
+						<option>COAL_5CD-PT07</option>
+						<option>COAL_5CD-PT08</option>
+						<option>COAL_5CD-PT09</option>
+						<option>LNG_TI37130</option>
+						<option>LNG_TI37230</option>
+						<option>LNG_TI37130</option>
+						<option>LNG_TI37230</option>
+						<option>LNG_TI37130</option>
+						<option>LNG_TI37230</option>
+						<option>LNG_TI37130</option>
+						<option>LNG_TI37230</option>
+						<option>LNG_TI37130</option>
+						<option>LNG_TI37230</option>
+						<option>LNG_TI37130</option>
+						<option>LNG_TI37230</option>
+						<option>LNG_TI37130</option>
+						<option>LNG_TI37230</option>
+						<option>LNG_TI37130</option>
+						<option>LNG_TI37230</option>
+						<option>LNG_TI37130</option>
+						<option>LNG_TI37230</option>
+						<option>LNG_TI37130</option>
+						<option>LNG_TI37230</option>
+						<option>LNG_TI37130</option>
+						<option>LNG_TI37230</option>
+						<option>LNG_TI37130</option>
+						<option>LNG_TI37230</option>
+						<option>CCP_AB1HAD45CP900_ZQ01</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.4/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.9/js/bootstrap-select.min.js"></script>
+	<script>
+
+		$(document).ready(function () {
+
+			$('select').selectpicker();
+
+			var s = "element0.element1.element2.element3";
+			var a = s.split(".");
+			var l = a.length;
+			console.log(l);
+			console.log(a[l-2] + "." + a[l-1]);
+
+		});
+	</script>
+</body>
+
+</html>

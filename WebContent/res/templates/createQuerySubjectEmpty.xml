@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<bmtactionlog project="C:\models\POC11\POC11.cpf" templatedir="../templates/bmt/Cr1Model" timestamp="20200509152207673" user="Administrator" version="11.0.13.4">
+<transaction saved="false" seq="3" timestamp="20200509155620328" uniqueId="82A447A282A447A2"><action seq="1" type="UpdateObject"><inputparams>
+<param seq="1" type="handle"><mappingpath>namespace</mappingpath><value>[DIMENSIONAL]</value></param>
+<param seq="2" type="cclnode"><value><![CDATA[
+<updateObjectRequest>
+	<tasks>
+		<task name="addObject">
+			<parameters>
+				<param locale="en-gb" name="objectName" value="New Query Subject"/>
+				<param name="objectType" value="querySubject"/>
+				<param name="makeNameUnique" value="false"/>
+				<param name="definitionType" value="modelQuery"/>
+			</parameters>
+		</task>
+	</tasks>
+</updateObjectRequest>]]></value></param></inputparams><domchanges/><result success="t"><outputparams/></result></action></transaction></bmtactionlog>

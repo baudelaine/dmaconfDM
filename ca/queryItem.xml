@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<queryItem>
+    <name locale="en-zw">CALCD_LNKD_AUTHZTN_LN_NB</name>
+    <name locale="en-za">CALCD_LNKD_AUTHZTN_LN_NB</name>
+    <name locale="en">CALCD_LNKD_AUTHZTN_LN_NB</name>
+    <name locale="fr">(fr) CALCD_LNKD_AUTHZTN_LN_NB</name>
+    <lastChanged>2019-10-31T15:47:29</lastChanged>
+    <externalName>CALCD_LNKD_AUTHZTN_LN_NB</externalName>
+    <usage>fact</usage>
+    <datatype>int32</datatype>
+    <precision>10</precision>
+    <scale>0</scale>
+    <size>4</size>
+    <nullable>true</nullable>
+    <regularAggregate>sum</regularAggregate>
+    <semiAggregate>sum</semiAggregate>
+</queryItem>

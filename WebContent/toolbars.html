@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Toolbars Testing</title>
+	<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link href="css/bootstrap-table.min.css" type="text/css" rel="stylesheet" />
+	<link href="css/bootstrap-editable.css" type="text/css" rel="stylesheet" />
+	<link href="css/bootstrap-select.min.css" type="text/css" rel="stylesheet" />
+	<link href="css/bootstrap-theme.min.css" type="text/css" rel="stylesheet" />
+	<link href="css/bootstrap-tagsinput.css" type="text/css" rel="stylesheet">
+	<link href="css/languages.min.css" type="text/css" rel="stylesheet">
+	<link href="css/mycss.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+
+	<div class="container-fluid" style="margin-top: 10px;">
+
+		<div class="modal fade" id="langModal" tabindex="-1" role="dialog" aria-labelledby="" data-keyboard="false" data-backdrop="static">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Adding language.</h4>
+		      </div>
+		      <div class="modal-body">
+
+						<div class="container-fluid">
+
+						<div class="row">
+								<select class="selectpicker form-control" id="langList" data-live-search="true" title="Choose a language...">
+								</select>
+						</div>
+
+
+		      </div>
+
+				</div>
+
+		      <div class="modal-footer" id="langModalFooter">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		        <button type="button" id="addLang" class="btn btn-primary">Add language</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+    <div class="well well-sm">
+
+			<div class="toolbar form-inline" id="mainToolbar">
+
+				<div class="input-group">
+					<div class="input-group-btn">
+						<select class="selectpicker" data-style="btn-default" id="tables" data-live-search="true" title="Choose a table..."></select>
+						<button type="button" onclick="SortOnStats()" class="btn btn-default" data-toggle="tooltip" title="Sort within stats."><span class="glyphicon glyphicon-sort-by-order" aria-hidden="true"></span></button>
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon">@</span>
+						<input type="text" id="alias" class="form-control" placeholder="Alias">
+					</div>
+					<button type="button" id="magnet" onclick="" class="btn btn-default dropdown-toggle" data-toggle="tooltip" data-placement="top" title="Get Query Subject."><span class="glyphicon glyphicon-magnet" aria-hidden="true"></span></button>
+				</div>
+
+				<div class="input-group">
+					<div class="input-group-btn">
+						<select class="selectpicker" data-style="btn-default" id="langSelect" data-live-search="false" title="Languages..."></select>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+						</button>
+						<ul class="dropdown-menu" id="langMenu">
+							<li><a href="#" id="addLangMenu">Add</a></li>
+							<li><a href="#" id="removeLangMenu">Remove</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="input-group" id="foldInputGroup">
+					<div class="input-group-btn">
+						<select class="selectpicker" data-style="btn-default" id="foldSelect" data-live-search="true" title="Folders..."></select>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+						</button>
+						<ul class="dropdown-menu" id="foldMenu">
+							<li><a href="#" id="addFold">Add</a></li>
+							<li><a href="#" id="labelFold">Label</a></li>
+							<li><a href="#" id="removeFold">Remove</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="input-group" id="dimInputGroup">
+					<div class="input-group-btn">
+						<select class="selectpicker" data-style="btn-default" id="dimSelect" data-live-search="true" title="Dimensions..."></select>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+						</button>
+						<ul class="dropdown-menu" id="dimMenu">
+							<li><a href="#" id="addDim">Add</a></li>
+							<li><a href="#" id="labelDim">Label</a></li>
+							<li><a href="#" id="removeDim">Remove</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="input-group" id="hierInputGroup">
+					<div class="input-group-btn">
+						<select class="selectpicker" data-style="btn-default" id="hierSelect" data-live-search="true" title="Hierarchy Names..."></select>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+						</button>
+						<ul class="dropdown-menu" id="hierMenu">
+							<li><a href="#" id="addHier">Add</a></li>
+							<li><a href="#" id="labelHier">Label</a></li>
+							<li><a href="#" id="removeHier">Remove</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+  </div>
+
+</body>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-table.min.js"></script>
+<script src="js/bootstrap-editable.js"></script>
+<script src="js/bootstrap-table-editable.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/bootstrap-list-filter.min.js"></script>
+<script src="js/bootstrap-tagsinput.js"></script>
+<script src="js/bootbox.min.js"></script>
+
+<script>
+
+var countryCodes = ["ar", "be", "bg", "cs", "da", "de", "el", "en", "es", "et", "fi", "fr", "ga", "hi", "hr", "hu", "in", "is", "it", "iw", "ja", "ko", "lt", "lv", "mk", "ms", "mt", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sl", "sq", "sr", "sv", "th", "tr", "uk", "vi", "zh"];
+var emptyOption = '<option class="fontsize" value="" data-subtext="" data-content=""></option>';
+
+$(document).ready(function() {
+		// $('#finToolbar').hide().addClass('hidden');
+		// $('#finToolbar').hide().addClass('show');
+		// $('#qSToolbar').hide().addClass('hidden');
+		// $('#qSToolbar').hide().addClass('show');
+		// $("#foldInputGroup").hide().addClass('hidden');
+		// $("#foldInputGroup").hide().addClass('show');
+		// $("#dimInputGroup").hide().addClass('hidden');
+		// $("#dimInputGroup").hide().addClass('show');
+		// $("#hierInputGroup").hide().addClass('hidden');
+		// $("#hierInputGroup").hide().addClass('show');
+		initLangList();
+});
+
+$("#addLangMenu").click(function(){
+	$('#langModal').modal('toggle');
+	$("#langList").selectpicker("val", emptyOption);
+	$("#langList").selectpicker("refresh");
+})
+
+$("#removeLangMenu").click(function(){
+
+	var lang = $("#langSelect").find("option:selected").val();
+	var flag = '<span class="lang-sm lang-lbl-full" lang="' + lang + '"></span>';
+
+	bootbox.confirm({
+    title: "Removing language.",
+    message: flag + " will be dropped.",
+    buttons: {
+      cancel: {
+          label: 'Cancel',
+          className: 'btn btn-default'
+      },
+      confirm: {
+          label: 'Confirm',
+          className: 'btn btn-primary'
+      }
+    },
+    callback: function(result){
+      if(result){
+				$("#langSelect").find("option:selected").remove();
+				var emptyOption = '<option class="fontsize" value="" data-subtext="" data-content=""></option>';
+				$("#langSelect").selectpicker("val", emptyOption);
+				$("#langSelect").selectpicker("refresh");
+      }
+    }
+  });
+})
+
+function initLangList(){
+	$.each(countryCodes, function(i, code){
+		var dc = '<span class="lang-lg lang-lbl-full" lang="' + code + '"></span> - (' + code + ')' ;
+		var option = '<option class="fontsize" value="' + code + '" data-content=\'' + dc + '\'></option>';
+		$("#langList").append(option);
+	});
+	$("#langList").selectpicker("val", emptyOption);
+	$("#langList").selectpicker("refresh");
+}
+
+$("#addLang").click(function(){
+	var lang = ($("#langList").val());
+	if(lang){
+		if($('#langSelect option[value="' + lang + '"]').length == 0){
+			var dc = '<span class="lang-lg lang-lbl-full" lang="' + lang + '"></span>' ;
+			var option = '<option class="fontsize" value="' + lang + '" data-content=\'' + dc + '\'></option>';
+			$("#langSelect").append(option);
+			$("#langSelect").selectpicker("val", lang);
+			$("#langSelect").selectpicker("refresh");
+		}
+		$('#langModal').modal('toggle');
+	}
+})
+
+$("#langList").on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+});
+
+$("#addFold").click(function(){
+	var $id = $(this).attr("id");
+  console.log("$id=" + $id);
+	bootbox.prompt({
+    size: "small",
+    title: "Enter folder name",
+    callback: function(result){
+       /* result = String containing user input if OK clicked or null if Cancel clicked */
+      if(result != null){
+				if($('#foldSelect option[value="' + result + '"]').length == 0){
+					var option = '<option class="fontsize" value="' + result + '" data-subtext="" data-content="">' + result + '</option>';
+					$("#foldSelect").append(option);
+					$("#foldSelect").selectpicker("val", result);
+					$("#foldSelect").selectpicker("refresh");
+				}
+      }
+    }
+  });
+})
+
+$("#addDim").click(function(){
+	var $id = $(this).attr("id");
+  console.log("$id=" + $id);
+	bootbox.prompt({
+    size: "small",
+    title: "Enter dimension name",
+    callback: function(result){
+       /* result = String containing user input if OK clicked or null if Cancel clicked */
+      if(result != null){
+				if($('#dimSelect option[value="' + result + '"]').length == 0){
+					var option = '<option class="fontsize" value="' + result + '" data-subtext="" data-content="">' + result + '</option>';
+					$("#dimSelect").append(option);
+					$("#dimSelect").selectpicker("val", result);
+					$("#dimSelect").selectpicker("refresh");
+				}
+      }
+    }
+  });
+})
+
+$("#addHier").click(function(){
+	var $id = $(this).attr("id");
+  console.log("$id=" + $id);
+	bootbox.prompt({
+    size: "small",
+    title: "Enter hierarchy name",
+    callback: function(result){
+       /* result = String containing user input if OK clicked or null if Cancel clicked */
+      if(result != null){
+				if($('#hierSelect option[value="' + result + '"]').length == 0){
+					var option = '<option class="fontsize" value="' + result + '" data-subtext="" data-content="">' + result + '</option>';
+					$("#hierSelect").append(option);
+					$("#hierSelect").selectpicker("val", result);
+					$("#hierSelect").selectpicker("refresh");
+				}
+      }
+    }
+  });
+})
+
+$("#labelFold").click(function(){
+	var $id = $(this).attr("id");
+  console.log("$id=" + $id);
+
+	var fold = $("#foldSelect").find("option:selected").val();
+
+	var lang = $("#langSelect").find("option:selected").val();
+	var flag = '<span class="lang-sm lang-lbl-full" lang="' + lang + '"></span>';
+
+	if(fold && lang){
+
+		bootbox.prompt({
+	    size: "large",
+	    title: 'Enter folder ' + flag + ' label for ' + fold + '.',
+	    callback: function(result){
+	       /* result = String containing user input if OK clicked or null if Cancel clicked */
+	      if(result != null){
+					if($('#foldSelect option[value="' + result + '"]').length == 0){
+						$("#foldSelect").find("option:selected").remove();
+						var option = '<option class="fontsize" value="' + result + '" data-subtext="" data-content="">' + result + '</option>';
+						$("#foldSelect").append(option);
+						$("#foldSelect").selectpicker("val", result);
+						$("#foldSelect").selectpicker("refresh");
+					}
+	      }
+	    }
+	  });
+	}
+})
+
+$("#labelDim").click(function(){
+	var $id = $(this).attr("id");
+  console.log("$id=" + $id);
+
+	var dim = $("#dimSelect").find("option:selected").val();
+
+	var lang = $("#langSelect").find("option:selected").val();
+	var flag = '<span class="lang-sm lang-lbl-full" lang="' + lang + '"></span>';
+
+	if(dim && lang){
+
+		bootbox.prompt({
+	    size: "large",
+	    title: 'Enter dimension ' + flag + ' label for ' + dim + '.',
+	    callback: function(result){
+	       /* result = String containing user input if OK clicked or null if Cancel clicked */
+	      if(result != null){
+					if($('#dimSelect option[value="' + result + '"]').length == 0){
+						$("#dimSelect").find("option:selected").remove();
+						var option = '<option class="fontsize" value="' + result + '" data-subtext="" data-content="">' + result + '</option>';
+						$("#dimSelect").append(option);
+						$("#dimSelect").selectpicker("val", result);
+						$("#dimSelect").selectpicker("refresh");
+					}
+	      }
+	    }
+	  });
+	}
+})
+
+$("#labelHier").click(function(){
+	var $id = $(this).attr("id");
+  console.log("$id=" + $id);
+
+	var hier = $("#hierSelect").find("option:selected").val();
+
+	var lang = $("#langSelect").find("option:selected").val();
+	var flag = '<span class="lang-sm lang-lbl-full" lang="' + lang + '"></span>';
+
+	if(hier && lang){
+
+		bootbox.prompt({
+	    size: "large",
+	    title: 'Enter folder ' + flag + ' label for ' + hier + '.',
+	    callback: function(result){
+	       /* result = String containing user input if OK clicked or null if Cancel clicked */
+	      if(result != null){
+					if($('#hierSelect option[value="' + result + '"]').length == 0){
+						$("#hierSelect").find("option:selected").remove();
+						var option = '<option class="fontsize" value="' + result + '" data-subtext="" data-content="">' + result + '</option>';
+						$("#hierSelect").append(option);
+						$("#hierSelect").selectpicker("val", result);
+						$("#hierSelect").selectpicker("refresh");
+					}
+	      }
+	    }
+	  });
+	}
+})
+
+$("#removeFold").click(function(){
+	var $id = $(this).attr("id");
+  console.log("$id=" + $id);
+	var fold = $("#foldSelect").find("option:selected").val();
+
+	bootbox.confirm({
+    title: "Removing folder.",
+    message: fold + " will be dropped.",
+    buttons: {
+      cancel: {
+          label: 'Cancel',
+          className: 'btn btn-default'
+      },
+      confirm: {
+          label: 'Confirm',
+          className: 'btn btn-primary'
+      }
+    },
+    callback: function(result){
+      if(result){
+				$("#foldSelect").find("option:selected").remove();
+				var emptyOption = '<option class="fontsize" value="" data-subtext="" data-content=""></option>';
+				$("#foldSelect").selectpicker("val", emptyOption);
+				$("#foldSelect").selectpicker("refresh");
+      }
+    }
+  });
+})
+
+$("#removeDim").click(function(){
+	var $id = $(this).attr("id");
+  console.log("$id=" + $id);
+	var dim = $("#dimSelect").find("option:selected").val();
+
+	bootbox.confirm({
+    title: "Removing dimension.",
+    message: dim + " will be dropped.",
+    buttons: {
+      cancel: {
+          label: 'Cancel',
+          className: 'btn btn-default'
+      },
+      confirm: {
+          label: 'Confirm',
+          className: 'btn btn-primary'
+      }
+    },
+    callback: function(result){
+      if(result){
+				$("#dimSelect").find("option:selected").remove();
+				var emptyOption = '<option class="fontsize" value="" data-subtext="" data-content=""></option>';
+				$("#dimSelect").selectpicker("val", emptyOption);
+				$("#dimSelect").selectpicker("refresh");
+      }
+    }
+  });
+})
+
+$("#removeHier").click(function(){
+	var $id = $(this).attr("id");
+  console.log("$id=" + $id);
+	var hier = $("#hierSelect").find("option:selected").val();
+
+	bootbox.confirm({
+    title: "Removing hierarchy name.",
+    message: hier + " will be dropped.",
+    buttons: {
+      cancel: {
+          label: 'Cancel',
+          className: 'btn btn-default'
+      },
+      confirm: {
+          label: 'Confirm',
+          className: 'btn btn-primary'
+      }
+    },
+    callback: function(result){
+      if(result){
+				$("#hierSelect").find("option:selected").remove();
+				var emptyOption = '<option class="fontsize" value="" data-subtext="" data-content=""></option>';
+				$("#hierSelect").selectpicker("val", emptyOption);
+				$("#hierSelect").selectpicker("refresh");
+      }
+    }
+  });
+})
+
+$("#magnet").click(function(){
+	var options = $('#langSelect option');
+
+	var values = $.map(options ,function(option) {
+    return option.value;
+	});
+
+	console.log(values);
+
+})
+
+</script>
+
+</hml>

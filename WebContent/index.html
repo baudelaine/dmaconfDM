@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="img/mini-logo.png"/>
+	<!-- <link rel="icon" href="https://data-accelerator.com/wp-content/uploads/2020/04/cropped-logo-rond-32x32.png" sizes="32x32" />
+	<link rel="icon" href="https://data-accelerator.com/wp-content/uploads/2020/04/cropped-logo-rond-192x192.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="https://data-accelerator.com/wp-content/uploads/2020/04/cropped-logo-rond-180x180.png" />	 -->
+	<title>Data Maximo Accelarator</title>
+	<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link href="css/bootstrap-table.min.css" type="text/css" rel="stylesheet" />
+	<link href="css/bootstrap-editable.css" type="text/css" rel="stylesheet" />
+	<link href="css/bootstrap-select.min.css" type="text/css" rel="stylesheet" />
+	<link href="css/bootstrap-theme.min.css" type="text/css" rel="stylesheet" />
+	<link href="css/bootstrap-tagsinput.css" type="text/css" rel="stylesheet">
+	<link href="css/languages.min.css" type="text/css" rel="stylesheet">
+	<link href="css/mycss.css" type="text/css" rel="stylesheet" />
+
+	
+	<!-- <a class="navbar-brand" href="https://data-accelerator.com/" target="_blank">
+		<img alt="data-accelerator.com" src="img/cropped-logo-rond-192x192.png" height="35" style="vertical-align:bottom;margin:-15px 0px">
+	</a>
+
+	<h6><span class="label label-primary">YOUR DATA YOUR WAY...</span></h6>
+
+	<ul class="navbar-form navbar-left" style="vertical-align:bottom;margin:-15px 20px">
+		<h3><span class="label label-primary" >Data Maximo Accelerator (DMA)</span></h3>
+	</ul> -->
+
+	<!-- <div class="input-group pull-right"> -->
+		<!-- <a class="navbar-brand" href="http://data-accelerator.com/" target="_blank">
+			<img alt="data-accelerator.com" src="img/logo.png" height="35" style="vertical-align:bottom;margin:-15px 0px">
+		</a> -->
+	<!-- </div> -->
+
+	
+	<!-- <div class="input-group pull-right" style=""> -->
+		<!-- <h4>
+			Data Maximo Accelerator
+		</h4> -->
+	<!-- </div> -->
+
+
+
+</head>
+<body>
+
+
+	<div class="container-fluid" style="margin-top: 10px;">
+
+		<div id="alert_placeholder"></div>
+		<div id="divLoading"></div>
+		<div id="Alert"></div>
+
+
+
+		<!-- modal -->
+
+		<div class="modal fade" id="PKModal" tabindex="-1" role="dialog" aria-labelledby="" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog modal-lg" role="document">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <h4 class="modal-title" id="myModalLabel">Adding PK Relation.</h4>
+				</div>
+				<div class="modal-body">
+
+						  <div class="container-fluid">
+
+						  <div class="row">
+								  <select class="selectpicker form-control" style="width:auto;" id="PKList" multiple data-actions-box="true" data-live-search="true" title="Choose a PK Relation...">
+								  </select>
+						  </div>
+
+				</div>
+
+				  </div>
+
+				<div class="modal-footer" id="PKModalFooter">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				  <button type="button" id="addPK" class="btn btn-primary">Add PK relation</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+
+	  <!-- modal -->
+
+
+		<!-- modal -->
+
+			<div class="modal fade" id="langModal" tabindex="-1" role="dialog" aria-labelledby="" data-keyboard="false" data-backdrop="static">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="myModalLabel">Adding language.</h4>
+			      </div>
+			      <div class="modal-body">
+
+							<div class="container-fluid">
+
+							<div class="row">
+									<select class="selectpicker form-control" id="langList" data-live-search="true" title="Choose a language...">
+									</select>
+							</div>
+
+			      </div>
+
+					</div>
+
+			      <div class="modal-footer" id="langModalFooter">
+			        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+			        <button type="button" id="addLang" class="btn btn-primary">Add language</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+		<!-- modal -->
+
+		<div class="modal fade" tabindex="-1" role="dialog" id="newRowModal" data-keyboard="false" data-backdrop="static">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Add new relationship to <label id="modQuerySubject">PK Table</label></h4>
+		      </div><!-- /.modal-header -->
+		      <div class="modal-body">
+						<div id="newRowModalAlert"></div>
+
+						<div class="container-fluid">
+							<div id="modDivLoading"></div>
+							<!-- <div class="row">
+								<div class="form-group">
+									<div class="input-group">
+											<label id="modQuerySubject" for="modPKTables"></label>
+									</div>
+								</div>
+							</div> -->
+
+							<div class="row">
+								<div class="form-group">
+												<label for="modPKTable">PK Table</label>
+												<div class="input-group-btn">
+													<select class="selectpicker form-control" data-style="btn-default" data-width="93%" id="modPKTable" data-live-search="true" title="Choose a pktable..."></select>
+													<button type="button" onclick="SortOnStats()" class="btn btn-default" data-toggle="tooltip" title="Sort within stats."><span class="glyphicon glyphicon-sort-by-order" aria-hidden="true"></span></button>
+												</div>
+								</div>
+							</div>
+
+							<!-- <div class="row">
+									<div class="form-group">
+										<div class="input-group">
+												<label for="modKeyName">key_name</label>
+												<input type="text" id="modKeyName" class="form-control" placeholder="fk_name">
+										</div>
+									</div>
+							</div> -->
+
+							<div class="row">
+									<div class="form-group">
+										<!-- <div class="input-group"> -->
+
+													<label for="modKeyType">Key Type</label>
+													<!-- <div class="input-group-btn"> -->
+														<select class="selectpicker form-control" data-style="btn-default" id="modKeyType">
+															<option value="F">Foreign</option>
+															<option value="P">Primary</option>
+														</select>
+													<!-- </div> -->
+
+										<!-- </div> -->
+									</div>
+							</div>
+
+							<div class="row">
+								<div class="form-group">
+									<!-- <div class="input-group"> -->
+										<label for="modColumn">Column</label>
+										<!-- <div class="input-group-btn"> -->
+											<select class="selectpicker form-control" data-style="btn-default" id="modColumn" data-live-search="true" title="Choose a column..."></select>
+										<!-- </div> -->
+									<!-- </div> -->
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group">
+									<!-- <div class="input-group"> -->
+										<label for="modPKColumn">PK Column</label>
+											<!-- <span class="input-group-addon"></span> -->
+											<!-- <input type="text" id="modPKTableAlias" class="form-control" placeholder="pktable_alias"> -->
+										<!-- <div class="input-group-btn"> -->
+											<select class="selectpicker form-control" data-style="btn-default" id="modPKColumn" data-live-search="true" title="Choose a pkcolumn..."></select>
+										<!-- </div> -->
+									<!-- </div> -->
+								</div>
+							</div>
+
+							<div class="row">
+									<div class="form-group">
+										<label for="modRelationship">Relations</label>
+										<textarea id="modRelationship" class="form-control" placeholder="Paste relations here..." rows="8"></textarea>
+									</div>
+							</div>
+
+						</div>
+
+					</div> <!-- /.modal-body -->
+		      <div class="modal-footer">
+						<span class="form-control-static pull-left">
+							<span class="label label-primary" id="recCount"></span>
+							<span class="label " id="recCountPercent"></span>
+						</span>
+						<button type="button" class="btn btn-default" onclick="modComputerelation()" data-toggle="tooltip" data-placement="top" title="Compute relation."><span class="glyphicon glyphicon-cog" aria-hidden="true"></button>
+						<button type="button" class="btn btn-default" onclick="modEraseRelation()" data-toggle="tooltip" data-placement="top" title="Erase relation."><span class="glyphicon glyphicon-erase" aria-hidden="true"></button>
+						<button type="button" id="butBuildRelation" class="btn btn-default" onclick="modBuildRelation()" data-toggle="tooltip" data-placement="top" title="Add relation."><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></button>
+		        <button type="button" class="btn btn-primary" onclick="modAddRelation()">Add</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		      </div><!-- /.modal-footer -->
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<!-- modal -->
+
+		<!-- modal -->
+
+		<div class="modal fade" tabindex="-1" role="dialog" id="DrillModal" data-keyboard="false" data-backdrop="static">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Build Drill Path for <label id="drillFieldName">Field Name</label></h4>
+		      </div><!-- /.modal-header -->
+		      <div class="modal-body">
+
+						<div class="container-fluid">
+							<div id="modDivLoading"></div>
+
+							<div class="row">
+					        <h4>Time Dimension</h4>
+					        <select class="selectpicker form-control" id="selectTimeDimension" multiple>
+										<option class="fontsize" value="Year" data-subtext="">Year</option>'
+										<option class="fontsize" value="Quarter" data-subtext="">Quarter</option>'
+										<option class="fontsize" value="Month" data-subtext="">Month</option>'
+										<option class="fontsize" value="Weeks" data-subtext="">Weeks</option>'
+										<option class="fontsize" value="Day" data-subtext="">Day</option>'
+										<option class="fontsize" value="AM/PM" data-subtext="">AM/PM</option>'
+										<option class="fontsize" value="Hour" data-subtext="">Hour</option>'
+										<option class="fontsize" value="Date" data-subtext="">Date</option>'
+					        </select>
+					    </div>
+							<div class="row">
+					        <h4>Dimension</h4>
+					        <select class="selectpicker form-control" id="selectDimension">
+					        </select>
+					    </div>
+					    <div class="row">
+					        <h4>Order</h4>
+					        <select class="selectpicker form-control" id="selectOrder" data-live-search="true">
+					        </select>
+					    </div>
+					    <div class="row">
+					        <h4>BK</h4>
+									<div class="input-group-btn">
+					        	<select class="selectpicker form-control dropup" data-dropup-auto="false" id="selectBK" data-width="93%" data-live-search="true"></select>
+										<button type="button" class="btn btn-default" onclick="AddBKExpression()" data-toggle="tooltip" data-placement="top" title="Add BK expression."><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></button>
+								</div>
+					    </div>
+							<div class="row">
+										<h4>BK expressions</h4>
+										<textarea id="bkExpression" class="form-control" placeholder="..." rows="3"></textarea>
+							</div>
+							<div class="row">
+					        <h4>Attribut</h4>
+									<div class="input-group-btn">
+						        <select class="selectpicker form-control" id="selectAttribut" data-width="93%" data-live-search="true"></select>
+										<button type="button" class="btn btn-default" onclick="AddAttribut()" data-toggle="tooltip" data-placement="top" title="Add Attribut."><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></button>
+									</div>
+					    </div>
+							<div class="row">
+										<h4>Attribut list</h4>
+										<textarea id="taAttribut" class="form-control" placeholder="..." rows="3"></textarea>
+							</div>
+							<div class="row">
+					        <h4>Hierarchy Name</h4>
+									<input id="hierarchyName" class="form-control" placeholder="...">
+					        </select>
+					    </div>
+
+						</div>
+
+					</div> <!-- /.modal-body -->
+		      <div class="modal-footer">
+		        <!-- <button type="button" class="btn btn-primary" onclick="BuildDrillPath()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></button> -->
+						<button type="button" class="btn btn-primary" onclick="BuildDrillPath()">Save</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		      </div><!-- /.modal-footer -->
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<!-- modal -->
+
+	<!-- modal -->
+
+	<div class="modal fade" tabindex="-1" role="dialog" id="FiltersModal" data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog" style="width: auto; max-width: 100%" role="document">
+			<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Build Filters for <label id="FiltersQSName">QS Name</label></h4>
+			</div><!-- /.modal-header -->
+			<div class="modal-body">
+
+						<div class="container-fluid">
+							<div id="modDivLoading"></div>
+
+						<div id="FiltersModalAlert"></div>
+
+
+						<div class="row">
+							<h4>Name</h4>
+									<div class="input-group-btn">
+								<select class="selectpicker form-control" data-dropup-auto="false" id="selectFilterName" data-width="96%" data-live-search="true"></select>
+										<button type="button" class="btn btn-default" onclick="AddFilter()" data-toggle="tooltip" data-placement="top" title="Add Filter."><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></button>
+										<button type="button" class="btn btn-default" onclick="DeleteFilter()" data-toggle="tooltip" data-placement="top" title="Delete Filter."><span class="glyphicon glyphicon-trash" aria-hidden="true"></button>
+								</div>
+						</div>
+	
+						<div class="row">
+							<h4>Option</h4>
+							<select class="selectpicker form-control" id="selectFilterOption" data-live-search="true">
+							</select>
+						</div>
+
+						<div class="row">
+							<h4>Target</h4>
+							<select class="selectpicker form-control" id="selectFilterTarget" data-live-search="true">
+							</select>
+						</div>
+
+						<div class="row">
+							<h4>Query Subjects</h4>
+							<select class="selectpicker form-control" id="selectFilterQS" data-live-search="true">
+							</select>
+						</div>
+						<div class="row">
+							<h4>Fields</h4>
+									<div class="input-group-btn">
+								<select class="selectpicker form-control" data-dropup-auto="false" id="selectFilterField" data-width="98%" data-live-search="true"></select>
+										<button type="button" class="btn btn-default" onclick="AddFilterExpression()" data-toggle="tooltip" data-placement="top" title="Add expression."><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></button>
+								</div>
+						</div>
+							<div class="row">
+										<h4>Expression</h4>
+										<textarea id="taFilterExpression" class="form-control" placeholder="..." rows="3"></textarea>
+							</div>
+	
+						</div>
+
+
+					</div> <!-- /.modal-body -->
+			<div class="modal-footer">
+				<!-- <button type="button" class="btn btn-primary" onclick="BuildDrillPath()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></button> -->
+						<button type="button" class="btn btn-primary" onclick="BuildFilter()">Save</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+			</div><!-- /.modal-footer -->
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<!-- modal -->
+
+
+	<!-- modal -->
+
+	<div class="modal fade" tabindex="-1" role="dialog" id="ExpressionModal" data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog" style="width: auto; max-width: 100%" role="document">
+			<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Build Expression for <label id="ExpressionFieldName">Field Name</label></h4>
+			</div><!-- /.modal-header -->
+			<div class="modal-body">
+
+						<div class="container-fluid">
+							<div id="modDivLoading"></div>
+
+						<div id="ExpressionModalAlert"></div>
+
+
+						<div class="row">
+							<h4>Query Subjects</h4>
+							<select class="selectpicker form-control" id="selectExpressionQS" data-live-search="true">
+							</select>
+						</div>
+						<div class="row">
+							<h4>Fields</h4>
+									<div class="input-group-btn">
+								<select class="selectpicker form-control" data-dropup-auto="false" id="selectExpressionField" data-width="96%" data-live-search="true"></select>
+										<button type="button" class="btn btn-default" onclick="AddExpression()" data-toggle="tooltip" data-placement="top" title="Add expression."><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></button>
+										<button type="button" class="btn btn-default" onclick="AddExpressionData()" data-toggle="tooltip" data-placement="top" title="Add expression [DATA]."><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></button>
+									</div>
+						</div>
+							<div class="row">
+										<h4>Expression</h4>
+										<textarea id="taExpression" class="form-control" placeholder="..." rows="3"></textarea>
+							</div>
+
+						</div>
+
+					</div> <!-- /.modal-body -->
+			<div class="modal-footer">
+				<!-- <button type="button" class="btn btn-primary" onclick="BuildDrillPath()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></button> -->
+						<button type="button" class="btn btn-primary" onclick="BuildExpression()">Save</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+			</div><!-- /.modal-footer -->
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<!-- modal -->
+
+	<!-- modal -->
+
+	<div class="modal fade" tabindex="-1" role="dialog" id="AddfieldsModal" data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog" style="width: auto; max-width: 100%" role="document">
+		<!-- <div class="modal-dialog" role="document"> -->
+				<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Add fields to view <label id="addFieldsViewName">View Name</label></h4>
+				</div><!-- /.modal-header -->
+			<div class="modal-body">
+
+					<div class="container-fluid">
+					
+						<div id="modDivLoading"></div>
+
+						<div id="AddfieldsModalAlert"></div>
+
+
+						<div class="row">
+							<h4>Query Subjects</h4>
+							<select class="selectpicker input-large" id="addFieldsQS" data-live-search="true" data-width="100%">
+							</select>
+						</div>
+					
+						<div class="row">
+							<h4>Fields</h4>
+									<!-- <div class="input-group-btn"> -->
+								<!-- <select class="selectpicker form-control" multiple data-actions-box="true" data-dropup-auto="false" id="addFieldsField" data-width="98%" data-live-search="true"></select> -->
+								<select class="selectpicker  input-large" multiple data-actions-box="true" data-dropup-auto="false" id="addFieldsField" data-live-search="true"  data-width="100%"></select>
+									<!-- </div> -->
+						</div>
+					
+						<!-- <div class="row">
+										<h4>Expression</h4>
+										<textarea id="addFieldsList" class="form-control" placeholder="..." rows="3"></textarea>
+						</div> -->
+
+					</div>
+
+			</div> <!-- /.modal-body -->
+			<div class="modal-footer">
+				<!-- <button type="button" class="btn btn-primary" onclick="BuildDrillPath()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></button> -->
+							<button type="button" class="btn btn-primary" onclick="AddFieldsToView()">Add</button>
+							<button type="button" class="btn btn-primary" onclick="SaveFieldsToView()">Save</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+						</div><!-- /.modal-footer -->
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<!-- modal -->
+		
+
+		<!-- modelList modal -->
+		<div class="modal fade" id="modModelList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-keyboard="false" data-backdrop="static">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Model(s) available(s) on server</h4>
+		      </div>
+		      <div class="modal-body">
+
+		      </div>
+		      <div class="modal-footer">
+		        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Save changes</button> -->
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!-- modelList modal -->
+
+		<!-- modelList modal -->
+		<div class="modal fade" id="settingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog" role="document">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <h4 class="modal-title" id="myModalLabel">About Project</h4>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group row">
+						  <label for="prjname" class="col-sm-2 col-form-label">Name</label>
+						  <div class="col-sm-10">
+							<input class="form-control" type="text" id="prjname" placeholder="" readonly>
+						  </div>
+						</div>
+						<div class="form-group row">
+							<label for="prjlanguages" class="col-sm-2 col-form-label">Main Language</label>
+							<div class="col-sm-10">
+							  <input class="form-control" type="text" id="prjlanguages" placeholder="" readonly>
+							</div>
+						  </div>
+						  <div class="form-group row">
+							<label for="prjdescription" class="col-sm-2 col-form-label">Description</label>
+							<div class="col-sm-10">
+							  <input class="form-control" type="text" id="prjdescription" placeholder="" readonly>
+							</div>
+						  </div>
+						  <div class="form-group row">
+							<label for="prjtimestamp" class="col-sm-2 col-form-label">Timestamp</label>
+							<div class="col-sm-10">
+							  <input class="form-control" type="text" id="prjtimestamp" placeholder="" readonly>
+							</div>
+						  </div>
+						  <div class="form-group row">
+							<label for="prjrelationCount" class="col-sm-2 col-form-label">Relation Count</label>
+							<div class="col-sm-10">
+							  <input class="form-control" type="text" id="prjrelationCount" placeholder="" readonly>
+							</div>
+						  </div>
+						  <div class="form-group row">
+							<label for="prjdbSchema" class="col-sm-2 col-form-label">DB Schema</label>
+							<div class="col-sm-10">
+							  <input class="form-control" type="text" id="prjdbSchema" placeholder="" readonly>
+							</div>
+						  </div>
+						  <div class="form-group row">
+							<label for="prjjndiName" class="col-sm-2 col-form-label">JNDI Name</label>
+							<div class="col-sm-10">
+							  <input class="form-control" type="text" id="prjjndiName" placeholder="" readonly>
+							</div>
+						  </div>
+						  <div class="form-group row">
+							<label for="prjdbName" class="col-sm-2 col-form-label">DB Name</label>
+							<div class="col-sm-10">
+							  <input class="form-control" type="text" id="prjdbName" placeholder="" readonly>
+							</div>
+						  </div>
+						  <div class="form-group row">
+							<label for="prjTableType" class="col-sm-2 col-form-label">Table Types</label>
+							<div class="col-sm-10">
+							  <input class="form-control" type="text" id="prjTableType" placeholder="" readonly>
+							</div>
+						  </div>
+						  <div class="form-group row">
+							<label for="prjdbEngine" class="col-sm-2 col-form-label">DB Engine</label>
+							<div class="col-sm-10">
+							  <input class="form-control" type="text" id="prjdbEngine" placeholder="" readonly>
+							</div>
+						  </div>
+						  <div class="form-group row">
+							<label for="prjresdescription" class="col-sm-2 col-form-label">Resource Description</label>
+							<div class="col-sm-10">
+							  <input class="form-control" type="text" id="prjresdescription" placeholder="" readonly>
+							</div>
+						  </div>
+						  <div class="form-group row">
+							<label for="prjcognosCatalog" class="col-sm-2 col-form-label">Cognos Catalog</label>
+							<div class="col-sm-10">
+							  <input class="form-control" type="text" id="prjcognosCatalog" placeholder="" readonly>
+							</div>
+						  </div>
+						  <div class="form-group row">
+							<label for="prjcognosSchema" class="col-sm-2 col-form-label">Cognos Schema</label>
+							<div class="col-sm-10">
+							  <input class="form-control" type="text" id="prjcognosSchema" placeholder="" readonly>
+							</div>
+						  </div>
+						  <div class="form-group row">
+							<label for="prjcognosDataSource" class="col-sm-2 col-form-label">Cognos DataSource</label>
+							<div class="col-sm-10">
+							  <input class="form-control" type="text" id="prjcognosDataSource" placeholder="" readonly>
+							</div>
+						  </div>
+
+				  </form>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <!-- modelList modal -->
+  
+		<!-- projectFile modal -->
+		<div class="modal fade" id="modProjectFile" tabindex="-1" role="dialog" aria-labelledby="modProjectFileLabel" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="modProjectFileLabel">Enter project name before publishing.</h4>
+					</div>
+					<div class="modal-body">
+
+					</div>
+					<div class="modal-footer">
+						<!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button> -->
+						<button type="button" class="btn btn-primary" onclick="SetProjectName()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- projectFile modal -->
+
+		<!-- removeKeysModal modal -->
+		<div class="modal fade" id="removeKeysModal" tabindex="-1" role="dialog" aria-labelledby="removeKeysModalLabel" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="removeKeysModalLabel">Following Query Subject(s) will be removed from model :</h4>
+					</div>
+					<div class="modal-body">
+
+					</div>
+					<div class="modal-footer">
+						<!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button> -->
+						<button type="button" class="btn btn-primary" onclick="RemoveKeysAccepted()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- projectFile modal -->
+
+		<!-- removeKeysModal modal -->
+		<div class="modal fade" id="removeModelsModal" tabindex="-1" role="dialog" aria-labelledby="removeKeysModalLabel" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="removeModelsModalLabel">Select model(s) available on server to be dropped :</h4>
+					</div>
+					<div class="modal-body">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="form-group">
+									<select class="selectpicker" data-width="100%" id="modelsSelect" multiple data-actions-box="true" data-live-search="true" title="Choose model(s)..."></select>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" id="dropModels">Drop</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- projectFile modal -->
+
+
+		<!-- logout modal -->
+	  <div class="modal fade" id="modLogout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-keyboard="false" data-backdrop="static">
+	    <div class="modal-dialog" role="document">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h3 class="modal-title" id="myModalLabel">Data Maximo Accelarator</h3>
+	        </div>
+	        <div class="modal-body">
+
+						<p><h5>Do you really want to logout ?</h5></p>
+
+	        </div>
+	        <div class="modal-footer">
+						<form method="post" action='ibm_security_logout' name="logout_form">
+							<input type="hidden" name="logoutExitPage" VALUE="login.html">
+							<input type="submit" class="btn btn-primary" name="logout" value="Logout">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+	          </form>
+
+	          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	  <!-- logout modal -->
+
+		<!-- hiddenQuery modal -->
+		<div class="modal fade" id="hiddenQueryModal" tabindex="-1" role="dialog" aria-labelledby="hiddenQueryModalLabel" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="hiddenQueryModalLabel">SQL queries for hidden</h4>
+					</div>
+					<div class="modal-body">
+						<div id="hiddenQueryModalAlert"></div>
+						<div id="modDivLoading"></div>
+						<form>
+		          <div class="form-group">
+		            <!-- <label for="tableLabel" class="col-form-label">Table Label</label> -->
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#hiddenQuerySyntax" aria-expanded="false" aria-controls="collapseExample">SQL syntax</a>
+								<div class="collapse" id="hiddenQuerySyntax">
+								  <div class="well well-sm">
+								    SELECT * FROM $TABLE WHERE $TABLE.$FIELD...
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#hiddenQueryAboutParameter" aria-expanded="false" aria-controls="collapseExample">About parameter(s)</a>
+								<div class="collapse" id="hiddenQueryAboutParameter">
+								  <div class="well well-sm">
+								    $TABLE stand for the selected query subject table. <br>$FIELD stand for all fields of the table.
+										<br><br><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> <strong>One query</strong> will be executed for <strong>each $FIELD</strong>. If <strong>no result found</strong>, <strong>hidden</strong> will be set to <strong>true</strong>.</span>
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#hiddenQueryEG0" aria-expanded="false" aria-controls="collapseExample">e.g.</a>
+								<div class="collapse" id="hiddenQueryEG0">
+								  <div class="well well-sm">
+										select * from $table where $table.$field is not null and $table.$field != '0' and $table.stx_at = 0
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#hiddenQueryEG1" aria-expanded="false" aria-controls="collapseExample">e.g.</a>
+								<div class="collapse" id="hiddenQueryEG1">
+								  <div class="well well-sm">
+										select * from workorder where $table.$field is not null and $table.$field != '0' and workorder.stx_at = 0
+								  </div>
+								</div>
+								<!-- <button type="button" id="tableLabelQuery" class="btn btn-default btn-xs" data-toggle="tooltip" title="Run query."><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></button> -->
+		          </div>
+        		</form>
+						<textarea class="form-control" id="hiddenQuery" rows="4"></textarea>
+					</div>
+					<div class="modal-footer">
+						<!-- <button type="button" onclick="SaveHiddenQueries()" class="btn btn-default" data-toggle="tooltip" title="Save queries to server."><span class="glyphicon glyphicon-save-file" aria-hidden="true"></span></button>
+						<button type="button" onclick="GetHiddenQueriesList()" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Open queries from server."><span class="glyphicon glyphicon-open-file" aria-hidden="true"></span></button> -->
+						<button type="button" class="btn btn-primary" onclick="setHidden()">Execute</button>
+						<button type="button" class="btn btn-primary" onclick="saveHiddenQuery()">Save</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- hiddenQuery modal -->
+
+		<!-- queriesList modal -->
+		<div class="modal fade" id="queryModal" tabindex="-1" role="dialog" aria-labelledby="queryModalLabel" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog" style="width: auto; max-width: 100%" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="queryModalLabel">SQL queries for labels and descriptions</h4>
+					</div>
+					<div class="modal-body">
+						<div id="queryModalAlert"></div>
+						<div id="modDivLoading"></div>						
+						<form>
+		          <div class="form-group">
+								<div id="tableLabelAlert"></div>
+		            <label for="tableLabel" class="col-form-label">Table Label</label>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#tableLabelSyntax" aria-expanded="false" aria-controls="collapseExample">SQL syntax</a>
+								<div class="collapse" id="tableLabelSyntax">
+								  <div class="well well-sm">
+								    SELECT ... AS Table_Name, ... AS Table_Label FROM ... IN ($TABLES)
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#tableLabelAboutParameter" aria-expanded="false" aria-controls="collapseExample">About parameter(s)</a>
+								<div class="collapse" id="tableLabelAboutParameter">
+								  <div class="well well-sm">
+								    ($TABLES) stand for a list of tables.
+									<br><br><span class="glyphicon glyphicon-alert" aria-hidden="true"> <strong>Case is sensitive</strong>.</span>
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#tableLabelEG" aria-expanded="false" aria-controls="collapseExample">e.g.</a>
+								<div class="collapse" id="tableLabelEG">
+								  <div class="well well-sm">
+								    <strong>SELECT</strong> table <strong>AS Table_Name,</strong> label <strong>AS Table_Label FROM</strong> tablelabels where table <strong>IN ($TABLES)</strong> and lang = 'en'
+										<br><br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Everything in <strong>bold</strong> is <strong>mandatory</strong>.</span>
+								  </div>
+								</div>
+
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#tableLabelEG1" aria-expanded="false" aria-controls="collapseExample">e.g. MAXIMO</a>
+								<div class="collapse" id="tableLabelEG1">
+								  <div class="well well-sm">
+										SELECT MAXIMO.MAXTABLE.TABLENAME AS Table_Name, MAXIMO.MAXOBJECT.DESCRIPTION AS Table_Label FROM MAXIMO.MAXTABLE join MAXIMO.MAXOBJECT on MAXIMO.MAXTABLE.TABLENAME = MAXIMO.MAXOBJECT.OBJECTNAME where MAXTABLE.TABLENAME IN ($TABLES)
+									</div>
+								</div>
+
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#tableLabelEG2" aria-expanded="false" aria-controls="collapseExample">e.g. LV</a>
+								<div class="collapse" id="tableLabelEG2">
+								  <div class="well well-sm">
+										SELECT systable.tableid AS Table_Name, singular AS Table_Label FROM systable join sdc on sdc.tableid = systable.tableid where systable.tableid IN ($TABLES)									</div>
+								</div>
+
+								<button type="button" id="tableLabelQuery" class="btn btn-default btn-xs" data-toggle="tooltip" title="Run query."><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></button>
+								<button type="button" class="btn btn-default btn-xs" id="eraseTableLabelQuery" data-toggle="tooltip" data-placement="top" title="Erase query."><span class="glyphicon glyphicon-erase" aria-hidden="true"></button>
+								<textarea class="form-control" id="tableLabel" rows="4"></textarea>
+		          </div>
+
+							<div class="form-group">
+								<div id="tableDescriptionAlert"></div>
+		            <label for="tableDescription" class="col-form-label">Table Description</label>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#tableDescriptionSyntax" aria-expanded="false" aria-controls="collapseExample">SQL syntax</a>
+								<div class="collapse" id="tableDescriptionSyntax">
+								  <div class="well well-sm">
+								    SELECT ... AS Table_Name, ... AS Table_Description FROM ... IN ($TABLES)
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#tableDescriptionAboutParameter" aria-expanded="false" aria-controls="collapseExample">About parameter(s)</a>
+								<div class="collapse" id="tableDescriptionAboutParameter">
+								  <div class="well well-sm">
+								    ($TABLES) stand for a list of tables.
+									<br><br><span class="glyphicon glyphicon-alert" aria-hidden="true"> <strong>Case is sensitive</strong>.</span>
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#tableDescriptionEG" aria-expanded="false" aria-controls="collapseExample">e.g.</a>
+								<div class="collapse" id="tableDescriptionEG">
+								  <div class="well well-sm">
+								    <strong>SELECT</strong> table <strong>AS Table_Name,</strong> description <strong>AS Table_Description FROM</strong> tablelabels where table <strong>IN ($TABLES)</strong> and lang = 'en'
+										<br><br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Everything in <strong>bold</strong> is <strong>mandatory</strong>.</span>
+								  </div>
+								</div>
+
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#tableDescriptionEG1" aria-expanded="false" aria-controls="collapseExample">e.g. MAXIMO</a>
+								<div class="collapse" id="tableDescriptionEG1">
+								  <div class="well well-sm">
+										SELECT MAXIMO.MAXTABLE.TABLENAME AS Table_Name, MAXIMO.MAXOBJECT.DESCRIPTION AS Table_Description FROM MAXIMO.MAXTABLE join MAXIMO.MAXOBJECT on MAXIMO.MAXTABLE.TABLENAME = MAXIMO.MAXOBJECT.OBJECTNAME where MAXTABLE.TABLENAME IN ($TABLES)
+								  </div>
+								</div>
+
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#tableDescriptionEG2" aria-expanded="false" aria-controls="collapseExample">e.g. LV</a>
+								<div class="collapse" id="tableDescriptionEG2">
+								  <div class="well well-sm">
+										SELECT systable.tableid AS Table_Name, tabledoc AS Table_Description FROM systable join sdc on sdc.tableid = systable.tableid where systable.tableid IN ($TABLES)
+									</div>
+								</div>
+
+								<button type="button" id="tableDescriptionQuery" class="btn btn-default btn-xs" data-toggle="tooltip" title="Run query."><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></button>
+								<button type="button" class="btn btn-default btn-xs" id="eraseTableDescriptionQuery" data-toggle="tooltip" data-placement="top" title="Erase query."><span class="glyphicon glyphicon-erase" aria-hidden="true"></button>
+		            <textarea class="form-control" id="tableDescription" rows="4"></textarea>
+		          </div>
+
+							<div class="form-group">
+								<div id="columnLabelAlert"></div>
+		            <label for="columnLabel" class="col-form-label">Column Label</label>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#columnLabelSyntax" aria-expanded="false" aria-controls="collapseExample">SQL syntax</a>
+								<div class="collapse" id="columnLabelSyntax">
+								  <div class="well well-sm">
+								    SELECT ... AS Table_Name, ... AS Column_Name, ... AS Column_Label FROM ... = $TABLE ... IN ($FIELDS)
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#columnLabelAboutParameter" aria-expanded="false" aria-controls="collapseExample">About parameter(s)</a>
+								<div class="collapse" id="columnLabelAboutParameter">
+								  <div class="well well-sm">
+										$TABLE stand for any table.<br>
+								    ($FIELDS) stand for all fields of a table.
+									<br><br><span class="glyphicon glyphicon-alert" aria-hidden="true"> <strong>Case is sensitive</strong>.</span>
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#columnLabelEG" aria-expanded="false" aria-controls="collapseExample">e.g.</a>
+								<div class="collapse" id="columnLabelEG">
+								  <div class="well well-sm">
+										<strong>SELECT</strong> table <strong>AS Table_Name,</strong> column <strong>AS Column_Name,</strong> label <strong>AS Column_Label FROM</strong> columnlabels where table <strong>= $TABLE</strong> and column <strong>IN ($FIELDS)</strong> and lang = 'en'
+										<br><br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Everything in <strong>bold</strong> is <strong>mandatory</strong>.</span>
+								  </div>
+								</div>
+
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#columnLabelEG1" aria-expanded="false" aria-controls="collapseExample">e.g. MAXIMO</a>
+								<div class="collapse" id="columnLabelEG1">
+								  <div class="well well-sm">
+										SELECT maxattribute.objectname AS Table_Name, maxattribute.attributeName AS Column_Name, maxattribute.title AS Column_Label FROM maxattribute where maxattribute.objectname = $TABLE and maxattribute.attributeName IN ($FIELDS)
+								  </div>
+								</div>
+
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#columnLabelEG2" aria-expanded="false" aria-controls="collapseExample">e.g. LV</a>
+								<div class="collapse" id="columnLabelEG2">
+								  <div class="well well-sm">
+										SELECT tableid AS Table_Name, columnid AS Column_Name, columnlabel AS Column_Label FROM syscolumn where tableid = $TABLE and columnid IN ($FIELDS)
+								  </div>
+								</div>
+
+								<button type="button" id="columnLabelQuery" class="btn btn-default btn-xs" data-toggle="tooltip" title="Run query."><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></button>
+								<button type="button" class="btn btn-default btn-xs" id="eraseColumnLabelQuery" data-toggle="tooltip" data-placement="top" title="Erase query."><span class="glyphicon glyphicon-erase" aria-hidden="true"></button>
+		            <textarea class="form-control" id="columnLabel" rows="4"></textarea>
+		          </div>
+
+							<div class="form-group">
+								<div id="columnDescriptionAlert"></div>
+		            <label for="columnDescription" class="col-form-label">Column Description</label>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#columnDescriptionSyntax" aria-expanded="false" aria-controls="collapseExample">SQL syntax</a>
+								<div class="collapse" id="columnDescriptionSyntax">
+								  <div class="well well-sm">
+								    SELECT ... AS Table_Name, ... AS Column_Name, ... AS Column_Description FROM ... = $TABLE ... IN ($FIELDS)
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#columnDescriptionAboutParameter" aria-expanded="false" aria-controls="collapseExample">About parameter(s)</a>
+								<div class="collapse" id="columnDescriptionAboutParameter">
+								  <div class="well well-sm">
+										$TABLE stand for any table.<br>
+								    ($FIELDS) stand for all fields of a table.
+									<br><br><span class="glyphicon glyphicon-alert" aria-hidden="true"> <strong>Case is sensitive</strong>.</span>
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#columnDescriptionEG" aria-expanded="false" aria-controls="collapseExample">e.g.</a>
+								<div class="collapse" id="columnDescriptionEG">
+								  <div class="well well-sm">
+										<strong>SELECT</strong> table <strong>AS Table_Name,</strong> column <strong>AS Column_Name,</strong> description <strong>AS Column_Description FROM</strong> columnlabels where table <strong>= $TABLE</strong> and column <strong>IN ($FIELDS)</strong> and lang = 'en'
+										<br><br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Everything in <strong>bold</strong> is <strong>mandatory</strong>.</span>
+								  </div>
+								</div>
+
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#columnDescriptionEG1" aria-expanded="false" aria-controls="collapseExample">e.g. MAXIMO</a>
+								<div class="collapse" id="columnDescriptionEG1">
+								  <div class="well well-sm">
+										SELECT maxattribute.objectname AS Table_Name, maxattribute.attributeName AS Column_Name, maxattribute.remarks AS Column_Description FROM maxattribute where maxattribute.objectname = $TABLE and maxattribute.attributeName IN ($FIELDS)
+								  </div>
+								</div>
+
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#columnDescriptionEG2" aria-expanded="false" aria-controls="collapseExample">e.g. LV</a>
+								<div class="collapse" id="columnDescriptionEG2">
+								  <div class="well well-sm">
+										SELECT tableid AS Table_Name, columnid AS Column_Name, columndoc AS Column_Description FROM syscolumn where tableid = $TABLE and columnid IN ($FIELDS)
+								  </div>
+								</div>
+
+								<button type="button" id="columnDescriptionQuery" class="btn btn-default btn-xs" data-toggle="tooltip" title="Run query."><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></button>
+								<button type="button" class="btn btn-default btn-xs" id="eraseColumnDescriptionQuery" data-toggle="tooltip" data-placement="top" title="Erase query."><span class="glyphicon glyphicon-erase" aria-hidden="true"></button>
+		            <textarea class="form-control" id="columnDescription" rows="4"></textarea>
+		          </div>
+        		</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" onclick="SaveQueries()" class="btn btn-primary" data-toggle="tooltip" title="Save queries to server.">Save</button>
+						<button type="button" onclick="GetQueriesList()" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Open queries from server.">Restore</button>
+						<!-- <button type="button" class="btn btn-primary" onclick="GetLabels()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></button> -->
+						<button type="button" class="btn btn-primary" onclick="GetLabelsMultiLang()">Execute</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Exit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- queriesList modal -->
+
+		<!-- csvLabel modal -->
+		<div class="modal fade" id="csvLabelModal" tabindex="-1" role="dialog" aria-labelledby="csvLabelModalLabel" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog" style="width: auto; max-width: 100%" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="csvLabelModalTitle">CSV for labels and descriptions</h4>
+					</div>
+					<div class="modal-body">
+						<div id="csvLabelModalAlert"></div>
+						<form>
+		          <div class="form-group">
+		            <label for="tableLabel" class="col-form-label">Table Label</label>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#csvTableLabelSyntax" aria-expanded="false" aria-controls="collapseExample">CSV format</a>
+								<div class="collapse" id="csvTableLabelSyntax">
+								  <div class="well well-sm">
+								    TABLE_NAME;TABLE_LABEL
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Column separator as to be semicolon e.g. <strong>;</strong></span>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"><strong> First row is column headers.</strong></span>
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#csvTableLabelEG" aria-expanded="false" aria-controls="collapseExample">e.g.</a>
+								<div class="collapse" id="csvTableLabelEG">
+								  <div class="well well-sm">
+										<strong>TABLE_NAME;TABLE_LABEL</strong><br>
+								    <strong>PROJECT;this is project table label</strong>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Column separator as to be semicolon e.g. <strong>;</strong></span>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"><strong> First row is column headers.</strong></span>
+								  </div>
+								</div>
+
+								<button type="button" id="csvTableLabelUpload" class="btn btn-default btn-xs btn-file" data-toggle="tooltip" title="Upload CSV.">
+									<span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+									<input type="file" accept=".csv" id="csvTableLabelFile" name="csvTableLabelFile">
+								</button>
+								<button type="button" class="btn btn-default btn-xs" id="delCsvTableLabel" data-toggle="tooltip" data-placement="top" title="Delete CSV."><span class="glyphicon glyphicon-trash" aria-hidden="true"></button>
+								<table class="table table-striped table-bordered fontsize" id="csvTableLabelTable">
+									<tr>
+										<th>TABLE_NAME</th>
+										<th>TABLE_LABEL</th>
+									</tr>
+									<tr>
+										<td style="text-align: center; vertical-align: middle;" colspan="2">no record found</td>
+									</tr>
+								</table>
+		          </div>
+
+							<div class="form-group">
+		            <label for="tableDescription" class="col-form-label">Table Description</label>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#csvTableDescriptionSyntax" aria-expanded="false" aria-controls="collapseExample">CSV format</a>
+								<div class="collapse" id="csvTableDescriptionSyntax">
+									<div class="well well-sm">
+										TABLE_NAME;TABLE_DESCRIPTION
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Column separator as to be semicolon e.g. <strong>;</strong></span>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"><strong> First row is column headers.</strong></span>
+									</div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#cvsTableDescriptionEG" aria-expanded="false" aria-controls="collapseExample">e.g.</a>
+								<div class="collapse" id="cvsTableDescriptionEG">
+								  <div class="well well-sm">
+										<strong>TABLE_NAME;TABLE_DESCRIPTION</strong><br>
+										<strong>PROJECT;This is project table description</strong>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Column separator as to be semicolon e.g. <strong>;</strong></span>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"><strong> First row is column headers.</strong></span>
+								  </div>
+								</div>
+
+								<button type="button" id="csvTableDescriptionUpload" class="btn btn-default btn-xs btn-file" data-toggle="tooltip" title="Upload CSV.">
+									<span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+									<input type="file" accept=".csv" id="csvTableDescriptionFile" name="csvTableDescriptionFile">
+								</button>
+								<button type="button" class="btn btn-default btn-xs" id="delCsvTableDescription" data-toggle="tooltip" data-placement="top" title="Delete CSV."><span class="glyphicon glyphicon-trash" aria-hidden="true"></button>
+								<table class="table table-striped table-bordered fontsize" id="csvTableDescriptionTable">
+									<tr>
+										<th>TABLE_NAME</th>
+										<th>TABLE_DESCRIPTION</th>
+									</tr>
+									<tr>
+										<td style="text-align: center; vertical-align: middle;" colspan="2">no record found</td>
+									</tr>
+								</table>
+		          </div>
+
+							<div class="form-group">
+		            <label for="columnLabel" class="col-form-label">Column Label</label>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#csvColumnLabelSyntax" aria-expanded="false" aria-controls="collapseExample">CSV format</a>
+								<div class="collapse" id="csvColumnLabelSyntax">
+								  <div class="well well-sm">
+										TABLE_NAME;COLUMN_NAME;COLUMN_LABEL
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Column separator as to be semicolon e.g. <strong>;</strong></span>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"><strong> First row is column headers.</strong></span>
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#csvColumnLabelEG" aria-expanded="false" aria-controls="collapseExample">e.g.</a>
+								<div class="collapse" id="csvColumnLabelEG">
+								  <div class="well well-sm">
+										<strong>TABLE_NAME;COLUMN_NAME;COLUMN_LABEL</strong><br>
+										<strong>PROJECT;PROJNO;This is projno column label</strong>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Column separator as to be semicolon e.g. <strong>;</strong></span>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"><strong> First row is column headers.</strong></span>
+								  </div>
+								</div>
+
+								<button type="button" id="csvColumnLabelUpload" class="btn btn-default btn-xs btn-file" data-toggle="tooltip" title="Upload CSV.">
+									<span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+									<input type="file" accept=".csv" id="csvColumnLabelFile" name="csvColumnLabelFile">
+								</button>
+								<button type="button" class="btn btn-default btn-xs" id="delCsvColumnLabel" data-toggle="tooltip" data-placement="top" title="Delete CSV."><span class="glyphicon glyphicon-trash" aria-hidden="true"></button>
+		            <table class="table table-striped table-bordered fontsize" id="csvColumnLabelTable">
+									<tr>
+										<th>TABLE_NAME</th>
+										<th>COLUMN_NAME</th>
+										<th>COLUMN_LABEL</th>
+									</tr>
+									<tr>
+										<td style="text-align: center; vertical-align: middle;" colspan="3">no record found</td>
+									</tr>
+								</table>
+		          </div>
+
+							<div class="form-group">
+		            <label for="columnDescription" class="col-form-label">Column Description</label>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#csvColumnDescriptionSyntax" aria-expanded="false" aria-controls="collapseExample">CSV format</a>
+								<div class="collapse" id="csvColumnDescriptionSyntax">
+								  <div class="well well-sm">
+										TABLE_NAME;COLUMN_NAME;COLUMN_DESCRIPTION
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Column separator as to be semicolon e.g. <strong>;</strong></span>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"><strong> First row is column headers.</strong></span>
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#csvColumnDescriptionEG" aria-expanded="false" aria-controls="collapseExample">e.g.</a>
+								<div class="collapse" id="csvColumnDescriptionEG">
+								  <div class="well well-sm">
+										<strong>TABLE_NAME;COLUMN_NAME;COLUMN_DESCRIPTION</strong><br>
+										<strong>PROJECT;PROJNO;This is projno column description</strong>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Column separator as to be semicolon e.g. <strong>;</strong></span>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"><strong> First row is column headers.</strong></span>
+								  </div>
+								</div>
+
+								<button type="button" id="csvColumnDescriptionUpload" class="btn btn-default btn-xs btn-file" data-toggle="tooltip" title="Upload CSV.">
+									<span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+									<input type="file" accept=".csv" id="csvColumnDescriptionFile" name="csvColumnDescriptionFile">
+								</button>
+								<button type="button" class="btn btn-default btn-xs" id="delCsvColumnDescription" data-toggle="tooltip" data-placement="top" title="Delete CSV."><span class="glyphicon glyphicon-trash" aria-hidden="true"></button>
+								<table class="table table-striped table-bordered fontsize" id="csvColumnDescriptionTable">
+									<tr>
+										<th>TABLE_NAME</th>
+										<th>COLUMN_NAME</th>
+										<th>COLUMN_DESCRIPTION</th>
+									</tr>
+									<tr>
+										<td style="text-align: center; vertical-align: middle;" colspan="3">no record found</td>
+									</tr>
+								</table>
+		          </div>
+        		</form>
+					</div>
+					<div class="modal-footer">
+						<!-- <button type="button" onclick="SaveQueries()" class="btn btn-default" data-toggle="tooltip" title="Save queries to server."><span class="glyphicon glyphicon-save-file" aria-hidden="true"></span></button>
+						<button type="button" onclick="GetQueriesList()" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Open queries from server."><span class="glyphicon glyphicon-open-file" aria-hidden="true"></span></button> -->
+						<!-- <button type="button" class="btn btn-primary" onclick="GetLabels()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></button>
+						<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></button> -->
+						<!-- <button type="button" class="btn btn-primary" id="saveCsvLabel">Save</button> -->
+						<button type="button" class="btn btn-primary" onclick="GetCsvLabelsMultiLang()">Execute</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Exit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- csvLabelsQueries modal -->
+
+		<!-- csvRelationExp modal -->
+		<div class="modal fade" id="csvRelationExpModal" tabindex="-1" role="dialog" aria-labelledby="csvRelationExpModalLabel" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog" style="width: auto; max-width: 100%" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="csvRelationExpModalTitle">CSV for relations expressions</h4>
+					</div>
+					<div class="modal-body">
+						<div id="csvRelationExpModalAlert"></div>
+						<form>
+							<div class="form-group">
+								<label for="tableLabel" class="col-form-label">Relation</label>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#csvRelationExpSyntax" aria-expanded="false" aria-controls="collapseExample">CSV format</a>
+								<div class="collapse" id="csvRelationExpSyntax">
+									<div class="well well-sm">
+										JOIN_NAME;FKTABLE_NAME;PKTABLE_NAME;RELATION_EXPRESSION
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Column separator as to be semicolon e.g. <strong>;</strong></span>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"><strong> First row is column headers.</strong></span>
+									</div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#csvRelationExpEG" aria-expanded="false" aria-controls="collapseExample">e.g.</a>
+								<div class="collapse" id="csvRelationExpEG">
+									<div class="well well-sm">
+										<strong>JOIN_NAME;FKTABLE_NAME;PKTABLE_NAME;RELATION_EXPRESSION</strong><br>
+										<strong>JOIN0;EMPLOYEE;DEPARTMENT;EMPLOYEE.WORKDEPT=DEPARTMENT.DEPTNO</strong>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Column separator as to be semicolon e.g. <strong>;</strong></span>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"><strong> First row is column headers.</strong></span>
+									</div>
+								</div>
+
+								<button type="button" id="csvRelationExpUpload" class="btn btn-default btn-xs btn-file" data-toggle="tooltip" title="Upload CSV.">
+									<span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+									<input type="file" accept=".csv" id="csvRelationExpFile" name="csvRelationExpFile">
+								</button>
+								<button type="button" class="btn btn-default btn-xs" id="delCsvRelationExp" data-toggle="tooltip" data-placement="top" title="Delete CSV."><span class="glyphicon glyphicon-trash" aria-hidden="true"></button>
+								<table class="table table-striped table-bordered fontsize" id="csvRelationExpTable">
+									<tr>
+										<th>JOIN_NAME</th>
+										<th>FKTABLE_NAME</th>
+										<th>PKTABLE_NAME</th>
+										<th>RELATION_EXPRESSION</th>
+									</tr>
+									<tr>
+										<td style="text-align: center; vertical-align: middle;" colspan="4">no record found</td>
+									</tr>
+								</table>
+							</div>
+
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Exit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- csvRelationExp modal -->
+
+		<!-- csvRelation modal -->
+		<div class="modal fade" id="csvRelationModal" tabindex="-1" role="dialog" aria-labelledby="csvRelationModalLabel" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog" style="width: auto; max-width: 100%" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="csvRelationModalTitle">CSV for relations</h4>
+					</div>
+					<div class="modal-body">
+						<div id="csvRelationModalAlert"></div>
+						<form>
+							<div class="form-group">
+								<label for="tableLabel" class="col-form-label">Relation</label>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#csvRelationSyntax" aria-expanded="false" aria-controls="collapseExample">CSV format</a>
+								<div class="collapse" id="csvRelationSyntax">
+									<div class="well well-sm">
+										FK_NAME;PK_NAME;FKTABLE_NAME;PKTABLE_NAME;KEY_SEQ;FKCOLUMN_NAME;PKCOLUMN_NAME
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Column separator as to be semicolon e.g. <strong>;</strong></span>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"><strong> First row is column headers.</strong></span>
+									</div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#csvRelationEG" aria-expanded="false" aria-controls="collapseExample">e.g.</a>
+								<div class="collapse" id="csvRelationEG">
+									<div class="well well-sm">
+										<strong>FK_NAME;PK_NAME;FKTABLE_NAME;PKTABLE_NAME;KEY_SEQ;FKCOLUMN_NAME;PKCOLUMN_NAME</strong><br>
+										<strong>RDE;PK_EMPLOYEE;DEPARTMENT;EMPLOYEE;1;MGRNO;EMPNO</strong>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Column separator as to be semicolon e.g. <strong>;</strong></span>
+										<br><span class="glyphicon glyphicon-alert" aria-hidden="true"><strong> First row is column headers.</strong></span>
+									</div>
+								</div>
+
+								<button type="button" id="csvRelationUpload" class="btn btn-default btn-xs btn-file" data-toggle="tooltip" title="Upload CSV.">
+									<span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+									<input type="file" accept=".csv" id="csvRelationFile" name="csvRelationFile">
+								</button>
+								<button type="button" class="btn btn-default btn-xs" id="delCsvRelation" data-toggle="tooltip" data-placement="top" title="Delete CSV."><span class="glyphicon glyphicon-trash" aria-hidden="true"></button>
+								<table class="table table-striped table-bordered fontsize" id="csvRelationTable">
+									<tr>
+										<th>FK_NAME</th>
+										<th>PK_NAME</th>
+										<th>FKTABLE_NAME</th>
+										<th>PKTABLE_NAME</th>
+										<th>KEY_SEQ</th>
+										<th>FKCOLUMN_NAME</th>
+										<th>PKCOLUMN_NAME</th>
+									</tr>
+									<tr>
+										<td style="text-align: center; vertical-align: middle;" colspan="7">no record found</td>
+									</tr>
+								</table>
+							</div>
+
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Exit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- csvRelation modal -->
+
+
+
+
+		<!-- relsQuery modal -->
+		<div class="modal fade" id="relsQueryModal" tabindex="-1" role="dialog" aria-labelledby="relsQueryModalLabel" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog" style="width: auto; max-width: 100%" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="relsQueryModalLabel">SQL queries for relations</h4>
+					</div>
+					<div class="modal-body">
+						<div id="relsQueryModalAlert"></div>
+						<form>
+		          <div class="form-group">
+		            <label for="tableLabel" class="col-form-label">Foreign Key</label>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#relsQuerySyntax" aria-expanded="false" aria-controls="collapseExample">SQL syntax</a>
+								<div class="collapse" id="relsQuerySyntax">
+								  <div class="well well-sm">
+								    SELECT ... as FK_NAME, ... as PK_NAME, ... as FKTABLE_NAME, ... as PKTABLE_NAME, ... as KEY_SEQ, ... as FKCOLUMN_NAME, ... as PKCOLUMN_NAME FROM .. = $TABLE
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#relsQueryAboutParameter" aria-expanded="false" aria-controls="collapseExample">About parameter(s)</a>
+								<div class="collapse" id="relsQueryAboutParameter">
+								  <div class="well well-sm">
+								    $TABLE stand for any table.
+									<br><br><span class="glyphicon glyphicon-alert" aria-hidden="true"> <strong>Case is sensitive</strong>.</span>
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#relsQueryFKEG0" aria-expanded="false" aria-controls="collapseExample">e.g.</a>
+								<div class="collapse" id="relsQueryFKEG0">
+								  <div class="well well-sm">
+										<strong>SELECT</strong> fk_name <strong>as FK_NAME,</strong> pk_name <strong>as PK_NAME,</strong> fkTable_name <strong>as FKTABLE_NAME,</strong> pkTable_name <strong>as PKTABLE_NAME,</strong> key_seq <strong>as KEY_SEQ,</strong> fkColumn_name <strong>as FKCOLUMN_NAME,</strong> pkColumn_name <strong>as PKCOLUMN_NAME FROM</strong> relations WHERE fkTable_name <strong>= $TABLE</strong>
+										<br><br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Everything in <strong>bold</strong> is <strong>mandatory</strong>.</span>
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#relsQueryFKEG1" aria-expanded="false" aria-controls="collapseExample">e.g. MAXIMO</a>
+								<div class="collapse" id="relsQueryFKEG1">
+								  <div class="well well-sm">
+										SELECT 'FK_' || TARGETOBJ || '_' || OBJECTNAME || '_' || LOGICALRELATIONSHIP.LOGICALRELATIONSHIPID as FK_NAME, 'PK_' || OBJECTNAME || '_' || TARGETOBJ || '_' || LOGICALRELATIONSHIP.LOGICALRELATIONSHIPID as PK_NAME, TARGETOBJ as FKTABLE_NAME, OBJECTNAME as PKTABLE_NAME, KEYNUM as KEY_SEQ, TARGETKEY as FKCOLUMN_NAME, PARENTKEY as PKCOLUMN_NAME FROM LOGICALRELATIONSHIP join LRKEYS on LOGICALRELATIONSHIP.LOGICALRELATIONSHIPID = LRKEYS.LOGICALRELATIONSHIPID WHERE TARGETOBJ = $TABLE
+								  </div>
+								</div>
+								<button type="button" id="runFKQuery" class="btn btn-default btn-xs" data-toggle="tooltip" title="Run query."><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></button>
+								<button type="button" class="btn btn-default btn-xs" id="eraseFKQuery" data-toggle="tooltip" data-placement="top" title="Erase query."><span class="glyphicon glyphicon-erase" aria-hidden="true"></button>
+								<textarea class="form-control" id="FKQuery" rows="8"></textarea>
+		          </div>
+        		</form>
+
+						<form>
+		          <div class="form-group">
+		            <label for="tableLabel" class="col-form-label">Primary Key</label>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#relsQuerySyntax" aria-expanded="false" aria-controls="collapseExample">SQL syntax</a>
+								<div class="collapse" id="relsQuerySyntax">
+								  <div class="well well-sm">
+								    SELECT ... as FK_NAME, ... as PK_NAME, ... as FKTABLE_NAME, ... as PKTABLE_NAME, ... as KEY_SEQ, ... as FKCOLUMN_NAME, ... as PKCOLUMN_NAME FROM .. = $TABLE
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#relsQueryAboutParameter" aria-expanded="false" aria-controls="collapseExample">About parameter(s)</a>
+								<div class="collapse" id="relsQueryAboutParameter">
+								  <div class="well well-sm">
+								    $TABLE stand for any table.
+									<br><br><span class="glyphicon glyphicon-alert" aria-hidden="true"> <strong>Case is sensitive</strong>.</span>
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#relsQueryPKEG0" aria-expanded="false" aria-controls="collapseExample">e.g.</a>
+								<div class="collapse" id="relsQueryPKEG0">
+								  <div class="well well-sm">
+										<strong>SELECT</strong> fk_name <strong>as FK_NAME,</strong> pk_name <strong>as PK_NAME,</strong> fkTable_name <strong>as FKTABLE_NAME,</strong> pkTable_name <strong>as PKTABLE_NAME,</strong> key_seq <strong>as KEY_SEQ,</strong> fkColumn_name <strong>as FKCOLUMN_NAME,</strong> pkColumn_name <strong>as PKCOLUMN_NAME FROM</strong> relations WHERE pkTable_name <strong>= $TABLE</strong>
+										<br><br><span class="glyphicon glyphicon-alert" aria-hidden="true"> Everything in <strong>bold</strong> is <strong>mandatory</strong>.</span>
+								  </div>
+								</div>
+								<a class="btn btn-primary btn-xs" role="button" data-toggle="collapse" href="#relsQueryPKEG1" aria-expanded="false" aria-controls="collapseExample">e.g. MAXIMO</a>
+								<div class="collapse" id="relsQueryPKEG1">
+								  <div class="well well-sm">
+										SELECT 'FK_' || TARGETOBJ || '_' || OBJECTNAME || '_' || LOGICALRELATIONSHIP.LOGICALRELATIONSHIPID as FK_NAME, 'PK_' || OBJECTNAME || '_' || TARGETOBJ || '_' || LOGICALRELATIONSHIP.LOGICALRELATIONSHIPID as PK_NAME, TARGETOBJ as FKTABLE_NAME, OBJECTNAME as PKTABLE_NAME, KEYNUM as KEY_SEQ, TARGETKEY as FKCOLUMN_NAME, PARENTKEY as PKCOLUMN_NAME FROM LOGICALRELATIONSHIP join LRKEYS on LOGICALRELATIONSHIP.LOGICALRELATIONSHIPID = LRKEYS.LOGICALRELATIONSHIPID WHERE OBJECTNAME = $TABLE
+								  </div>
+								</div>
+								<button type="button" id="runPKQuery" class="btn btn-default btn-xs" data-toggle="tooltip" title="Run query."><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></button>
+								<button type="button" class="btn btn-default btn-xs" id="erasePKQuery" data-toggle="tooltip" data-placement="top" title="Erase query."><span class="glyphicon glyphicon-erase" aria-hidden="true"></button>
+								<textarea class="form-control" id="PKQuery" rows="8"></textarea>
+		          </div>
+        		</form>
+
+					</div>
+					<div class="modal-footer">
+						<!-- <button type="button" onclick="SaveHiddenQueries()" class="btn btn-default" data-toggle="tooltip" title="Save queries to server."><span class="glyphicon glyphicon-save-file" aria-hidden="true"></span></button>
+						<button type="button" onclick="GetHiddenQueriesList()" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Open queries from server."><span class="glyphicon glyphicon-open-file" aria-hidden="true"></span></button> -->
+						<button type="button" class="btn btn-primary" onclick="saveRelsQuery()">Save</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Exit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- relsQuery modal -->
+
+		<!-- modelList modal -->
+		<div class="modal fade" id="modQueriesList" tabindex="-1" role="dialog" aria-labelledby="mymodQueriesList" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">Queries(s) available(s) on server</h4>
+					</div>
+					<div class="modal-body">
+
+					</div>
+					<div class="modal-footer">
+						<!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- modelList modal -->
+
+
+
+		<!-- <div class="clearfix"></div> -->
+
+		<!-- <div class="well well-sm">
+
+			<div class="toolbar form-inline" id="Toolbar">
+				<div class="input-group">
+					<div class="input-group-btn">
+						<select class="selectpicker" data-style="btn-default" id="tables" data-live-search="true" title="Choose a table..."></select>
+						<button type="button" onclick="SortOnStats()" class="btn btn-default" data-toggle="tooltip" title="Sort within stats."><span class="glyphicon glyphicon-sort-by-order" aria-hidden="true"></span></button>
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon">@</span>
+						<input type="text" id="alias" class="form-control" placeholder="Alias">
+					</div>
+					<button type="button" onclick="GetQuerySubjects()" class="btn btn-default dropdown-toggle" data-toggle="tooltip" data-placement="top" title="Get Query Subject."><span class="glyphicon glyphicon-magnet" aria-hidden="true"></span></button>
+				</div>
+
+				<div class="input-group">
+					<div class="input-group-btn">
+						<select class="selectpicker" data-style="btn-default" id="languagesSelect" data-live-search="true" title="Current languages..."></select>
+						<button type="button" onclick="OpenQueryModal()" id="LoadLabelsAndDescription" class="btn btn-default" data-toggle="tooltip" title="Load labels and description."><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></button>
+					</div>
+				</div>
+
+			</div>
+
+		</div> -->
+
+
+		<div class="well well-sm">
+
+
+			<div class="toolbar form-inline" id="mainToolbar">
+
+				<div class="input-group">
+					<div class="input-group-btn">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+					</button>
+					<ul class="dropdown-menu" id="mainMenu">
+						<li role="separator" class="divider"></li>
+						<li><a href="#" id="ulActionLog">Upload Action Log</a></li>
+						<li><a href="#" id="showActionLog">Show Action Log(s)</a></li>
+						<li><a href="#" id="dlActionLog">Download Action Log(s)</a></li>
+						<li><a href="#" id="rmActionLog">Remove Action Log(s)</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#" id="ulPrj">Upload Project</a></li>
+						<li><a href="#" id="dlPrj">Download Project</a></li>
+						<li><a href="#" id="rmPrj">Remove Project</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#" id="ulWks">Upload Workspace</a></li>
+						<li><a href="#" id="dlWks">Download Workspace</a></li>
+						<li><a href="#" id="rmWks">Remove Workspace</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#" id="testDBConnection">Test Database Connection</a></li>
+						<li><a href="#" id="testCognosConnection">Test Cognos Connection</a></li>
+						<li><a href="#" id="testModelDirConnection">Test Models Directory access</a></li>
+						<li role="separator" class="divider"></li>
+						<li id="liSearchTool"><a href="#" id="searchTool">Search Tool</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#" id="metrics">Metrics</a></li>
+						<li><a href="#" id="settings">About Project</a></li>
+						<li><a href="#" id="logout">Logout</a></li>
+
+					</ul>
+					<input type="file" name="actionLogFile" id="actionLogFile" style="display: none;" accept=".xml">
+					<input type="file" name="ulWksFile" id="ulWksFile" style="display: none;" accept=".zip">
+					<input type="file" name="ulPrjFile" id="ulPrjFile" style="display: none;" accept=".zip">
+
+
+					</div>
+				</div>
+
+				<div class="input-group">
+					<div class="input-group-btn">
+						<button type="button" onclick="Test()" class="hidden btn btn-default" data-toggle="tooltip" data-placement="top" title="Test.">Test</button>
+						<button type="button" onclick="promptPublish()" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Publish model."><span class="glyphicon glyphicon-send" aria-hidden="true"></span></button>
+						<button type="button" onclick="SaveModel()" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Save model to server."><span style="font-size: 15px" class="glyphicon glyphicon-export" aria-hidden="true"></span></button>
+						<button type="button" onclick="GetModelList()" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Open model from server."><span style="font-size: 15px" class="glyphicon glyphicon-import" aria-hidden="true"></span style="font-size: 15px"></button>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+						</button>
+						<input type="hidden" id="alias" value=""/>
+						<ul class="dropdown-menu" id="tablesMenu">
+							<li><a href="#" id="dlModel">Download Model</a></li>
+							<li><a href="#" id="ulModel">Upload Model</a></li>
+							<li><a href="#" id="rmModel">Remove Model(s)</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#" id="ulXMLModel">Upload XML Model</a></li>
+							<li class="disabled"><a href="#" id="dlPublishedModel">Download Published Model(s)</a></li>
+							<li class="disabled"><a href="#" id="rmPublishedModel">Remove Published Model(s)</a></li>
+						</ul>
+					</div>
+					<input type="file" name="ulModelFile" id="ulModelFile" style="display: none;" accept=".json">
+					<input type="file" name="ulXMLModelFile" id="ulXMLModelFile" style="display: none;" accept=".xml">
+				</div>
+
+
+				<div class="input-group">
+					<div class="input-group-btn">
+						<select class="selectpicker" data-style="btn-default" id="tables" data-live-search="true" title="Tables..."></select>
+						<button type="button" id="magnet" onclick="GetQuerySubjects()"class="btn btn-default dropdown-toggle" data-toggle="tooltip" data-placement="top" title="Get Query Subject."><span class="glyphicon glyphicon-magnet" aria-hidden="true"></span></button>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+						</button>
+						<input type="hidden" id="alias" value=""/>
+						<ul class="dropdown-menu" id="tablesMenu">
+							<li><a href="#" id="addTableAlias">Alias</a></li>
+							<li><a href="#" id="sortTables">Sort</a></li>
+							<li id="liRefreshTableDBMD"><a href="#" id="refreshTableDBMD">Refesh DBMD</a></li>
+							<li><a href="#" id="watchContent">Watch Content</a></li>
+							<li role="separator" class="divider"></li>
+							<li id="liAddSqlRel"><a href="#" id="addSqlRel">Add SQL Relations</a></li>
+							<li><a href="#" id="addCsvRel">Add CSV Relations</a></li>
+							<li><a href="#" id="addCsvRelExp">Add CSV Relations Expressions</a></li>
+							<li><a href="#" id="removeRel">Remove Relations</a></li>
+							<li id="liSaveRel"><a href="#" id="saveRel">Save Relations</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#" id="loadFromXML">Load Tables from XML</a></li>
+						</ul>
+					</div>
+					<input type="file" name="XMLFile" id="XMLFile" style="display: none;" accept=".xml">
+				</div>
+
+				<div class="input-group">
+					<div class="input-group-btn">
+						<!-- <select class="selectpicker" data-style="btn-default" id="qsSelect" multiple data-actions-box="true" data-live-search="true" title="Query Subjects..."></select> -->
+						<select class="selectpicker" data-style="btn-default" id="qsSelect" data-live-search="true" title="Query Subjects..."></select>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+						</button>
+						<!-- <input type="hidden" id="Alias" value=""/> -->
+						<ul class="dropdown-menu" id="qsMenu">
+							<li id="liSetHidden"><a href="#" id="setHidden">Set Hidden</a></li>
+							<li><a href="#" id="setHiddenINL">Set Hidden (if no label)</a></li>
+							<li class="enabled"><a href="#" id="setHiddenAll">Set Hidden All</a></li>
+							<li><a href="#" id="setHiddenINLAll">Set Hidden (if no label) All</a></li>
+							<li><a href="#" id="setUnHidden">Reset Hidden</a></li>
+							<li><a href="#" id="setUnHiddenAll">Reset Hidden All</a></li>
+							<!-- <li><a href="#" id="removeQSLabels">Remove Labels</a></li> -->
+							<li role="separator" class="divider"></li>
+							<li><a href="#" id="expandQS">Expand All</a></li>
+							<li><a href="#" id="collapseQS">Collapse All</a></li>
+							<li><a href="#" id="removeQS">Remove All</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#" id="sortQss">Sort</a></li>
+							<li><a href="#" id="downloadQss">Download</a></li>
+							<li><a href="#" id="loadQss">Load</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#" id="generateViews">Generate Views</a></li>
+							<li><a href="#" id="downloadViews">Download Views</a></li>
+							<li><a href="#" id="loadViews">Load Views</a></li>
+							<li><a href="#" id="removeViews">Remove Views</a></li>
+							<li><a href="#" id="createView">Create View</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#" id="updateModel">Update Model</a></li>
+						</ul>
+					</div>
+					<input type="file" name="CSVViewsFile" id="CSVViewsFile" style="display: none;" accept=".csv">
+					<input type="file" name="CSVQssFile" id="CSVQssFile" style="display: none;" accept=".csv">
+				</div>
+
+				<div class="input-group">
+					<div class="input-group-btn">
+						<select class="selectpicker" data-style="btn-default" id="langSelect" data-live-search="false" title="Languages..."></select>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+						</button>
+						<ul class="dropdown-menu" id="langMenu">
+							<li><a href="#" id="addLangMenu">Add</a></li>
+							<li><a href="#" id="removeLangMenu">Remove</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#" id="addSqlLabel">SQL Labels</a></li>
+							<!-- <li class="disabled"><a href="#" id="CSVLabels">CSV Labels</a></li> -->
+							<li><a href="#" id="addCsvLabel">CSV Labels</a></li>
+							<li><a href="#" id="saveLabels">Save Labels</a></li>
+							<li><a href="#" id="removeLabel">Remove Label</a></li>
+							<li><a href="#" id="removeLabels">Remove All Labels</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="input-group" id="foldInputGroup">
+					<div class="input-group-btn">
+						<select class="selectpicker" data-style="btn-default" id="foldSelect" data-live-search="true" title="Folders..."></select>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+						</button>
+						<ul class="dropdown-menu" id="foldMenu">
+							<li><a href="#" id="addFold">Add</a></li>
+							<li><a href="#" id="removeFold">Remove</a></li>
+							<li class="disabled hidden"><a href="#" id="labelFold">Label</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="input-group" id="dimInputGroup">
+					<div class="input-group-btn">
+						<select class="selectpicker" data-style="btn-default" id="dimSelect" data-live-search="true" title="Dimensions..."></select>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
+						</button>
+						<ul class="dropdown-menu" id="dimMenu">
+							<li><a href="#" id="addDim">Add</a></li>
+							<li><a href="#" id="removeDim">Remove</a></li>
+							<li class="disabled hidden"><a href="#" id="labelDim">Label</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- <div class="input-group" id="hierInputGroup">
+						<div class="input-group-btn">
+								<select class="selectpicker" data-style="btn-default" id="hierSelect" data-live-search="true" title="Hierarchy Names..."></select>
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+								</button>
+								<ul class="dropdown-menu" id="hierMenu">
+										<li><a href="#" id="addHier">Add</a></li>
+										<li><a href="#" id="labelHier">Label</a></li>
+										<li><a href="#" id="removeHier">Remove</a></li>
+								</ul>
+						</div>
+				</div> -->
+
+
+				<div class="input-group pull-right">
+					<a class="navbar-brand" href="http://data-accelerator.com/" target="_blank">
+						<img alt="data-accelerator.com" src="img/logo.png" height="35" style="vertical-align:bottom;margin:-15px 0px">
+					</a>
+				</div>
+
+				<!-- <div class="input-group pull-right" style="">
+					<h4>
+						Data Maximo Accelerator
+					</h4>
+				</div> -->
+
+			</div>
+
+		</div>
+
+
+		<div>
+
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist" id="navTab">
+		    <li role="presentation" class="active"><a href="#Final" aria-controls="final" role="tab" data-toggle="tab">Final</a></li>
+		    <li role="presentation"><a href="#Reference" aria-controls="reference" role="tab" data-toggle="tab">Reference</a></li>
+		    <li role="presentation"><a id="qsTab_click" href="#QuerySubject" aria-controls="querySubject" role="tab" data-toggle="tab">Query Subject</a></li>
+				<li role="presentation"><a href="#Security" aria-controls="security" role="tab" data-toggle="tab">Security</a></li>
+				<!-- <li role="presentation" class="disabled"><a href="#Translation" aria-controls="translation" role="tab" data-toggle="tab">Translation</a></li> -->
+				<li role="presentation"><a href="#Translation" aria-controls="translation" role="tab" data-toggle="tab">Translation</a></li>
+		    <!-- <li role="presentation"><a href="#Fields" aria-controls="fields" role="tab" data-toggle="tab">Fields</a></li> -->
+				<li id="viewTab" role="presentation" class="disabled"><a id="viewTab_click" href="#View" aria-controls="view" role="tab" data-toggle="tab">View</a></li>
+			</ul>
+
+
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active" id="final">
+
+				</div>
+
+		    <div role="tabpanel" class="tab-pane" id="reference">
+
+				</div>
+
+		    <div role="tabpanel" class="tab-pane" id="querySubject">
+
+				</div>
+
+		    <div role="tabpanel" class="tab-pane" id="security">
+
+				</div>
+		  </div>
+
+		</div>
+
+				<table class="table table-striped fontsize" id="DatasTable">
+
+				</table>
+
+				<table class="table table-striped fontsize" id="ViewsTable">
+
+				</table>
+
+	</div> <!-- container -->
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-table.min.js"></script>
+	<script src="js/bootstrap-editable.js"></script>
+	<script src="js/bootstrap-table-editable.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
+	<script src="js/bootstrap-list-filter.min.js"></script>
+	<script src="js/bootstrap-tagsinput.js"></script>
+	<script src="js/bootbox.min.js"></script>
+	<script src="js/myfunctions.js"></script>
+
+</body>
+</html>

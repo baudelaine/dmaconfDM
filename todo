@@ -1,0 +1,96 @@
+1. Pouvoir avoir le search tool qui fonctionne avec les vues
+-> A tester
+
+2. Avoir systématiquement les vues dans la liste déroulante avec entre parenthèses (Vue)
+-> A tester
+
+3. Pouvoir utiliser le model.xml pour générer le modèle lorsque celui-ci est présent - cad s'il le model.xml est présent, peu importe si je suis en mode XML ou pas au niveau de mon projet
+-> A tester
+
+4. Assurer le calculs des pourcentage (FK supérieures à 100% n'est pas possible)
+-> A tester
+
+5. Pouvoir vider les labels que pour le QS sélectionné
+-> A tester (voir remove-label.png)
+
+6. Pouvoir vider les labels en gardant les labels des champs customs
+-> A tester
+
+7. Pouvoir exporter/importer un fichier excel représentant l'onglet "Query subject" afin de pouvoir le réordonner, changer les labels et le recharger. (Le but est de donner le fichier et users puis le recharger)
+-> A tester (voir download.jpg)
+
+8. Avoir un index sur le numéro du champ afin de toujours pouvoir remettre le classement initial. Calculer un index pour les champs custom toujours à la suite des champs réels en utilisant l'ordre dans lequel ils sont dans le json
+-> A tester
+
+9. Pouvoir faire une mise à jour du modèle en recalculant l'index des champs (si un champ a été ajouté par ex au milieu ou supprimé) La mise a jour doit tenir compte des champs supprimés. Les champs déjà présents doivent être récupérés et associés au nouvel index)
+-> A tester
+
+10. Enlever le controle de la coche reptableName (ca fait perdre du temps)
+-> A tester
+
+11. Lorsqu'il y a une erreur de génération, download d'un petit fichier error.txt (afin de connaitre l'erreur si on a loupé le message à la volée)
+-> A tester
+
+12. idéalement, utiliser le même algo (celui qui donne les noms avec les chemins dans les popup) pour calculer les QS à supprimer lors de la décoche
+-> A tester
+
+13. Pouvoir choisir moi même les tables root (après coup) liste déroulante ou coche
+-> A tester
+
+14. Lors de l'import des relations P en appuyant sur l'aimant, proposer une popup avec les relations à cocher afin de les importer dans les relations du QS en question (avec live search sur la table cible?) (pour ne pas polluer la liste de relation)
+-> A tester
+
+15. Pouvoir exécuter les Hidden sur tous les QS en même temps en utilisant la query associée dans le Json
+-> A tester (voir set-hidden-all.png)
+
+16. Mettre un query par défaut dans les requete hidden (celle de l'exemple maximo)
+-> A tester
+
+17. A la génération, proposer de télécharger l'action log ou le projet fini via une case à cocher. 
+-> ???
+
+18. Download labels dans 4 fichiers identiques à upload labels
+-> A tester
+
+19. Il faudrait un bouton pour uploader le model.xml pour ne pas avoir à passer par le WinSCP -> pour fonctionner en mode connecté mais sans réimporter les tables dans le modèle à chaque fois qu'on génère.
+-> A tester
+
+
+12.
+Test with /home/fr054721/dmaconf/BDXMET-V0.8.2-2022-05-26-17-15-38.json
+Quand tu décoches l'EMPLACEMNT (WO_LOCATIONS( tu décoches une ref)) sur la table final WORKORDER, tu auras la table WO_LOCATIONS qui devra disparaître.
+Et lorsque tu décoches l'emplacement (ASSET_LOCATION (tu décoches une final)), sur la table final ASSET.
+-> Alors la table finale ASSET_LOCATION doit disparaitre ainsi que toutes les refs associées.
+cad:
+- LOCATION_GEO
+-LOCATION_BAT
+-LOCATION_ODT
+-WOANCESTOR_GEO
+-WOANCESTOR_BAT
+-WOANCESTOR_ODT
+-LOCHIERARCHY_GEO
+-LOCHIERARCHY_BAT
+-LOCHIERARCHY_ODT
+
+Onglet Ref -> WORKORDERFinal -> WO_LOCATIONSRef -> décoche Ref
+Résultat: Virer WO_LOCATIONSRef et BM_LOC_RESPRef
+Puis
+Onglet Final -> ASSETFinal -> ASSET_LOCATIONSFinal -> décoche Final
+Résultat: Dégager:
+SERVICEADDRESSRef
+LOCANCESTOR_GEORef
+LOCATIONSPECRef
+LOCANCESTOR_ODTRef
+LOCANCESTOR_BATRef
+ASSET_LOCATIONSFinal
+LOCHIERARCHY_GEORef
+LOCHIERARCHY_BATRef
+LOCHIERARCHY_ODTRef
+LOCATIONS_GEORef
+LOCATIONS_BATRef
+LOCATIONS_ODTRef
+HIERARCHY_GEO_VIEWRef
+
+LOCANCESTOR_GEORef, LOCANCESTOR_BATRef, LOCHIERARCHY_GEORef, LOCHIERARCHY_BATRef, LOCATIONS_GEORef, WO_LOCATIONSRef, BM_LOC_RESPRef, LOCANCESTOR_ODTRef, LOCATIONSPECRef, HIERARCHY_GEO_VIEWRef, ASSET_LOCATIONSFinal, LOCHIERARCHY_ODTRef, LOCATIONS_BATRef, WPMATERIALRef, LOCATIONS_ODTRef, SERVICEADDRESSRef
+
+

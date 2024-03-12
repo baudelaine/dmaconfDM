@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<bmtactionlog project="C:\models\translation15\translation15.cpf" templatedir="../templates/bmt/Cr1Model" timestamp="20190605171131179" user="Administrator" version="11.0.7.11">
+<transaction saved="false" seq="1" timestamp="20190605171320660" uniqueId="5A724F3B5A724F3B">
+<action seq="1" type="ModifyComplex"><inputparams>
+<param seq="1" type="handle"><mappingpath>queryItem/expression</mappingpath><value>/O/expression[0]/O/[DATA].[S_SAMPLE].[SAMPLESTATUS]</value></param>
+<param seq="2" type="i18nstring"><value>if (&lt;refobj&gt;[DATA].[S_SAMPLE].[TRA_SAMPLESTATUS.TRANSTEXT]&lt;/refobj&gt;  is not null) then (&lt;refobj&gt;[DATA].[S_SAMPLE].[TRA_SAMPLESTATUS.TRANSTEXT]&lt;/refobj&gt;  ) else (&lt;refobj&gt;[FILTER_FINAL].[S_SAMPLE].[SAMPLESTATUS]&lt;/refobj&gt;)</value></param></inputparams><domchanges/>
+<result success="t"><outputparams/></result></action></transaction></bmtactionlog>

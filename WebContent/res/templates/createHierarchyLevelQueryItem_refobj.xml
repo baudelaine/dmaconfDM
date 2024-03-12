@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<bmtactionlog project="C:\models\refobj12\refobj12.cpf" templatedir="../templates/bmt/Cr1Model" timestamp="20191102130749496" user="Administrator" version="11.0.13.4">
+<transaction saved="false" seq="1" timestamp="20191102130938135" uniqueId="AD77531DAD77531D">
+<action seq="1" type="Create"><inputparams>
+	<param seq="1" type="integer"><value>2</value></param>
+	<param seq="2" type="handle"><mappingpath>level</mappingpath><value>[DIMENSIONAL].[Time Dimension POLINE.ENTERDATE].[ENTERDATE (By month)].[YEAR]</value></param>
+	<param seq="3" type="i18nstring"><value>New Query Item</value></param>
+	<param seq="4" type="integer"><value>1</value></param></inputparams><domchanges/><result success="t"><outputparams/></result></action>
+<action seq="2" type="ResetPromptValues"><inputparams>
+	<param seq="1" type="integer"><value>1</value></param></inputparams><domchanges/><result success="t"><outputparams/></result></action>
+<action seq="3" type="ResetPromptValues"><inputparams>
+	<param seq="1" type="integer"><value>1</value></param></inputparams><domchanges/><result success="t"><outputparams/></result></action>
+<action seq="4" type="ModifyComplex"><inputparams>
+	<param seq="1" type="handle"><mappingpath>queryItem/expression</mappingpath><value>/O/expression[0]/O/[DIMENSIONAL].[Time Dimension POLINE.ENTERDATE].[ENTERDATE (By month)].[YEAR].[TEST]</value></param>
+	<param seq="2" type="i18nstring"><value>&lt;refobj&gt;expToReplace&lt;/refobj&gt;</value></param></inputparams><domchanges/><result success="t"><outputparams/></result></action></transaction></bmtactionlog>

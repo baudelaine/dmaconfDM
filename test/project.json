@@ -1,0 +1,1 @@
+{"name":"cda4","languages":["fr"],"dbSchema":"MAXIMO","resource":{"jndiName":"jdbc/CDA4.MAXIMO","dbName":"CDA4","dbEngine":"DB2","description":"CDA4 (jdbc/CDA4.MAXIMO - DB2)","cognosCatalog":"","cognosSchema":"MAXIMO","cognosDataSource":"CDA4"},"description":"","timestamp":"2020-10-7-9-43-55","relationCount":true}

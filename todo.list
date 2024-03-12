@@ -1,0 +1,111 @@
+Correction DMA 
+- Hidden if no label (Mode deconnecté) -> A tester
+- Chargement des labels csv (Lorsqu'on charge ensuit les labels des QS. 
+  Le labels des champs fonctionne qd on le fait en premier (vérifier charser) -> ???
+- % Mode connecté SQL server, et %par lien parent -> en attente d'une base SQL Server de test
+- Remonter l'erreur comme avant dans le message rouge et dans le error.txt -> A faire
+- SQL Label par QS -> ???
+- Bug quand on a fait watch content et qu'on ajoute un ref ou final par la suite -> A tester
+- Gérer la poubelle des final -> A tester
+- Ajouter la tarification (Comtpe Objets DMA, Relation Ref, Niveau et Mesure) -> Quasi fini manque le metric pour les objects créé automatiquement 
+- Pouvoir télécharger le model.xml à tout moment -> A tester
+- Gérer le shutdown aléatoire -> A faire
+- Search Tool en mode déconnecté -> A tester
+- Ajouter indicateur DMA (Nb Fields in table) -> A tester
+- Gérer les delim = ; avec des doubles quotes dans les descriptions
+- Il manque des tables dans search tool (ORA deconnecté CCMO table STA_GRC_INTERACTION)
+- IL manque des champs dans le DMA (ACTOR STA_GRC_INTERACTION)
+- Labels table pas chargés
+
+Import fichier labels, gérer double cote
+Import fichier view, gérer double cote
+Remove expression relations
+Liste champs above par expression régulière depuis l'expression de relation
+Ajouter une case à cocher dans l'onglet Ref - Invert Cardinality
+Ajouter case à cocher (Label table parent)
+setHidden (if no label) All
+Ne pas fermer le panneau qd on chose une case ref que l'alias existe déjà
+Créer un autre bouton Generate view (différent) pour un algo différent
+
+en dev cool et rapide
+setHidden (if no label) All
+remove expression relation
+remove views
+
+Ajouter une case à cocher dans l'onglet Ref au niveau des relations - Invert Cardinality
+Ajouter case à cocher dans l'onglet Final au niveau des relations - Right join
+Ajouter case à cocher dans l'onglet QuerySubjet (table label in braket) au niveau du field (avec un cocher tout qqp) par ex en dessous du bouton setHidden All
+Ajouter case à cocher dans l'onglet QuerySubjet (path label in braket) au niveau du QS (avec un cocher tout qqp) par ex en dessous du bouton setHidden All
+Ajouter une case à cocher dans l'onglet Ref au niveau des relations - Invert Cardinality
+Ajouter case à cocher dans l'onglet Final au niveau des relations - Right join
+Ajouter case à cocher dans l'onglet QuerySubjet (table label in braket) au niveau du field (avec un cocher tout qqp) par ex en dessous du bouton setHidden All
+Ajouter case à cocher dans l'onglet QuerySubjet (path label in braket) au niveau du QS 
+deplacer le champ folder dans l'onglet final (de QS vers Final)
+
+download model.json -> corriger qss doit etre querySubject
+
+la fonction upload model.json ne fonctionne pas
+
+table label et table description ne sortent pas dans l'extract des views.csv
+le champ n'est pas rempli, mais les colonnes sont la
+
+Est-ce possible d'ajouter une poubelle sur les Views (Au niveau du QS et du Field stp) Merci d'avance camarade. y a aucune règle, aucune prise de tete, juste un poubelle pour enlever un champ qu'on veut plus
+et aussi un QS
+
+
+du coup tu peux virer le champ position
+de l'onglet vue
+on va gagner un peu de place
+car l'ID du field peut etre un peu long
+
+**********
+qd je charge un fichier views et que je me suis trompé dans les headers
+il me dit les headers sont pas bons
+et qd je rectifie, il continue de me dire la meme chose
+il faut que j'enregistre, le fichier sous un nom différent
+pour que ca se charge
+tu prends le projet antibia, le dernier modele
+tu telecharges les vues
+tu ajoutes une colonnes
+tu le recharges
+ca passe pas normal
+tu corriges
+ca passe toujours pas
+sauf en enregistrant sous un autre nom
+j'ai meme essayé de me déconnecter et me reconnecter, pourtant, je dois qd meme changer le nom du fichire
+***********
+
+Yo camarade, qd tu ajouteras les poubelles pour les vues, il me faudra aussi un nouveau champ dans l'objet Field pour les vues - OriginalTableAlias
+Ne pas afficher dans la UI
+Ce champ devra faire partie de l'extraction view.csv
+en fait, capeut être bien de le faire rapidement tant que je peux encore coder un peu à l'iic
+
+***********
+
+A ajouter à la liste - bug remove label
+On perd les balises de langue et la géération bug
+user0 -> CCMO_STAG_FULL - > RemoveLabels
+
+**********
+
+Autre bug ou on pourrait ajouter une règle
+
+Si on fait un lien vers la meme table
+il faudrait ne pas renommer la table qui commence par final
+mais bon a noter mais pas urgent
+
+*********
+
+remove label - pas urgent, mais on sait qu'il faut pas s'en servir
+mais faut l'ajouter à la liste
+
+
+*********
+
+A ajouter dans la liste, on peut pas ne pas choisir de QS lorsqu'on a dejà choisi un -> fixed
+
+*********
+
+point virgule in download and upload views expression -> fixed
+
+*********

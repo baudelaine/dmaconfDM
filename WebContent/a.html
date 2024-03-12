@@ -1,0 +1,79 @@
+<script src="js/jquery.min.js"></script>
+<script>
+
+  var s = "[FINAL].[PROJECT].[MAJPROJ] = [PROjECT].[PROJNO]";
+
+  var oldValue = "PROJECT";
+  var re = new RegExp("[^\\.]\\[" + oldValue + "\\]", "gi");
+  var newValue = "PROJECTAA";
+
+  console.log(s);
+
+  console.log("On modifie le pk_alias...");
+
+  s = s.replace(re, " [" + newValue + "]");
+  console.log(s);
+
+  re = new RegExp("[^\\.]\\[" + newValue + "\\]", "gi");
+
+  console.log("On coche la case fin...");
+
+  s = s.replace(re, " [FINAL].[" + newValue + "]");
+  console.log(s);
+
+  var whereClause = "PROJECT.PROJNO = DEPARTMENT.DEPTNO AND PROJECT.PROJNO = EMPLOYEE.EMPNO";
+  console.log(whereClause);
+
+  re = new RegExp("[^\\.^=^ ]*\\.[^\\.^=^ ]*", "gi");
+  var cols = whereClause.match(re);
+  console.log(cols);
+
+  var tables = [];
+  $.each(cols, function(i, col){
+    var table = col.split(".")[0];
+    tables.push(table);
+  })
+
+  console.log(tables);
+
+  var set = new Set();
+  $.each(tables, function(i, table){
+    set.add(table);
+  })
+
+  console.log(set);
+
+  var tableClause = Array.from(set).join(', ');
+
+  console.log(tableClause);
+
+  var qs_recCount = 20;
+
+  var query = "SELECT COUNT(*) as COUNT, (cast(round((count(*)/" + qs_recCount + ".0)*100, 3) as numeric(31,3))) as PERCENT FROM " + tableClause + " WHERE " + whereClause;
+
+  console.log(query);
+
+  console.log(query);
+  var parms = {query: query};
+
+  $.ajax({
+    type: 'POST',
+    url: "GetSQLQuery",
+    dataType: 'json',
+    data: JSON.stringify(parms),
+
+    success: function(data) {
+      console.log(data);
+    },
+    error: function(data) {
+      console.log(data);
+    }
+  });
+
+  var re = new RegExp("[#@&~€$£ÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñŒœ¨%µ\{\}\\[\\]\^\*/<>\?\!;§]", "gi");
+  var name = "¨[abcd&*éé#1@2/3{}¨%µ<!>]?;§^";
+  var name = name.replace(re, "");
+  console.log(name);
+
+
+</script>

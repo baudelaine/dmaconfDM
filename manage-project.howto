@@ -1,0 +1,7 @@
+USERS_HOME="/home/dma"
+USER="user2"
+cd ${USERS_HOME}/${USER}
+PRJ="cda3"
+jq 'del(."'${PRJ}'")' projects.json | sponge projects.json
+jq keys projects.json
+rm -rf ${USERS_HOME}/${USER}/${PRJ}
